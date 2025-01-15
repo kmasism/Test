@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UpgradeLog>
+  <Settings>
+    <Setting Name="LogFile" Value="HomebaseAdmin.log" />
+    <Setting Name="GenerateInterfacesForClasses" Value="FALSE" />
+    <Setting Name="ProjectName" Value="HomebaseAdmin" />
+    <Setting Name="OutputName" Value="HomebaseAdmin.csproj" />
+    <Setting Name="OutputDir" Value="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\" />
+    <Setting Name="ProjectPath" Value="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\HomebaseAdmin.vbp" />
+    <Setting Name="MigrateProjectTo" Value="WinExe" />
+  </Settings>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\frm_Admin_Menu.frm" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\frm_Admin_Menu.cs" FileType="Form" Upgraded="True">
+    <Section Name="(Layout)">
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Database" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="Label2" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_login_message" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_login_ID" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_login_password" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_try_count" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Login" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_Message" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_user_id" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_User_Name" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lbl_user_type" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="Label4" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblDatabase" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Status" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblServerLabel" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblServer" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblVersion" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblVersionLable" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblDateLabel" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblDate" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="frm_Admin_Menu" ObjectType="Form" PME="ClipControls" Qty="1">Form property frm_Admin_Menu.ClipControls was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Login" ObjectType="Threed.SSPanel" PME="BevelInner" Qty="1">Threed.SSPanel property pnl_Login.BevelInner was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_cancel" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_cancel.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Status" ObjectType="Threed.SSPanel" PME="BevelInner" Qty="1">Threed.SSPanel property pnl_Status.BevelInner was not upgraded.</Issue>
+    </Section>
+    <Section Name="cmd_login_Click">
+      <Issue Type="Runtime" Number="2099" ObjectName="FileSystem" ObjectType="String" PME="Dir" Qty="2">Return value for Dir has a new behavior.</Issue>
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+    </Section>
+    <Section Name="Form_Load">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+      <Issue Type="Runtime" Number="2080" ObjectType="Form" PME="Load" Qty="1">Form_Load event was upgraded to Form_Load method and has a new behavior.</Issue>
+    </Section>
+    <Section Name="mnuInstall_Click">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+    </Section>
+    <Section Name="mnuNewRelease_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="mnuReLogin_Click">
+      <Issue Type="Runtime" Number="2065" ObjectName="Form" ObjectType="Form" PME="Activated" Qty="1">Form event Form.Activated has a new behavior.</Issue>
+      <Issue Type="ToDo" Number="1069" Qty="1">Error handling statement (On Error Resume Next) was converted to a pattern that might have a different behavior.</Issue>
+    </Section>
+    <Section Name="mnuTomorrow_Click">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+    </Section>
+    <Section Name="(Rules Applying)">
+      <Issue Type="ToDo" Number="2018" Qty="1">Remove the next line of code to stop form from automatically showing.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\frm_AircraftLookup.frm" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\frm_AircraftLookup.cs" FileType="Form" Upgraded="True">
+    <Section Name="(Layout)">
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Aircraft_Contact_Type_List" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblLatitudeGPS" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_24" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_19" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_4" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_13" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_9" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_23" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_22" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_21" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_17" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_16" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblAirport_0" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_airport_update" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="SSPanel3" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_airport_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_kfeat_test" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Update_Aircraft_Status" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_NameDesc_Asking" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_avionics_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Aircraft_Class_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Aircraft_Type_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_EMP_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_APU_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Certification_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_IC_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Spec_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Certified_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Aircraft_Contact_Type_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CompanyRelationship" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_ACTypeMain" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CREG" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="acTopicsPanel" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblExportToExcel_1" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblExportToExcel_0" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblEngineModelsStop" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="tab_Lookup" ObjectType="SSTab" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="Label39" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnlAdmin" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="frm_AircraftLookup" ObjectType="Form" PME="ClipControls" Qty="1">Form property frm_AircraftLookup.ClipControls was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lookup" ObjectType="TabDlg.SSTab" PME="Tabs" Qty="1">TabDlg.SSTab property tab_Lookup.Tabs was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lookup" ObjectType="TabDlg.SSTab" PME="TabsPerRow" Qty="1">TabDlg.SSTab property tab_Lookup.TabsPerRow was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Kfeat" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Kfeat.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_KeyFeature" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_KeyFeature._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_KeyFeature" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_KeyFeature._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_AutoMod" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_AutoMod._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_AutoMod" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_AutoMod._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Aircraft_Status" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Aircraft_Status._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Aircraft_Status" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Aircraft_Status._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Aircraft_Status" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Aircraft_Status.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_AirCraft_Asking" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_AirCraft_Asking._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_AirCraft_Asking" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_AirCraft_Asking._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Asking" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Asking.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_avionics_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_avionics_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Avionics" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Avionics.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Avionics" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Avionics._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Avionics" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Avionics._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Aircraft_Class" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Aircraft_Class._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Aircraft_Class" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Aircraft_Class._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Aircraft_Class" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Aircraft_Class.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Aircraft_Class_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Aircraft_Class_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Aircraft_Type" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Aircraft_Type._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Aircraft_Type" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Aircraft_Type._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Aircraft_type" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Aircraft_type.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Aircraft_Type_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Aircraft_Type_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_EMP_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_EMP_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_EMP" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_EMP.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Engine_Maintenance" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Engine_Maintenance._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Engine_Maintenance" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Engine_Maintenance._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Interior_Configuration" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Interior_Configuration._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Interior_Configuration" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Interior_Configuration._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_IC" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_IC.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_IC_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_IC_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Aircraft_Contact_type" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Aircraft_Contact_type.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Aircraft_Contact_Type_List" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Aircraft_Contact_Type_List.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FGRD_AircraftContactType" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FGRD_AircraftContactType._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FGRD_AircraftContactType" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FGRD_AircraftContactType._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_ACTypeMain" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_ACTypeMain.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Aircraft_Contact_Type_AddUpdate" ObjectType="Threed.SSPanel" PME="Caption" Qty="1">Threed.SSPanel property pnl_Aircraft_Contact_Type_AddUpdate.Caption was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Aircraft_Contact_Type_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Aircraft_Contact_Type_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CompanyRelationship" ObjectType="Threed.SSPanel" PME="Caption" Qty="1">Threed.SSPanel property pnl_CompanyRelationship.Caption was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CompanyRelationship" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CompanyRelationship.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Auxiliary_Power" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Auxiliary_Power._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Auxiliary_Power" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Auxiliary_Power._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_APU" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_APU.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_APU_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_APU_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Operating_Certification" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Operating_Certification._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Operating_Certification" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Operating_Certification._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Certification" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Certification.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Certification_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Certification_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_Label19_3" ObjectType="Label" PME="WordWrap" Qty="1">Label property _Label19_3.WordWrap was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Specification" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Specification._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Specification" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Specification._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Spec" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Spec.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Spec_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Spec_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_cmdAirportPreviousNext_1" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property _cmdAirportPreviousNext_1.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_cmdAirportPreviousNext_0" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property _cmdAirportPreviousNext_0.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Airport_Add" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Airport_Add.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_11" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_11.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_12" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_12.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_13" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_13.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_17" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_17.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_16" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_16.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_8" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_8.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_7" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_7.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_6" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_6.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_txtAirport_14" ObjectType="TextBox" PME="DataFormat" Qty="1">TextBox property _txtAirport_14.DataFormat was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="SSPanel3" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property SSPanel3.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_Airport" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_Airport._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_Airport" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_Airport._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Certified_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Certified_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_certified_add" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_certified_add.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FGRD_Certifed" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FGRD_Certifed._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FGRD_Certifed" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FGRD_Certifed._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmdAddCREG" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmdAddCREG.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grdCREG" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grdCREG._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grdCREG" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grdCREG._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CREG" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CREG.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_Label40_4" ObjectType="Label" PME="WordWrap" Qty="1">Label property _Label40_4.WordWrap was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_ABI_Hide_AC" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_ABI_Hide_AC._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_ABI_Hide_AC" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_ABI_Hide_AC._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicsUpdateEvo" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property acTopicsUpdateEvo.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicAdd" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property acTopicAdd.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicsGrid" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method acTopicsGrid._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicsGrid" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method acTopicsGrid._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicsPanel" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property acTopicsPanel.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicAircraftList" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method acTopicAircraftList._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="acTopicAircraftList" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method acTopicAircraftList._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_maint_items" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_maint_items._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_maint_items" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_maint_items._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grdEngineModels" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grdEngineModels._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grdEngineModels" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grdEngineModels._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="ButtonWidth" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.ButtonWidth was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="ButtonHeight" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.ButtonHeight was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="Appearance" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.Appearance was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="BorderStyle" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.BorderStyle was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button1" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button1.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button1" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button1.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button2" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button2.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button3" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button3.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button3" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button3.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button4" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button4.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button5" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button5.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button5" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button5.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button6" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button6.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button7" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button7.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button7" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button7.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button8" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button8.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'Label40' was set to the maximun used index.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'lblAirport' was set to the maximun used index.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'lbl_Airport_Message' was set to the maximun used index.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'txt_certification_name' was set to the maximun used index.</Issue>
+    </Section>
+    <Section Name="get_keyfeat">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Clear is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="6">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member CellAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="5">Member ColAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="4">Member CellBackColor is not defined in type VB.Control.</Issue>
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Rows is not defined in type VB.Control.</Issue>
+    </Section>
+    <Section Name="display_maintenance_items">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Clear is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Cols is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="6">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="11">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="4">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member CellAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member ColAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="4">Member CellBackColor is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member RowData is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member Rows is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member TopRow is not defined in type VB.Control.</Issue>
+    </Section>
+    <Section Name="fill_maintenance_item">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="8">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Fill_Topic_Area">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Fill_Parent_Topic_Area">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Insert_Update_Aircraft_Topic_item">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Fill_Aircraft_Topic_Item">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Aircraft_Topic_List_By_Topic_Fill">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Clear is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="4">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="6">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member CellAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member ColAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member CellBackColor is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member Rows is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="AircraftContactTypeFill">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Clear is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="27">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="13">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Rows is not defined in type VB.Control.</Issue>
+    </Section>
+    <Section Name="Update_Aircraft_TBO_Hours">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Update_Aircraft_Model_Record_With_Aircraft_Model_Engine_Lowest_Seq">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="4">Use of Null/IsNull() detected.</Issue>
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="UpdateAllAircraftAirports">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="cmd_Airport_Delete_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="cmd_button_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="14">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="14">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Send_To_Evo">
+      <Issue Type="Compile" Number="2064" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="CursorLocation" Qty="1">ADODB.Connection property cntConn.CursorLocation was not upgraded.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="ConnectionTimeout" Qty="1">ADODB.Connection property cntConn.ConnectionTimeout was not upgraded.</Issue>
+      <Issue Type="ToDo" Number="7010" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Open" Qty="1">The connection string must be verified to fullfill the .NET data provider connection string requirements.</Issue>
+      <Issue Type="Runtime" Number="6021" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Load_grd_ABI_Hide_AC">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="cmd_Save_Kfeat_Click">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="cmdEngineModelsDelete_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Load_Engine_Model_Grid">
+      <Issue Type="Runtime" Number="1068" ObjectName="grdEngineModels" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="CellBackColor" Qty="18">lTempColor of type Variant is being forced to int.</Issue>
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="7">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="ShellOpenURLInBrowser">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="FG_KeyFeature_Click">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="2">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Form_Load">
+      <Issue Type="Runtime" Number="2080" ObjectType="Form" PME="Load" Qty="1">Form_Load event was upgraded to Form_Load method and has a new behavior.</Issue>
+    </Section>
+    <Section Name="grd_ABI_Hide_AC_Click">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="lblExportToExcel_Click">
+      <Issue Type="Runtime" Number="2081" ObjectName="gfso" ObjectType="Scripting.FileSystemObject" PME="DeleteFile" Qty="2">DeleteFile has a new behavior.</Issue>
+    </Section>
+    <Section Name="tab_Lookup_Click">
+      <Issue Type="ToDo" Number="1067" Qty="12">Member Clear is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="36">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="60">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="30">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="25">Member Rows is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="5">Member ColAlignment is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Cols is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1065" ObjectName="cmdEngineModelsRefresh" ObjectType="CommandButton" PME="Click" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Txt_atype_Code_KeyPress">
+      <Issue Type="Compile" Number="1058" ObjectName="Txt_atype_Code" ObjectType="TextBox" PME="KeyPress" Qty="1">Assignment not supported: KeyAscii to a non-positive constant</Issue>
+    </Section>
+    <Section Name="Txt_emp_Code_KeyPress">
+      <Issue Type="Compile" Number="1058" ObjectName="Txt_emp_Code" ObjectType="TextBox" PME="KeyPress" Qty="1">Assignment not supported: KeyAscii to a non-positive constant</Issue>
+    </Section>
+    <Section Name="txt_kfeat_code_KeyPress">
+      <Issue Type="Compile" Number="1058" ObjectName="txt_kfeat_code" ObjectType="TextBox" PME="KeyPress" Qty="1">Assignment not supported: KeyAscii to a non-positive constant</Issue>
+    </Section>
+    <Section Name="Aircraft_Contact_Type">
+      <Issue Type="ToDo" Number="1065" ObjectName="mnuFileClose" ObjectType="Menu" PME="Click" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Airport_Display">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="11">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Update_FAA_Flight_Data">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Airport_Update">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Airport_Delete">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="2">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="2">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Airport_Fill_List">
+      <Issue Type="Runtime" Number="1068" Qty="8">maincolor of type Variant is being forced to int.</Issue>
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Key_Feature_Mass_Update">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+      <Issue Type="Runtime" Number="6021" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="Execute" Qty="4">Casting 'ADODB.ExecuteOptionEnum' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="8">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+      <Issue Type="Runtime" Number="1049" ObjectName="Fields.Item" ObjectType="ADODB.Field" PME="Value" Qty="4">Use of Null/IsNull() detected.</Issue>
+      <Issue Type="Runtime" Number="6021" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="Execute" Qty="3">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+    </Section>
+    <Section Name="Record_Delete_Log_Entry">
+      <Issue Type="Runtime" Number="6021" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="(Rules Applying)">
+      <Issue Type="ToDo" Number="2018" Qty="1">Remove the next line of code to stop form from automatically showing.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\frm_CommonLookup.frm" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\frm_CommonLookup.cs" FileType="Form" Upgraded="True">
+    <Section Name="(Layout)">
+      <Issue Type="Design" Number="2045" ObjectName="pnl_avionics_0" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_JC_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnlAcctRepUpdateChange" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_website_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="SSPanel1" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_JC_List" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="chk_user_team_leader_flag" ObjectType="CheckBox" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_User_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Service_Update_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_yes_no" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_avionics_1" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="frm_CommonLookup" ObjectType="Form" PME="ClipControls" Qty="1">Form property frm_CommonLookup.ClipControls was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lookup" ObjectType="TabDlg.SSTab" PME="Tabs" Qty="1">TabDlg.SSTab property tab_Lookup.Tabs was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lookup" ObjectType="TabDlg.SSTab" PME="TabsPerRow" Qty="1">TabDlg.SSTab property tab_Lookup.TabsPerRow was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_website_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_website_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_JC_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_JC_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_JC_List" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_JC_List.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="fG_JournalCat" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method fG_JournalCat._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="fG_JournalCat" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method fG_JournalCat._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_JC" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_JC.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_User_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_User_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Users" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Users._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Users" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Users._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_User" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_User.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Service" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Service.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Service" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Service._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Service" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Service._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_Subscriptions" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_Subscriptions._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_Subscriptions" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_Subscriptions._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Service_Update_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Service_Update_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_AccountRep" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_AccountRep._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_AccountRep" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_AccountRep._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_email" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_email._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_email" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_email._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tabstrip_data" ObjectType="TabDlg.SSTab" PME="Tabs" Qty="1">TabDlg.SSTab property tabstrip_data.Tabs was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tabstrip_data" ObjectType="TabDlg.SSTab" PME="TabsPerRow" Qty="1">TabDlg.SSTab property tabstrip_data.TabsPerRow was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grid_details" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grid_details._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grid_details" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grid_details._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_cmd_apu_1" ObjectType="CommandButton" PME="UseMaskColor" Qty="1">CommandButton property _cmd_apu_1.UseMaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="ButtonWidth" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.ButtonWidth was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="ButtonHeight" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.ButtonHeight was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="Appearance" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.Appearance was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="BorderStyle" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.BorderStyle was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button1" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button1.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button1" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button1.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button2" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button2.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button3" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button3.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button3" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button3.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button4" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button4.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button5" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button5.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button5" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button5.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button6" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button6.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button7" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button7.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button7" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button7.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button8" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button8.AutoSize was not upgraded.</Issue>
+    </Section>
+    <Section Name="create_class_page">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="3">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Save_Custom_Export_Field">
+      <Issue Type="Runtime" Number="1068" Qty="6">Get_PrimaryTab_ID() of type Variant is being forced to string.</Issue>
+      <Issue Type="Runtime" Number="1068" Qty="2">Get_Block_ID() of type Variant is being forced to string.</Issue>
+    </Section>
+    <Section Name="Test_Connection_Query">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="6">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="InsertJournalNote_AC">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="cmdRemoveCompOrphanPhoneNbrs_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="cmdRemoveContactOrphanPhoneNbrs_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="FG_Users_Click">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="3">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Form_Load">
+      <Issue Type="Runtime" Number="2080" ObjectType="Form" PME="Load" Qty="1">Form_Load event was upgraded to Form_Load method and has a new behavior.</Issue>
+    </Section>
+    <Section Name="lst_class_Click">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="4">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="tab_Lookup_Click">
+      <Issue Type="ToDo" Number="1065" ObjectName="cmd_apu" ObjectType="CommandButton" PME="Click" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="txt_accrep_account_id_KeyPress">
+      <Issue Type="Compile" Number="1058" ObjectName="txt_accrep_account_id" ObjectType="TextBox" PME="KeyPress" Qty="1">Assignment not supported: KeyAscii to a non-positive constant</Issue>
+    </Section>
+    <Section Name="txt_accrep_account_type_KeyPress">
+      <Issue Type="Compile" Number="1058" ObjectName="txt_accrep_account_type" ObjectType="TextBox" PME="KeyPress" Qty="1">Assignment not supported: KeyAscii to a non-positive constant</Issue>
+    </Section>
+    <Section Name="FillCustomFieldList">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Fill_Field_Details">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="8">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="(Rules Applying)">
+      <Issue Type="ToDo" Number="2018" Qty="1">Remove the next line of code to stop form from automatically showing.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\frm_CompanyContactLookup.frm" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\frm_CompanyContactLookup.cs" FileType="Form" Upgraded="True">
+    <Section Name="(Layout)">
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CT_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_ContactTitleGroup" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblStopTitleLoad_1" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblStopTitleLoad_0" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="Label1_49" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="frmRegion_0" ObjectType="Frame" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Currency_Change" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CAT_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_GAT_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CBT_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="Label1_26" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Country_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_Language_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CSN_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_CS_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_PT_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_State_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_TZ_AddUpdate" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="cmdRemoveBusGroup" ObjectType="CommandButton" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="cmdAddBusGroup" ObjectType="CommandButton" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_BusGroup" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnlEFIG_Add_Group" ObjectType="SSFrame" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnlEFIG_Delete" ObjectType="SSFrame" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_24" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_22" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_23" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnl_AddFinGroup" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_19" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_9" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_13" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="lblNIOL_CompanyData_12" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnlEFIG_NIOL" ObjectType="SSFrame" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="Label40" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="tab_Lookup" ObjectType="SSTab" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="frm_CompanyContactLookup" ObjectType="Form" PME="ClipControls" Qty="1">Form property frm_CompanyContactLookup.ClipControls was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="ButtonWidth" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.ButtonWidth was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="ButtonHeight" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.ButtonHeight was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="Appearance" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.Appearance was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar" ObjectType="MSComctlLib.Toolbar" PME="BorderStyle" Qty="1">MSComctlLib.Toolbar property tbr_ToolBar.BorderStyle was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button1" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button1.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button1" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button1.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button2" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button2.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button3" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button3.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button3" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button3.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button4" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button4.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button5" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button5.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button5" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button5.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button6" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button6.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button7" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button7.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button7" ObjectType="MSComctlLib.Button" PME="Style" Qty="1">MSComctlLib.Button property tbr_ToolBar_Buttons_Button7.Style was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tbr_ToolBar_Buttons_Button8" ObjectType="MSComctlLib.IButton" PME="AutoSize" Qty="1">MSComctlLib.IButton method tbr_ToolBar_Buttons_Button8.AutoSize was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lookup" ObjectType="TabDlg.SSTab" PME="Tabs" Qty="1">TabDlg.SSTab property tab_Lookup.Tabs was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lookup" ObjectType="TabDlg.SSTab" PME="TabsPerRow" Qty="1">TabDlg.SSTab property tab_Lookup.TabsPerRow was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CAT_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CAT_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Cat_List" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="GridColorFixed" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid property FG_Cat_List.GridColorFixed was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Cat_List" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Cat_List._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Cat_List" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Cat_List._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_CAT" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_CAT.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_GAT" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_GAT.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_CompAgency" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_CompAgency._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_CompAgency" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_CompAgency._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_GAT_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_GAT_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_CBT" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_CBT.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_CBTList" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_CBTList._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_CBTList" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_CBTList._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CBT_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CBT_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_BusGroup" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_BusGroup.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Country_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Country_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2081" ObjectName="_HiddenModule" ObjectType="Variant" PME="array" Qty="1">Array has a new behavior.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Country" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Country._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Country" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Country._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Country" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Country.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Language_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Language_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Language" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Language._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Language" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Language._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Language" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Language.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_Currency_Change" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_Currency_Change.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Currency" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Currency._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Currency" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Currency._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_Currency" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_Currency.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_SirName" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_SirName._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_SirName" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_SirName._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_CSN" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_CSN.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CSN_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CSN_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_CS" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_CS.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_Suffix" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_Suffix._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_Suffix" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_Suffix._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CS_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CS_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_contact_title" ObjectType="TabDlg.SSTab" PME="Tabs" Qty="1">TabDlg.SSTab property tab_contact_title.Tabs was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_contact_title" ObjectType="TabDlg.SSTab" PME="TabsPerRow" Qty="1">TabDlg.SSTab property tab_contact_title.TabsPerRow was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_Title" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_Title._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_Title" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_Title._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_ContactTitleGroup" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_ContactTitleGroup.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_CT_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_CT_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_Title_New" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_Title_New._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Contact_Title_New" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Contact_Title_New._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_titles_in_group" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_titles_in_group._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_titles_in_group" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_titles_in_group._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Phone_Type" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Phone_Type._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Phone_Type" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Phone_Type._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_PT" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_PT.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_PT_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_PT_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_State_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_State_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmb_state_country" ObjectType="ComboBox" PME="Locked" Qty="1">ComboBox property cmb_state_country.Locked was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_State" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_State.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_State" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_State._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_State" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_State._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnl_TZ_AddUpdate" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnl_TZ_AddUpdate.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_Add_TZ" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_Add_TZ.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_TimeZone" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_TimeZone._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_TimeZone" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_TimeZone._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_FracPrograms" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_FracPrograms._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_FracPrograms" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_FracPrograms._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmd_add_fracPG" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmd_add_fracPG.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grdMemSearch" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grdMemSearch._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grdMemSearch" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grdMemSearch._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="cmdAddFracMember" ObjectType="CommandButton" PME="MaskColor" Qty="1">CommandButton property cmdAddFracMember.MaskColor was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_ProgCompany" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_ProgCompany._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_ProgCompany" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_ProgCompany._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_EFIG_NIOL" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_EFIG_NIOL._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_EFIG_NIOL" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_EFIG_NIOL._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lists" ObjectType="TabDlg.SSTab" PME="Tabs" Qty="1">TabDlg.SSTab property tab_Lists.Tabs was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="tab_Lists" ObjectType="TabDlg.SSTab" PME="TabsPerRow" Qty="1">TabDlg.SSTab property tab_Lists.TabsPerRow was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_EFIG_MC" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="GridColorFixed" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid property FG_EFIG_MC.GridColorFixed was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_EFIG_MC" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_EFIG_MC._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_EFIG_MC" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_EFIG_MC._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_RelatedCompanies" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="GridColorFixed" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid property grd_RelatedCompanies.GridColorFixed was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_RelatedCompanies" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_RelatedCompanies._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="grd_RelatedCompanies" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method grd_RelatedCompanies._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_lblCompanyData_2" ObjectType="Label" PME="WordWrap" Qty="1">Label property _lblCompanyData_2.WordWrap was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_lblCompanyData_0" ObjectType="Label" PME="WordWrap" Qty="1">Label property _lblCompanyData_0.WordWrap was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_FG_Array_0" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="GridColorFixed" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid property _FG_Array_0.GridColorFixed was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_FG_Array_0" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method _FG_Array_0._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="_FG_Array_0" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method _FG_Array_0._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Region" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_NumberOfBands" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Region._NumberOfBands was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="FG_Region" ObjectType="MSHierarchicalFlexGridLib.MSHFlexGrid" PME="_Band(0)Cols" Qty="1">MSHierarchicalFlexGridLib.MSHFlexGrid method FG_Region._Band(0)Cols was not upgraded.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'Line2' was set to the maximun used index.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'lblCompanyData' was set to the maximun used index.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'lblDialLineAccessCode' was set to the maximun used index.</Issue>
+      <Issue Type="Design" Number="6020" Qty="1">The length of array 'lblNIOL_CompanyData' was set to the maximun used index.</Issue>
+    </Section>
+    <Section Name="FillBusinessGroupLists">
+      <Issue Type="Compile" Number="2064" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="CursorLocation" Qty="3">ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded.</Issue>
+      <Issue Type="Runtime" Number="2080" ObjectName="Information" ObjectType="Boolean" PME="IsEmpty" Qty="3">IsEmpty was upgraded to a comparison and has a new behavior.</Issue>
+    </Section>
+    <Section Name="Fill_Contact_Title_List_From_Group">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="3">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="cmd_Add_State_Click">
+      <Issue Type="Compile" Number="2064" ObjectName="cmb_state_country" ObjectType="ComboBox" PME="Locked" Qty="1">ComboBox property cmb_state_country.Locked was not upgraded.</Issue>
+    </Section>
+    <Section Name="cmd_ASP_dot_Net_Click">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+    </Section>
+    <Section Name="cmd_Save_Country_Click">
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="cmdAdd_CompRef_Click">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="cmdAdd_FG_Click">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="2">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="cmdMergeFractionals_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="3">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="3">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="cmdSearch_Compy_wDate_Click">
+      <Issue Type="Runtime" Number="1068" Qty="1">date_today of type Variant is being forced to DateTime.</Issue>
+      <Issue Type="Runtime" Number="1068" Qty="1">date_today of type Variant is being forced to string.</Issue>
+    </Section>
+    <Section Name="FG_CBTList_Click">
+      <Issue Type="ToDo" Number="1067" Qty="7">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" ObjectName="txt_cbus_type" ObjectType="TextBox" PME="Text" Qty="1">Member Text is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" ObjectName="txt_cbus_Name" ObjectType="TextBox" PME="Text" Qty="1">Member Text is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="5">Member Text is not defined in type VB.Control.</Issue>
+    </Section>
+    <Section Name="FG_State_Click">
+      <Issue Type="Compile" Number="2064" ObjectName="cmb_state_country" ObjectType="ComboBox" PME="Locked" Qty="1">ComboBox property cmb_state_country.Locked was not upgraded.</Issue>
+    </Section>
+    <Section Name="Form_Load">
+      <Issue Type="Runtime" Number="2080" ObjectType="Form" PME="Load" Qty="1">Form_Load event was upgraded to Form_Load method and has a new behavior.</Issue>
+    </Section>
+    <Section Name="tab_Lookup_Click">
+      <Issue Type="ToDo" Number="1067" Qty="36">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="69">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="27">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="18">Member Rows is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1065" Qty="1">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="Fill_FG_EFIG_MC">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="7">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="LoadNIOL">
+      <Issue Type="Runtime" Number="1068" Qty="1">date_today of type Variant is being forced to DateTime.</Issue>
+      <Issue Type="Runtime" Number="1068" Qty="1">date_today of type Variant is being forced to string.</Issue>
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="5">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Load_Company_SIC_Codes">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="4">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="vbCheck_Click">
+      <Issue Type="ToDo" Number="1067" Qty="6">Member Col is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member Row is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="3">Member ColWidth is not defined in type VB.Control.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Rows is not defined in type VB.Control.</Issue>
+    </Section>
+    <Section Name="Get_Financial_Group_Companies">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="7">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Get_Financial_Group_Unrelated_Companies">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="7">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="(Rules Applying)">
+      <Issue Type="ToDo" Number="2018" Qty="1">Remove the next line of code to stop form from automatically showing.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\frmCompanyAdd.frm" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\frmCompanyAdd.cs" FileType="Form" Upgraded="True">
+    <Section Name="cmdAdd_Click">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Form_Load">
+      <Issue Type="Runtime" Number="2080" ObjectType="Form" PME="Load" Qty="1">Form_Load event was upgraded to Form_Load method and has a new behavior.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\Admin_mdi.frm" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\Admin_mdi.cs" FileType="MDI Form" Upgraded="True">
+    <Section Name="(Layout)">
+      <Issue Type="Design" Number="2045" ObjectName="lbl_WhichDatabase" ObjectType="Label" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2045" ObjectName="pnlStatusBar" ObjectType="SSPanel" PME="Font" Qty="1">Only TrueType and OpenType fonts are supported in Windows Forms.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="mdi_AdminAssistant" ObjectType="MDIForm" PME="ScrollBars" Qty="1">MDIForm property mdi_AdminAssistant.ScrollBars was not upgraded.</Issue>
+      <Issue Type="Design" Number="2068" Qty="1">MSComDlg.CommonDialog object was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnlStatusBar" ObjectType="Threed.SSPanel" PME="BorderWidth" Qty="1">Threed.SSPanel property pnlStatusBar.BorderWidth was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnlStatusBar" ObjectType="Threed.SSPanel" PME="BevelInner" Qty="1">Threed.SSPanel property pnlStatusBar.BevelInner was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="pnlStatusBar" ObjectType="Threed.SSPanel" PME="Alignment" Qty="1">Threed.SSPanel property pnlStatusBar.Alignment was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="prg_Progress_Bar" ObjectType="ComctlLib.ProgressBar" PME="Appearance" Qty="1">ComctlLib.ProgressBar property prg_Progress_Bar.Appearance was not upgraded.</Issue>
+      <Issue Type="Design" Number="2064" ObjectName="imgNormal" ObjectType="MSComctlLib.ImageList" PME="Location" Qty="1">MSComctlLib.ImageList method imgNormal.Location was not upgraded.</Issue>
+    </Section>
+    <Section Name="(Declarations)">
+      <Issue Type="Compile" Number="2068" Qty="1">MSComDlg.CommonDialog object was not upgraded.</Issue>
+    </Section>
+    <Section Name="MDIForm_Load">
+      <Issue Type="Runtime" Number="2080" ObjectType="Form" PME="Load" Qty="1">Form_Load event was upgraded to Form_Load method and has a new behavior.</Issue>
+    </Section>
+    <Section Name="MDIForm_QueryUnload">
+      <Issue Type="Runtime" Number="2065" ObjectName="QueryUnloadConstants" ObjectType="QueryUnloadConstants" PME="vbFormControlMenu" Qty="1">QueryUnloadConstants property QueryUnloadConstants.vbFormControlMenu has a new behavior.</Issue>
+    </Section>
+    <Section Name="(Rules Applying)">
+      <Issue Type="Compile" Number="2068" Qty="2">MSComDlg.CommonDialog object was not upgraded.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\modAdminCommon.bas" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\modAdminCommon.cs" FileType="Module" Upgraded="True">
+    <Section Name="Exist">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="gbl_LeftAdjust">
+      <Issue Type="Runtime" Number="1068" ObjectName="Strings" ObjectType="String" PME="Trim" Qty="1">FLD of type Variant is being forced to Scalar.</Issue>
+    </Section>
+    <Section Name="gbl_RightAdjust">
+      <Issue Type="Runtime" Number="1068" ObjectName="Strings" ObjectType="String" PME="Trim" Qty="1">FLD of type Variant is being forced to Scalar.</Issue>
+    </Section>
+    <Section Name="MakeNumeric">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Open_Database">
+      <Issue Type="Compile" Number="2064" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="CursorLocation" Qty="1">ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded.</Issue>
+      <Issue Type="ToDo" Number="7010" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Open" Qty="1">The connection string must be verified to fullfill the .NET data provider connection string requirements.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="Open_Client_Connection">
+      <Issue Type="Compile" Number="2064" ObjectName="CLIENT_ADO_DB" ObjectType="ADODB.Connection" PME="CursorLocation" Qty="1">ADODB.Connection property CLIENT_ADO_DB.CursorLocation was not upgraded.</Issue>
+      <Issue Type="ToDo" Number="7010" ObjectName="CLIENT_ADO_DB" ObjectType="ADODB.Connection" PME="Open" Qty="1">The connection string must be verified to fullfill the .NET data provider connection string requirements.</Issue>
+    </Section>
+    <Section Name="GetSystemDateTime">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="Fix_Quote">
+      <Issue Type="Runtime" Number="1068" ObjectName="Strings" ObjectType="String" PME="Trim" Qty="2">varInput of type Variant is being forced to string.</Issue>
+    </Section>
+    <Section Name="Report_Error">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="2">Err.Number has a new behavior.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Clipboard" ObjectType="Clipboard" PME="SetText" Qty="1">Clipboard.SetText has a new behavior.</Issue>
+    </Section>
+    <Section Name="Display_Error">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="2">Err.Number has a new behavior.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Clipboard" ObjectType="Clipboard" PME="SetText" Qty="1">Clipboard.SetText has a new behavior.</Issue>
+    </Section>
+    <Section Name="Trace">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="ADO_Transaction">
+      <Issue Type="Compile" Number="2064" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="ConnectionTimeout" Qty="1">ADODB.Connection property ADODB_Trans_conn.ConnectionTimeout was not upgraded.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="CursorLocation" Qty="1">ADODB.Connection property ADODB_Trans_conn.CursorLocation was not upgraded.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="Mode" Qty="1">ADODB.Connection property ADODB_Trans_conn.Mode was not upgraded.</Issue>
+      <Issue Type="Compile" Number="2070" ObjectName="ConnectModeEnum" ObjectType="ADODB.ConnectModeEnum" PME="adModeShareDenyNone" Qty="1">Constant adModeShareDenyNone was not upgraded.</Issue>
+      <Issue Type="ToDo" Number="7010" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="Open" Qty="1">The connection string must be verified to fullfill the .NET data provider connection string requirements.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="Record_Error">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="3">Err.Number has a new behavior.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Clipboard" ObjectType="Clipboard" PME="SetText" Qty="1">Clipboard.SetText has a new behavior.</Issue>
+    </Section>
+    <Section Name="Record_Delete_Log_Entry">
+      <Issue Type="Runtime" Number="6021" ObjectName="ADODB_Trans_conn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="ComputeHighlightCodes">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+      <Issue Type="ToDo" Number="1065" Qty="2">Error handling statement (Resume Next) could not be converted.</Issue>
+    </Section>
+    <Section Name="ClearAllLocksForCurrentUser">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="3">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="3">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="2">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="Key_Feature_Standard">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="Table_Action_Log">
+      <Issue Type="Runtime" Number="6021" ObjectName="LOCAL_ADO_DB" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="OpenURLInInternetExplorerObject">
+      <Issue Type="Runtime" Number="7008" ObjectName="Interaction" ObjectType="Variant" PME="CreateObject" Qty="1">The ProgId could not be found on computer where this application was migrated</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Visible is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Navigate is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="OpenURLInInternetExplorer">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+      <Issue Type="Runtime" Number="7008" ObjectName="Interaction" ObjectType="Variant" PME="CreateObject" Qty="1">The ProgId could not be found on computer where this application was migrated</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Visible is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Navigate is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="OpenURLInChrome">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+    </Section>
+    <Section Name="OpenURLInFireFox">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+    </Section>
+    <Section Name="ShellOpenURLInBrowser">
+      <Issue Type="ToDo" Number="7005" Qty="1">parameters (if any) must be set using the Arguments property of ProcessStartInfo</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="modAdminCommon" ObjectType="modAdminCommon" PME="ShellExecute" Qty="1">ShellExecuteA has a new behavior.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="CreateNewAVDataId">
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="Open_FAA_FLightData_Database">
+      <Issue Type="Compile" Number="2064" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="CursorLocation" Qty="1">ADODB.Connection property cntConn.CursorLocation was not upgraded.</Issue>
+      <Issue Type="ToDo" Number="7010" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Open" Qty="1">The connection string must be verified to fullfill the .NET data provider connection string requirements.</Issue>
+    </Section>
+    <Section Name="Update_FAA_Flight_Data_Clear_APort_Id_Distance_In_Batch_Mode">
+      <Issue Type="Runtime" Number="6021" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Update_FAA_Flight_Data_APort_Id_By_APort_Code_In_Batch_Mode">
+      <Issue Type="Runtime" Number="6021" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Update_FAA_Flight_Data_Distance_By_APort_Id_In_Batch_Mode">
+      <Issue Type="Runtime" Number="6021" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+    <Section Name="Update_FAA_Flight_Data_Clear_Action_Date_For_By_Action_Date_In_Batch_Mode">
+      <Issue Type="Runtime" Number="6021" ObjectName="cntConn" ObjectType="ADODB.Connection" PME="Execute" Qty="1">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Compile" Number="2064" ObjectName="ExecuteOptionEnum" ObjectType="ADODB.ExecuteOptionEnum" PME="adExecuteNoRecords" Qty="1">ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\modExcel.bas" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\modExcel.cs" FileType="Module" Upgraded="True">
+    <Section Name="Create_Excel_File">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Workbooks is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Worksheets is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member ActiveWorkbook is not defined in type Variant.</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument FileName was not resolved and corresponds to the following expression strFileName</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument FileFormat was not resolved and corresponds to the following expression xlNormal</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Visible is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="OpenExcel">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Workbooks is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Worksheets is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Visible is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="OpenExcelFile">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Workbooks is not defined in type Variant.</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument FileName was not resolved and corresponds to the following expression strFileName</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member ActiveWorkbook is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member ActiveSheet is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Visible is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="ExportMSHFlexGrid">
+      <Issue Type="ToDo" Number="1067" Qty="3">Member ScreenUpdating is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="20">Member Cells is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Columns is not defined in type Variant.</Issue>
+      <Issue Type="Runtime" Number="6021" Qty="2">Casting 'int' to Enum may cause different behaviour.</Issue>
+      <Issue Type="Runtime" Number="2081" ObjectName="Information.Err" ObjectType="ErrObject" PME="Number" Qty="1">Err.Number has a new behavior.</Issue>
+    </Section>
+    <Section Name="ReturnPercentageGrowth">
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+    <Section Name="DrawGrid">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Range is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="15">Member Selection is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="AddHyperLink">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Range is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Hyperlinks is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Selection is not defined in type Variant.</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument Anchor was not resolved and corresponds to the following expression oExcel.Selection</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument Address was not resolved and corresponds to the following expression </Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument SubAddress was not resolved and corresponds to the following expression strHRef</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument TextToDisplay was not resolved and corresponds to the following expression strText</Issue>
+    </Section>
+    <Section Name="Merge_Cells">
+      <Issue Type="ToDo" Number="1067" Qty="1">Member Range is not defined in type Variant.</Issue>
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Cells is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="Save_Excel_File">
+      <Issue Type="ToDo" Number="1067" Qty="2">Member ActiveWorkbook is not defined in type Variant.</Issue>
+      <Issue Type="Runtime" Number="7006" Qty="1">The Named argument FileName was not resolved and corresponds to the following expression strFullFileName</Issue>
+    </Section>
+    <Section Name="Add_Seperator_Line_To_Excel">
+      <Issue Type="ToDo" Number="1067" Qty="2">Member Cells is not defined in type Variant.</Issue>
+    </Section>
+    <Section Name="Add_Number_To_Excel">
+      <Issue Type="ToDo" Number="1067" Qty="6">Member Cells is not defined in type Variant.</Issue>
+      <Issue Type="Runtime" Number="1049" ObjectName="Information" ObjectType="Boolean" PME="IsNull" Qty="1">Use of Null/IsNull() detected.</Issue>
+    </Section>
+  </File>
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\MyAdmin.bas" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\MyAdmin.cs" FileType="Module" Upgraded="True" />
+  <File OldPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\SOURCE CODE - DICIEMBRE\HomebaseAdministrator\Source\Stat_bar.bas" NewPath="C:\Users\BTDevBase\Desktop\JETNET source code Sept 2024\DICIEMBRE_OUTPUT\Upgraded\HomebaseAdministrator\Source\Stat_bar.cs" FileType="Module" Upgraded="True">
+    <Section Name="ShellExecute">
+      <Issue Type="Runtime" Number="2081" ObjectName="modAdminCommon" ObjectType="modAdminCommon" PME="ShellExecute" Qty="1">ShellExecuteA has a new behavior.</Issue>
+    </Section>
+  </File>
+</UpgradeLog>
+

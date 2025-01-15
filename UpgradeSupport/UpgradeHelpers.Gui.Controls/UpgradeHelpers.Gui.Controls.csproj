@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{933E4CEF-EEA2-40F8-8014-65259A517A43}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UpgradeHelpers.Gui.Controls</RootNamespace>
+    <AssemblyName>UpgradeHelpers.Gui.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <StyleCopTreatErrorsAsWarnings>false</StyleCopTreatErrorsAsWarnings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(TargetFrameworkVersion)' == 'v3.5' Or '$(TargetFrameworkVersion)'=='v4.0' ">
+    <DefineConstants>TargetF48;WINFORMS;NET10;NET20;NET30;NET35;NET40;$(DefineConstants)</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TargetF48;WINFORMS;TRACE;DEBUG;$(DefineConstants)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TargetF48;WINFORMS;TRACE;$(DefineConstants)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <DocumentationFile>bin\Release\UpgradeHelpers.Gui.Controls.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarsNet.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBoxHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CheckBoxHelper.Designer.cs" />
+    <Compile Include="ComboBoxHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommandButtonHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommandButtonHelper.designer.cs">
+      <DependentUpon>CommandButtonHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlArrayHelper.cs" />
+    <Compile Include="ControlHelper.cs" />
+    <Compile Include="DateTimePickerHelper.cs" />
+    <Compile Include="DirListBoxHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DriveListBoxHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FileListBoxHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormsHelper.cs" />
+    <Compile Include="ImageListHelper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ImageListHelper.designer.cs">
+      <DependentUpon>ImageListHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputBoxHelper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InputBoxHelper.Designer.cs">
+      <DependentUpon>InputBoxHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LabelHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="LineHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListBoxHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListBoxHelper.designer.cs">
+      <DependentUpon>ListBoxHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListControlHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListControlHelper.designer.cs">
+      <DependentUpon>ListControlHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListViewHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ListViewHelper.designer.cs">
+      <DependentUpon>ListViewHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaskTextBoxExtension.cs" />
+    <Compile Include="MenuHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MenuHelper.designer.cs">
+      <DependentUpon>MenuHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OptionButtonHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="OptionButtonHelper.Designer.cs" />
+    <Compile Include="PictureBoxExtended.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PictureBoxHelper.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="SSPanelHelper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SSPanelHelper.Designer.cs">
+      <DependentUpon>SSPanelHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SSTabHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SSTabHelper.designer.cs">
+      <DependentUpon>SSTabHelper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusBarHelper.cs" />
+    <Compile Include="TabControlHelper.cs" />
+    <Compile Include="ToolbarHelper.cs" />
+    <Compile Include="TreeViewHelper.cs" />
+    <Compile Include="UpDownHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ImageListHelper.resx">
+      <DependentUpon>ImageListHelper.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputBoxHelper.resx">
+      <DependentUpon>InputBoxHelper.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UpgradeHelpers.Gui.ContainerHelper\UpgradeHelpers.Gui.ContainerHelper.csproj">
+      <Project>{a4c9e0b1-7c82-427a-80f1-b548b5a1b1e8}</Project>
+      <Name>UpgradeHelpers.Gui.ContainerHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UpgradeHelpers.Gui.Graphics\UpgradeHelpers.Gui.Graphics.csproj">
+      <Project>{72e5ff68-a339-4924-85d9-31c32ec540f6}</Project>
+      <Name>UpgradeHelpers.Gui.Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UpgradeHelpers.SupportHelper\UpgradeHelpers.SupportHelper.csproj">
+      <Project>{2104ade2-996d-4769-b4ee-add2fae011f8}</Project>
+      <Name>UpgradeHelpers.SupportHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UpgradeHelpers.Utils.ReflectionHelper\UpgradeHelpers.Utils.ReflectionHelper.csproj">
+      <Project>{9ad53694-7256-4635-aeea-92ff88652713}</Project>
+      <Name>UpgradeHelpers.Utils.ReflectionHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UpgradeHelpers.Utils\UpgradeHelpers.Utils.csproj">
+      <Project>{1a91e8f9-beff-4b66-98df-4bfee15fa39f}</Project>
+      <Name>UpgradeHelpers.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

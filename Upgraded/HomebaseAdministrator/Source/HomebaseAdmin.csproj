@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion />
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB5589D4-FC61-484E-BCA7-E8369D70429E}</ProjectGuid>
+    <MyType>WindowsForms</MyType>
+    <AssemblyName>HomebaseAdmin</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>HomebaseAdministrator.mdi_AdminAssistant</StartupObject>
+    <AssemblyMajorVersion>2</AssemblyMajorVersion>
+    <AssemblyMinorVersion>2</AssemblyMinorVersion>
+    <AssemblyRevisionNumber>46</AssemblyRevisionNumber>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <UseWinFormsOutOfProcDesigner>True</UseWinFormsOutOfProcDesigner>
+    <RootNamespace>HomebaseAdministrator</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' Or '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DefineDebug>True</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;Win32,HomebaseAdministrator</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <StartArguments>USR=dcr USRPWD=453590 DB=jetnet_ra UID=sa PSW=moejive IP=10.10.254.54</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' Or '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>False</DebugSymbols>
+    <DefineDebug>False</DefineDebug>
+    <DefineTrace>True</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE;Win32,HomebaseAdministrator</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <StartArguments>USR=dcr USRPWD=453590 DB=jetnet_ra UID=sa PSW=moejive IP=10.10.254.54</StartArguments>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel1">
+      <HintPath>..\..\Dlls\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\VisualBasic.PowerPacks.Vs.1.0.0\lib\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.DB.ADO\UpgradeHelpers.DB.ADO.csproj">
+      <Project>{99220D3D-4722-432C-9681-ADFFF2065D68}</Project>
+      <Name>UpgradeHelpers.DB.ADO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.DB.Essentials\UpgradeHelpers.DB.Essentials.csproj">
+      <Project>{B5D4A0EE-0D52-4EE8-829D-48DAF1E56B8E}</Project>
+      <Name>UpgradeHelpers.DB.Essentials</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Utils\UpgradeHelpers.Utils.csproj">
+      <Project>{1A91E8F9-BEFF-4B66-98DF-4BFEE15FA39F}</Project>
+      <Name>UpgradeHelpers.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Gui.Controls\UpgradeHelpers.Gui.Controls.csproj">
+      <Project>{933E4CEF-EEA2-40F8-8014-65259A517A43}</Project>
+      <Name>UpgradeHelpers.Gui.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Gui.ContainerHelper\UpgradeHelpers.Gui.ContainerHelper.csproj">
+      <Project>{A4C9E0B1-7C82-427A-80F1-B548B5A1B1E8}</Project>
+      <Name>UpgradeHelpers.Gui.ContainerHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Gui.Graphics\UpgradeHelpers.Gui.Graphics.csproj">
+      <Project>{72E5FF68-A339-4924-85D9-31C32EC540F6}</Project>
+      <Name>UpgradeHelpers.Gui.Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.SupportHelper\UpgradeHelpers.SupportHelper.csproj">
+      <Project>{2104ADE2-996D-4769-B4EE-ADD2FAE011F8}</Project>
+      <Name>UpgradeHelpers.SupportHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Utils.ReflectionHelper\UpgradeHelpers.Utils.ReflectionHelper.csproj">
+      <Project>{9AD53694-7256-4635-AEEA-92FF88652713}</Project>
+      <Name>UpgradeHelpers.Utils.ReflectionHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Utils.CursorHelper\UpgradeHelpers.Utils.CursorHelper.csproj">
+      <Project>{FB0B3516-10AF-40FB-9880-7E5E3AB3C9EC}</Project>
+      <Name>UpgradeHelpers.Utils.CursorHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\ThirdParty\DataGridViewCommon\UpgradeHelpers.DataGridViewCommon.csproj">
+      <Project>{BF739AAC-734F-4363-957A-585C4B4CB735}</Project>
+      <Name>UpgradeHelpers.DataGridViewCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\ThirdParty\DataGridViewFlex\UpgradeHelpers.DataGridViewFlex.csproj">
+      <Project>{F4D40B9D-70E9-49C9-99F0-A4C0DCE152E4}</Project>
+      <Name>UpgradeHelpers.DataGridViewFlex</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.DB.ADO.Controls\UpgradeHelpers.DB.ADO.Controls.csproj">
+      <Project>{0B3D376C-1869-42DB-BD34-3A44D653DECB}</Project>
+      <Name>UpgradeHelpers.DB.ADO.Controls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.DB.Essentials.Controls\UpgradeHelpers.DB.Essentials.Controls.csproj">
+      <Project>{68EA1811-5616-43CD-92D4-5C3EDC899684}</Project>
+      <Name>UpgradeHelpers.DB.Essentials.Controls</Name>
+    </ProjectReference>
+    <Reference Include="Microsoft.CSharp" />
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.NotUpgradeHelper\UpgradeHelpers.NotUpgradeHelper.csproj">
+      <Project>{4D15E9B3-ECF3-4267-99A4-83C25FFD8EC4}</Project>
+      <Name>UpgradeHelpers.NotUpgradeHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Gui.Utils\UpgradeHelpers.Gui.Utils.csproj">
+      <Project>{F852374C-22BA-4CB6-AA34-DA1A589B9D8D}</Project>
+      <Name>UpgradeHelpers.Gui.Utils</Name>
+    </ProjectReference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+    </COMReference>
+    <Reference Include="MSDATASRC">
+      <Name>MSDATASRC</Name>
+    </Reference>
+    <COMReference Include="Microsoft.Vbe.Interop">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <Lcid>0</Lcid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <WrapperTool>primary</WrapperTool>
+    </COMReference>
+    <ProjectReference Include="..\..\JetNetSupport\JetNetSupport.csproj">
+      <Project>{B53CDDD7-ABCF-4CB1-8446-1E41940FC317}</Project>
+      <Name>UpgradeSolution1Support</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.Utils.WinForms\UpgradeHelpers.Utils.WinForms.csproj">
+      <Project>{23DA0B69-AAC0-4841-81A9-84FD729D73FE}</Project>
+      <Name>UpgradeHelpers.Utils.WinForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\UpgradeSupport\UpgradeHelpers.FontHelper\UpgradeHelpers.FontHelper.csproj">
+      <Project>{71513051-C991-499F-806D-E5A9007A70CA}</Project>
+      <Name>UpgradeHelpers.FontHelper</Name>
+    </ProjectReference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_AircraftLookup.Designer.cs">
+      <DependentUpon>frm_AircraftLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AircraftLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modAdminCommon.cs" />
+    <Compile Include="frm_CompanyContactLookup.Designer.cs">
+      <DependentUpon>frm_CompanyContactLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CompanyContactLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_CommonLookup.Designer.cs">
+      <DependentUpon>frm_CommonLookup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_CommonLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Admin_Menu.Designer.cs">
+      <DependentUpon>frm_Admin_Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Admin_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modExcel.cs" />
+    <Compile Include="Admin_mdi.Designer.cs">
+      <DependentUpon>Admin_mdi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_mdi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompanyAdd.Designer.cs">
+      <DependentUpon>frmCompanyAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCompanyAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stat_bar.cs" />
+    <Compile Include="MyAdmin.cs" />
+    <EmbeddedResource Include="frm_AircraftLookup.resX">
+      <DependentUpon>frm_AircraftLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CompanyContactLookup.resX">
+      <DependentUpon>frm_CompanyContactLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_CommonLookup.resX">
+      <DependentUpon>frm_CommonLookup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Admin_Menu.resX">
+      <DependentUpon>frm_Admin_Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin_mdi.resX">
+      <DependentUpon>Admin_mdi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCompanyAdd.resX">
+      <DependentUpon>frmCompanyAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

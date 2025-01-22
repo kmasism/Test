@@ -328,7 +328,7 @@ namespace JETNET_Homebase
 		// 04/16/2008 - By David D. Cruger
 		// Added for saving company information on return to the company record
 		[Serializable]
-		public struct Company_Form_Saved_Info
+		public class Company_Form_Saved_Info //gap-note Struct changed to class. VBUC feature.
 		{
 			public int lCompId; // Make Sure We Are Coming Back To The Same Company
 			public int lJournId; // Same as CompId

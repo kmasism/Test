@@ -40,7 +40,7 @@ namespace JETNET_Homebase
 
 
 		[Serializable]
-		public struct Monitor_Cursor_Movement
+		public class Monitor_Cursor_Movement //gap-note Struct changed to class. VBUC feature.
 		{
 
 			public string UserId;
@@ -59,7 +59,7 @@ namespace JETNET_Homebase
 		}
 
 		[Serializable]
-		public struct JETNET_API_Record
+		public class JETNET_API_Record/ /gap-note Struct changed to class. VBUC feature.
 		{
 
 			public int lContactId;

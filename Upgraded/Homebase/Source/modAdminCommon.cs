@@ -67,7 +67,7 @@ namespace JETNET_Homebase
 		// Public Type Defs
 		//==================
 		[Serializable]
-		public struct Rec_Journal
+		public class Rec_Journal //gap-note Struct changed to class. VBUC feature.
 		{
 			public System.DateTime journ_date;
 			public string journ_category_code;

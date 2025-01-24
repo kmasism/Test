@@ -59,7 +59,7 @@ namespace JETNET_Homebase
 		}
 
 		[Serializable]
-		public class JETNET_API_Record/ /gap-note Struct changed to class. VBUC feature.
+		public class JETNET_API_Record //gap-note Struct changed to class. VBUC feature.
 		{
 
 			public int lContactId;

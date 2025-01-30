@@ -10966,11 +10966,11 @@ namespace JETNET_Homebase
 						}
 						else
 						{
-							//UPGRADE_ISSUE: (2064) Scripting.File property fFile.Type was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-							MessageBox.Show($"File Type Must Be JPG or BMP Type!{Environment.NewLine}Type: [{fFile.getType()}]", AssemblyHelper.GetTitle(System.Reflection.Assembly.GetExecutingAssembly()), MessageBoxButtons.OK, MessageBoxIcon.Error);
-							//UPGRADE_ISSUE: (2064) Scripting.File property fFile.Type was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-							result = $"File Type Must Be JPG or BMP Type!{Environment.NewLine}Type: [{fFile.getType()}]";
-						} // If strType <> "" Then
+                            // gap-note: jgamboa. Use FileInfo.Extension instead of File.Type.
+                            MessageBox.Show($"File Type Must Be JPG or BMP Type!{Environment.NewLine}Type: [{fFile.Extension.ToLower()}]", AssemblyHelper.GetTitle(System.Reflection.Assembly.GetExecutingAssembly()), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            // gap-note: jgamboa. Use FileInfo.Extension instead of File.Type.
+                            result = $"File Type Must Be JPG or BMP Type!{Environment.NewLine}Type: [{fFile.Extension.ToLower()}]";
+                        } // If strType <> "" Then
 
 					}
 					else

@@ -443,18 +443,20 @@ namespace JETNET_Homebase
 
 						strType = "";
 
-						//UPGRADE_ISSUE: (2064) Scripting.File property fFile.Type was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-						switch(fFile.getType())
-						{
-							case "JPEG Image" : case "JPG Image" : case "JPEG File" : case "JPG File" : 
-								strType = "JPG"; 
-								break;
-							case "Bitmap Image" : case "BMP Image" : case "Bitmap File" : case "BMP File" : 
-								strType = "BMP"; 
-								break;
-						}
+                        // gap-note: jgamboa. Use FileInfo.Extension instead of File.Type. This
+                        // extracts the extension from the file name and avoids regionalization
+                        // issues, requiring some code adjustments due to value differences.
+                        switch (fFile.Extension.ToLower())
+                        {
+                            case ".jpeg" : case ".jpg" :
+                                strType = "JPG";
+                                break;
+                            case ".bmp":
+                                strType = "BMP";
+                                break;
+                        }
 
-						if (strType != "")
+                        if (strType != "")
 						{
 
 							// Default Values
@@ -556,9 +558,9 @@ namespace JETNET_Homebase
 						}
 						else
 						{
-							//UPGRADE_ISSUE: (2064) Scripting.File property fFile.Type was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-							MessageBox.Show($"File Type Must Be JPG or BMP Type!{Environment.NewLine}Type: [{fFile.getType()}]", AssemblyHelper.GetTitle(System.Reflection.Assembly.GetExecutingAssembly()), MessageBoxButtons.OK, MessageBoxIcon.Error);
-						} // If strType <> "" Then
+                            // gap-note: jgamboa. Use FileInfo.Extension instead of File.Type.
+                            MessageBox.Show($"File Type Must Be JPG or BMP Type!{Environment.NewLine}Type: [{fFile.Extension.ToLower()}]", AssemblyHelper.GetTitle(System.Reflection.Assembly.GetExecutingAssembly()), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        } // If strType <> "" Then
 
 					}
 					else

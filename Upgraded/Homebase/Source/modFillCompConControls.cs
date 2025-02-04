@@ -1933,10 +1933,10 @@ namespace JETNET_Homebase
 				//l_tmpArray = (string[]) ArraysHelper.DeepCopy(null);
 				string strState = "";
 
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_State.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_State.setToolTipText(cbo_State.Text);
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_country.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_country.setToolTipText(cbo_country.Text);
+                // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                cbo_State.SetToolTipText(cbo_State.Text);
+                // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                cbo_country.SetToolTipText(cbo_country.Text);
 
 				strState = cbo_State.Text.Trim().ToUpper();
 				if (strState != "")
@@ -2025,10 +2025,10 @@ namespace JETNET_Homebase
 
 				starting_state = (cbo_State.SelectedIndex - 1);
 
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_State.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_State.setToolTipText(cbo_State.Text);
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_country.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_country.setToolTipText(cbo_country.Text);
+				// gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+				cbo_State.SetToolTipText(cbo_State.Text);
+                // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                cbo_country.SetToolTipText(cbo_country.Text);
 
 				int tempForEndVar = modGlobalVars.State_Array.GetUpperBound(0);
 				for (int i = modGlobalVars.State_Array.GetLowerBound(0); i <= tempForEndVar; i++)
@@ -2108,10 +2108,10 @@ namespace JETNET_Homebase
 				strState = cbo_State.Text.Trim().ToLower();
 				strCOUNTRY = cbo_country.Text.Trim().ToLower();
 
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_State.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_State.setToolTipText(strState);
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_country.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_country.setToolTipText(strCOUNTRY);
+                // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                cbo_State.SetToolTipText(strState);
+                // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                cbo_country.SetToolTipText(strCOUNTRY);
 
 				if (strCOUNTRY != "")
 				{

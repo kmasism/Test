@@ -2538,14 +2538,14 @@ namespace JETNET_Homebase
 						if (($"{Convert.ToString(snpEmail["emailscan_status"])}").Trim() == "Failed")
 						{
 							inTextbox.Font = inTextbox.Font.Change(bold:true);
-							//UPGRADE_ISSUE: (2064) TextBox property inTextbox.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-							inTextbox.setToolTipText(StringsHelper.Replace(($"{Convert.ToString(snpEmail["emailscan_message"])}").Trim(), Environment.NewLine, " ", 1, -1, CompareMethod.Binary));
+                            // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                            inTextbox.SetToolTipText(StringsHelper.Replace(($"{Convert.ToString(snpEmail["emailscan_message"])}").Trim(), Environment.NewLine, " ", 1, -1, CompareMethod.Binary));
 						}
 						else
 						{
 							inTextbox.Font = inTextbox.Font.Change(bold:false);
-							//UPGRADE_ISSUE: (2064) TextBox property inTextbox.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-							inTextbox.setToolTipText("");
+                            // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                            inTextbox.SetToolTipText("");
 						}
 					}
 

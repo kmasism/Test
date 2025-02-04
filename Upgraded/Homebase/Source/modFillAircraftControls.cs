@@ -618,8 +618,8 @@ namespace JETNET_Homebase
 
 				cbo_to_fill.SelectedIndex = 0;
 
-				//UPGRADE_ISSUE: (2064) ComboBox property cbo_to_fill.ToolTipText was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				cbo_to_fill.setToolTipText("");
+                // gap-note: jgamboa. Use SetToolTipText extension method to set the tooltip of the control in the ToolTipMain.
+                cbo_to_fill.SetToolTipText("");
 				cbo_to_fill.Enabled = true;
 
 				ado_Usage.Close();

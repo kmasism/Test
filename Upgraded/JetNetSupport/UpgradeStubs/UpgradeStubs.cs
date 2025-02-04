@@ -134,7 +134,7 @@ public static class System_Windows_Forms_Control
 			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.DataChanged");
 			return default(bool);
 		}
-		public static void setToolTipText(this Control instance, string ToolTipText) => UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.ToolTipText");
+		public static void SetToolTipText(this Control instance, string ToolTipText) => UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.ToolTipText");
 
 		public static void setToolTipText(this Component instance, string ToolTipText) => UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.ToolTipText");
 

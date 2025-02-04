@@ -1836,8 +1836,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].HistoricalSearch = false;
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			}
 
@@ -1996,8 +1995,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].HistoricalSearch = false;
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			}
 
@@ -2078,8 +2076,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].HistoricalSearch = false;
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			}
 

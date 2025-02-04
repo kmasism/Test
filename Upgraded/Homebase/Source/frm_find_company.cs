@@ -460,8 +460,7 @@ namespace JETNET_Homebase
 			}
 			else
 			{
-				//UPGRADE_WARNING: (2065) Form method new_frm_CompanyAdd.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(modGlobalVars.new_frm_CompanyAdd, 0);
+				modGlobalVars.new_frm_CompanyAdd.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 			}
 
 		}
@@ -1446,8 +1445,7 @@ namespace JETNET_Homebase
 						// Temp Hold. Needs More Work
 						//Set_Panels_Visible True
 
-						//UPGRADE_WARNING: (2065) Form method frm_Find_Company.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-						Support.ZOrder(this, 0);
+						this.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 					} // gbl_bHomeClicked Then
 

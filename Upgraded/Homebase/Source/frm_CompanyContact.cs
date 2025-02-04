@@ -5775,8 +5775,7 @@ namespace JETNET_Homebase
 		{
 
 			pnl_Contact_Phone.Visible = true;
-			//UPGRADE_WARNING: (2065) Frame method pnl_Contact_Phone.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-			Support.ZOrder(pnl_Contact_Phone, 0);
+			pnl_Contact_Phone.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			clear_contact_phone_add();
 
@@ -6440,8 +6439,7 @@ namespace JETNET_Homebase
 					grd_Contact_Phone_Numbers.CurrentColumnIndex = 0;
 
 					pnl_Contact_Phone.Visible = true;
-					//UPGRADE_WARNING: (2065) Frame method pnl_Contact_Phone.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(pnl_Contact_Phone, 0);
+					pnl_Contact_Phone.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 					grd_Contact_Phone_Numbers.Enabled = false;
 
 				}

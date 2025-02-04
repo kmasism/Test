@@ -4486,8 +4486,7 @@ namespace JETNET_Homebase
 				//UPGRADE_ISSUE: (2064) Threed.SSPanel property pnl_verify_aircraft_status.Caption was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 				pnl_verify_aircraft_status.setCaption("Verify Yacht Status:");
 				pnl_verify_aircraft_status.Visible = true;
-				//UPGRADE_WARNING: (2065) Threed.SSPanel method pnl_verify_aircraft_status.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(pnl_verify_aircraft_status, 0);
+				pnl_verify_aircraft_status.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				frame_verify_pnl.Visible = false;
 
@@ -5973,8 +5972,7 @@ namespace JETNET_Homebase
 				//UPGRADE_ISSUE: (2064) Threed.SSPanel property pnl_verify_aircraft_status.Caption was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 				pnl_verify_aircraft_status.setCaption("Add Company Journal Note:");
 				pnl_verify_aircraft_status.Visible = true;
-				//UPGRADE_WARNING: (2065) Threed.SSPanel method pnl_verify_aircraft_status.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(pnl_verify_aircraft_status, 0);
+				pnl_verify_aircraft_status.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				lbl_comp[VERIFY_ACLABEL_INDEX].Visible = false;
 				lbl_comp[VERIFY_CONTACT_INDEX].Visible = false;
@@ -6635,8 +6633,7 @@ namespace JETNET_Homebase
 
 					//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].Show();
-					//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].ZOrder(0);
+					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 					//-----------------------------
 					// Check To See If On
@@ -14565,33 +14562,28 @@ namespace JETNET_Homebase
 						{
 							case modGlobalVars.e_find_form_entry_points.geChangeHistContact : case modGlobalVars.e_find_form_entry_points.geAssociateToAircraft : case modGlobalVars.e_find_form_entry_points.geExclusiveBroker : 
 								//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show(); 
-								//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].ZOrder(0); 
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show();  
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 								break;
 							case modGlobalVars.e_find_form_entry_points.geFindManufacturer : case modGlobalVars.e_find_form_entry_points.geAddShareRelation : case modGlobalVars.e_find_form_entry_points.geFortune1000 : case modGlobalVars.e_find_form_entry_points.geAccountCallback : 
 								//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].Show(); 
-								//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].ZOrder(0); 
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].Show();  
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 								break;
 							case modGlobalVars.e_find_form_entry_points.geAddCompanyRelation : 
 								//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].Show(); 
-								//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].ZOrder(0); 
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].Show();  
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 								break;
 							case modGlobalVars.e_find_form_entry_points.geAircraftChange : 
 								//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].Show(); 
-								//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].ZOrder(0); 
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].Show();  
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 								break;
 							case modGlobalVars.e_find_form_entry_points.geAircraftDocument : 
 								//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].Show(); 
-								//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].ZOrder(0); 
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].Show();  
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 								break;
 							default:
 								 
@@ -14603,8 +14595,7 @@ namespace JETNET_Homebase
 								{
 									//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 									modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Show();
-									//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-									modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].ZOrder(0);
+									modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 								} 
 								 
 								break;
@@ -14627,38 +14618,32 @@ namespace JETNET_Homebase
 						case modGlobalVars.e_find_form_entry_points.geChangeHistContact : case modGlobalVars.e_find_form_entry_points.geAssociateToAircraft : 
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show(); 
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].ZOrder(0); 
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 							break;
 						case modGlobalVars.e_find_form_entry_points.geFindManufacturer : case modGlobalVars.e_find_form_entry_points.geAddShareRelation : case modGlobalVars.e_find_form_entry_points.geFortune1000 : case modGlobalVars.e_find_form_entry_points.geAccountCallback : 
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].Show(); 
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].ZOrder(0); 
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 							break;
 						case modGlobalVars.e_find_form_entry_points.geAddCompanyRelation : 
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].Show(); 
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].ZOrder(0); 
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_CON].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 							break;
 						case modGlobalVars.e_find_form_entry_points.geAircraftChange : 
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].Show(); 
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].ZOrder(0); 
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_TX].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 							break;
 						case modGlobalVars.e_find_form_entry_points.geAircraftDocument : 
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].Show(); 
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].ZOrder(0); 
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_DOCS].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 							break;
 						case modGlobalVars.e_find_form_entry_points.geExclusiveBroker : 
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show(); 
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].ZOrder(0); 
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes 
 							 
 							//      Case geYacht 
 							// 
@@ -14685,8 +14670,7 @@ namespace JETNET_Homebase
 								modAdminCommon.Record_Event("Monitor Activity", $"mnuFileClose_Click - Form Name: {Convert.ToString(modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Name)}", 0, nReference_CompanyJID, nReference_CompanyID, false, 0, 0);
 								//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Show();
-								//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].ZOrder(0);
+								modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 							} 
 							 
 							break;
@@ -15562,8 +15546,7 @@ namespace JETNET_Homebase
 			}
 			else
 			{
-				//UPGRADE_WARNING: (2065) Form method new_frm_CompanyAdd.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(modGlobalVars.new_frm_CompanyAdd, 0);
+				modGlobalVars.new_frm_CompanyAdd.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 			}
 
 		}
@@ -18018,8 +18001,7 @@ namespace JETNET_Homebase
 					grd_company_phone.Enabled = false;
 
 					frame_comp_phone.Visible = true;
-					//UPGRADE_WARNING: (2065) Frame method frame_comp_phone.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(frame_comp_phone, 0);
+					frame_comp_phone.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				} // If grd_company_phone.Row > 0 Then
 			}
@@ -18041,8 +18023,7 @@ namespace JETNET_Homebase
 			{
 
 				frame_comp_phone.Visible = true;
-				//UPGRADE_WARNING: (2065) Frame method frame_comp_phone.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(frame_comp_phone, 0);
+				frame_comp_phone.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				cmd_company_save.Visible = false;
 
@@ -19695,8 +19676,7 @@ namespace JETNET_Homebase
 										time_at_company.Enabled = true;
 										tbr_ToolBar.Visible = true;
 
-										//UPGRADE_WARNING: (2065) Form method frm_Company.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-										Support.ZOrder(this, 0);
+										this.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 									} // If nReference_CompanyID > 0 Then
 
@@ -29741,8 +29721,7 @@ namespace JETNET_Homebase
 				//UPGRADE_ISSUE: (2064) Threed.SSPanel property pnl_verify_aircraft_status.Caption was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 				pnl_verify_aircraft_status.setCaption("Verify Aircraft Status:");
 				pnl_verify_aircraft_status.Visible = true;
-				//UPGRADE_WARNING: (2065) Threed.SSPanel method pnl_verify_aircraft_status.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(pnl_verify_aircraft_status, 0);
+				pnl_verify_aircraft_status.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				frame_verify_pnl.Visible = false;
 

@@ -541,8 +541,7 @@ namespace JETNET_Homebase
 				{
 					modAdminCommon.Record_Event("Monitor Activity", $"pubf_ReturnToStartPage 1 - {Frm.Name}", 0, 0, 0, false, 0, 0);
 					Frm.Show();
-					//UPGRADE_WARNING: (2065) Form method Frm.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(Frm, 0);
+					Frm.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 				}
 				else
 				{
@@ -562,8 +561,7 @@ namespace JETNET_Homebase
 
 					modAdminCommon.Record_Event("Monitor Activity", $"pubf_ReturnToStartPage 2 - {Frm.Name}", 0, 0, 0, false, 0, 0);
 					Frm.Show();
-					//UPGRADE_WARNING: (2065) Form method Frm.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(Frm, 0);
+					Frm.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				}
 
@@ -578,8 +576,8 @@ namespace JETNET_Homebase
 					modAdminCommon.Record_Event("Monitor Activity", $"pubf_ReturnToStartPage 3 - {Convert.ToString(modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Name)}", 0, 0, 0, false, 0, 0);
 					//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Show();
-					//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].ZOrder(0);
+
+					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				}
 
@@ -16067,8 +16065,7 @@ namespace JETNET_Homebase
 				}
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[iForm - 1].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[iForm - 1].ZOrder(0);
+				modGlobalVars.find_frm_collection[iForm - 1].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 				//UPGRADE_TODO: (1067) Member SetFocus is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[iForm - 1].Focus();
 

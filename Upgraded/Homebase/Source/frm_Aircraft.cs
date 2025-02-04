@@ -6349,8 +6349,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Reference_AircraftID = Convert.ToInt32(adoAircraftRecordset["ac_id"]);
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				modAircraft.SetOperatorFlag(modAdminCommon.gbl_Aircraft_ID, modAdminCommon.gbl_Aircraft_Journal_ID);
 
@@ -9719,8 +9718,7 @@ namespace JETNET_Homebase
 						{
 							if (new_frm_ShareRelationships.inACID == modAdminCommon.gbl_Aircraft_ID)
 							{
-								//UPGRADE_WARNING: (2065) Form method new_frm_ShareRelationships.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-								Support.ZOrder(new_frm_ShareRelationships, 0); // if the form is around then bring it to front
+								new_frm_ShareRelationships.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 								return;
 							}
 							else
@@ -20429,8 +20427,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Reference_AircraftID = Convert.ToInt32(adoAircraftRecordset["ac_id"]);
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			}
 
@@ -20614,9 +20611,8 @@ namespace JETNET_Homebase
 							//UPGRADE_TODO: (1067) Member HistoricalContactName is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].HistoricalContactName = mnuChangeContactType[Index].Text.Trim();
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show();
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].ZOrder(0);
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].Show();	
+							modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_AC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 							modAircraft.SetOperatorFlag(modAdminCommon.gbl_Aircraft_ID, modAdminCommon.gbl_Aircraft_Journal_ID);
 
@@ -30490,8 +30486,7 @@ namespace JETNET_Homebase
 			modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].cmd_sale_source.Visible = true;
 			//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Show();
-			//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].ZOrder(0);
+			modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 			//UPGRADE_TODO: (1067) Member SetFocus is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Focus();
 

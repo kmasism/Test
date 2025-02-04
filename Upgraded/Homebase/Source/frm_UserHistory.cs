@@ -1754,8 +1754,7 @@ namespace JETNET_Homebase
 							frm_Company.Reference_CompanyJID = lJournId;
 							//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 							frm_Company.Show();
-							//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-							frm_Company.ZOrder(0);
+							frm_Company.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 							//UPGRADE_TODO: (1067) Member Form_Activate is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 							frm_Company.Form_Activated(null,null);//gap-note Calling Form_Activated with no parameters
 

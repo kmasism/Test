@@ -2089,8 +2089,7 @@ namespace JETNET_Homebase
 					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].cmd_add_to_pub.Visible = true;
 					//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Show();
-					//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].ZOrder(0);
+					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 					//UPGRADE_TODO: (1067) Member SetFocus is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Focus();
 
@@ -4771,8 +4770,7 @@ namespace JETNET_Homebase
 								frm_aircraft.DefInstance.Reference_Journal_ID = modAdminCommon.gbl_Aircraft_Journal_ID;
 								frm_aircraft.DefInstance.Reference_Company_ID = 0;
 								frm_aircraft.DefInstance.Show();
-								//UPGRADE_WARNING: (2065) Form method frm_aircraft.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-								frm_aircraft.DefInstance.BringToFront();
+								frm_aircraft.DefInstance.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 								//UPGRADE_WARNING: (2065) Form event Form.Activated has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
 								frm_aircraft.DefInstance.Form_Activated(frm_aircraft.DefInstance, new EventArgs());
 
@@ -6741,9 +6739,8 @@ namespace JETNET_Homebase
 							frm_aircraft.DefInstance.Reference_Aircraft_ID = modAdminCommon.gbl_Aircraft_ID;
 							frm_aircraft.DefInstance.Reference_Journal_ID = modAdminCommon.gbl_Aircraft_Journal_ID;
 							frm_aircraft.DefInstance.Reference_Company_ID = 0;
-							frm_aircraft.DefInstance.Show();
-							//UPGRADE_WARNING: (2065) Form method frm_aircraft.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-							Support.ZOrder(frm_aircraft.DefInstance, 0);
+							frm_aircraft.DefInstance.Show();	
+							frm_aircraft.DefInstance.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 							//UPGRADE_WARNING: (2065) Form event Form.Activated has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
 							frm_aircraft.DefInstance.Form_Activated(frm_aircraft.DefInstance, new EventArgs());
 
@@ -8396,8 +8393,7 @@ namespace JETNET_Homebase
 					frm_aircraft.DefInstance.Reference_Journal_ID = modAdminCommon.gbl_Aircraft_Journal_ID;
 					frm_aircraft.DefInstance.Reference_Company_ID = 0;
 					frm_aircraft.DefInstance.Show();
-					//UPGRADE_WARNING: (2065) Form method frm_aircraft.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(frm_aircraft.DefInstance, 0);
+					frm_aircraft.DefInstance.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 					//UPGRADE_WARNING: (2065) Form event Form.Activated has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
 					frm_aircraft.DefInstance.Form_Activated(frm_aircraft.DefInstance, new EventArgs());
 
@@ -8876,8 +8872,7 @@ namespace JETNET_Homebase
 					frm_aircraft.DefInstance.Reference_Journal_ID = modAdminCommon.gbl_Aircraft_Journal_ID;
 					frm_aircraft.DefInstance.Reference_Company_ID = 0;
 					frm_aircraft.DefInstance.Show();
-					//UPGRADE_WARNING: (2065) Form method frm_aircraft.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(frm_aircraft.DefInstance, 0);
+					frm_aircraft.DefInstance.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 					//UPGRADE_WARNING: (2065) Form event Form.Activated has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
 					frm_aircraft.DefInstance.Form_Activated(frm_aircraft.DefInstance, new EventArgs());
 

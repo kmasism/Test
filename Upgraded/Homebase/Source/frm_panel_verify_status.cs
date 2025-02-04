@@ -94,8 +94,7 @@ namespace JETNET_Homebase
 				//UPGRADE_ISSUE: (2064) Threed.SSPanel property pnl_verify_aircraft_status.Caption was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 				pnl_verify_aircraft_status.setCaption("Verify Aircraft Status:");
 				pnl_verify_aircraft_status.Visible = true;
-				//UPGRADE_WARNING: (2065) Threed.SSPanel method pnl_verify_aircraft_status.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(pnl_verify_aircraft_status, 0);
+				pnl_verify_aircraft_status.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 				frame_verify_pnl.Visible = false;
 

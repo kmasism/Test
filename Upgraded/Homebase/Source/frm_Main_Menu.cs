@@ -1780,8 +1780,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Clear_Search_Criteria(true, true, true);
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 				//UPGRADE_TODO: (1067) Member SetFocus is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_NEW].Focus();
 

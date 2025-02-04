@@ -311,8 +311,7 @@ namespace JETNET_Homebase
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].ActionTypes = tCompFind_ActionTypes;
 				//UPGRADE_TODO: (1067) Member Show is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].Show();
-				//UPGRADE_TODO: (1067) Member ZOrder is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].ZOrder(0);
+				modGlobalVars.find_frm_collection[modGlobalVars.FIND_FORM_MISC].BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			}
 
@@ -355,8 +354,7 @@ namespace JETNET_Homebase
 
 				}
 
-				//UPGRADE_WARNING: (2065) Form method frm_ShareRelationships.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-				Support.ZOrder(this, 0);
+				this.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 
 			}
 		}

@@ -1935,8 +1935,7 @@ namespace JETNET_Homebase
 				{
 
 					// activate
-					//UPGRADE_WARNING: (2065) Form method frm_CompanyAdd.ZOrder has a new behavior. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-2065
-					Support.ZOrder(this, 0);
+					this.BringToFront(); //gap-note Manual change to fix BringToFront rule failing sometimes
 					this.Activate();
 					if (!bFormLoaded)
 					{

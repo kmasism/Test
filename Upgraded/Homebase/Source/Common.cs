@@ -14874,196 +14874,196 @@ namespace JETNET_Homebase
 			return Does_Contact_Have_An_Active_Subscription(lContactId, ref lSubId, ref lParentId, false, ref tempRefParam5);
 		} // Does_Contact_Have_An_Active_Subscription
 
-		internal static void UpdateLogin_Fields(int temp_contact_id, int temp_sub_id, string login_name, bool is_frontegg)
-		{
+        internal static void UpdateLogin_Fields(int temp_contact_id, int temp_sub_id, string login_name, bool is_frontegg)
+        {
 
-			StringBuilder Query = new StringBuilder();
-			string temp_title = "";
-			string sQuery = "";
-			int nRecCount = 0;
-			int nCounter = 0;
-			ADORecordSetHelper ado_ContactType = new ADORecordSetHelper();
-			bool is_frontegg_blank = false;
+            StringBuilder Query = new StringBuilder();
+            string temp_title = "";
+            string sQuery = "";
+            int nRecCount = 0;
+            int nCounter = 0;
+            ADORecordSetHelper ado_ContactType = new ADORecordSetHelper();
+            bool is_frontegg_blank = false;
 
-			if (temp_contact_id > 0 && temp_sub_id > 0 && login_name.Trim() != "")
-			{
+            if (temp_contact_id > 0 && temp_sub_id > 0 && login_name.Trim() != "")
+            {
 
-				Query = new StringBuilder("UPDATE Subscription_Login  SET  ");
-				Query.Append(" sublogin_action_date = NULL,  "); // clear the action date - MSW - 11/3/24
+                Query = new StringBuilder("UPDATE Subscription_Login  SET  ");
+                Query.Append(" sublogin_action_date = NULL,  "); // clear the action date - MSW - 11/3/24
 
-				sQuery = "SELECT * ";
-				sQuery = $"{sQuery}, (SELECT TOP 1 CASE WHEN M.PNUM_NUMBER_FULL IS NOT NULL THEN CASE WHEN M.PNUM_EXT IS NULL THEN M.PNUM_NUMBER_FULL ELSE M.PNUM_NUMBER_FULL+' EXT:'+M.PNUM_EXT END ELSE CASE WHEN O.PNUM_NUMBER_FULL IS NOT NULL THEN CASE WHEN O.PNUM_EXT IS NULL THEN O.PNUM_NUMBER_FULL ELSE O.PNUM_NUMBER_FULL+' EXT:'+O.PNUM_EXT END ELSE CASE WHEN C.PNUM_NUMBER_FULL IS NOT NULL THEN CASE WHEN C.PNUM_EXT IS NULL THEN C.PNUM_NUMBER_FULL ELSE C.PNUM_NUMBER_FULL+' EXT:'+C.PNUM_EXT END ELSE''END END END FROM CONTACT A WITH (NOLOCK) LEFT OUTER JOIN PHONE_NUMBERS M ON M.PNUM_TYPE='MOBILE'AND A.CONTACT_ID=M.PNUM_CONTACT_ID AND M.PNUM_JOURN_ID=0 LEFT OUTER JOIN PHONE_NUMBERS O ON O.PNUM_TYPE='OFFICE'AND A.CONTACT_ID=O.PNUM_CONTACT_ID AND O.PNUM_JOURN_ID=0 LEFT OUTER JOIN PHONE_NUMBERS C ON C.PNUM_TYPE='OFFICE' AND A.CONTACT_COMP_ID=C.PNUM_COMP_ID AND C.PNUM_JOURN_ID=0 WHERE A.CONTACT_ID=CONTACT.CONTACT_ID AND A.CONTACT_JOURN_ID=0) AS 'CONTACTBESTPHONE' ";
-				sQuery = $"{sQuery} FROM Contact WITH(NOLOCK) ";
-				sQuery = $"{sQuery} inner join company with (NOLOCK) on comp_id = contact_comp_id and comp_journ_id = contact_journ_id ";
-				sQuery = $"{sQuery} where contact_id = {temp_contact_id.ToString()} and contact_journ_id = 0 ";
-
-
-				//UPGRADE_ISSUE: (2064) ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				modAdminCommon.LOCAL_ADO_DB.setCursorLocation(CursorLocationEnum.adUseClient);
-
-				ado_ContactType.Open(sQuery, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockReadOnly);
-
-				if (!(ado_ContactType.BOF && ado_ContactType.EOF))
-				{
+                sQuery = "SELECT * ";
+                sQuery = $"{sQuery}, (SELECT TOP 1 CASE WHEN M.PNUM_NUMBER_FULL IS NOT NULL THEN CASE WHEN M.PNUM_EXT IS NULL THEN M.PNUM_NUMBER_FULL ELSE M.PNUM_NUMBER_FULL+' EXT:'+M.PNUM_EXT END ELSE CASE WHEN O.PNUM_NUMBER_FULL IS NOT NULL THEN CASE WHEN O.PNUM_EXT IS NULL THEN O.PNUM_NUMBER_FULL ELSE O.PNUM_NUMBER_FULL+' EXT:'+O.PNUM_EXT END ELSE CASE WHEN C.PNUM_NUMBER_FULL IS NOT NULL THEN CASE WHEN C.PNUM_EXT IS NULL THEN C.PNUM_NUMBER_FULL ELSE C.PNUM_NUMBER_FULL+' EXT:'+C.PNUM_EXT END ELSE''END END END FROM CONTACT A WITH (NOLOCK) LEFT OUTER JOIN PHONE_NUMBERS M ON M.PNUM_TYPE='MOBILE'AND A.CONTACT_ID=M.PNUM_CONTACT_ID AND M.PNUM_JOURN_ID=0 LEFT OUTER JOIN PHONE_NUMBERS O ON O.PNUM_TYPE='OFFICE'AND A.CONTACT_ID=O.PNUM_CONTACT_ID AND O.PNUM_JOURN_ID=0 LEFT OUTER JOIN PHONE_NUMBERS C ON C.PNUM_TYPE='OFFICE' AND A.CONTACT_COMP_ID=C.PNUM_COMP_ID AND C.PNUM_JOURN_ID=0 WHERE A.CONTACT_ID=CONTACT.CONTACT_ID AND A.CONTACT_JOURN_ID=0) AS 'CONTACTBESTPHONE' ";
+                sQuery = $"{sQuery} FROM Contact WITH(NOLOCK) ";
+                sQuery = $"{sQuery} inner join company with (NOLOCK) on comp_id = contact_comp_id and comp_journ_id = contact_journ_id ";
+                sQuery = $"{sQuery} where contact_id = {temp_contact_id.ToString()} and contact_journ_id = 0 ";
 
 
+                //UPGRADE_ISSUE: (2064) ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
+                modAdminCommon.LOCAL_ADO_DB.setCursorLocation(CursorLocationEnum.adUseClient);
 
-					while(!ado_ContactType.EOF)
-					{
+                ado_ContactType.Open(sQuery, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockReadOnly);
 
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["contact_title"]))
-						{
-							Query.Append($"  sublogin_title = '{Convert.ToString(ado_ContactType["contact_title"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["contact_first_name"]))
-						{
-							Query.Append($"  sublogin_first_name = '{Convert.ToString(ado_ContactType["contact_first_name"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["contact_last_name"]))
-						{
-							Query.Append($"  sublogin_last_name = '{Convert.ToString(ado_ContactType["contact_last_name"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["comp_address1"]))
-						{
-							Query.Append($"  sublogin_address = '{Convert.ToString(ado_ContactType["comp_address1"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["comp_city"]))
-						{
-							Query.Append($"  sublogin_city = '{Convert.ToString(ado_ContactType["comp_city"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["comp_state"]))
-						{
-							Query.Append($"  sublogin_state = '{Convert.ToString(ado_ContactType["comp_state"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["comp_zip_code"]))
-						{
-							Query.Append($"  sublogin_postal_code = '{Convert.ToString(ado_ContactType["comp_zip_code"])}', ");
-						}
-
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["comp_country"]))
-						{
-							Query.Append($"  sublogin_country = '{Convert.ToString(ado_ContactType["comp_country"])}', ");
-						}
-						//
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["CONTACTBESTPHONE"]))
-						{
-							Query.Append($"  sublogin_phone = '{Convert.ToString(ado_ContactType["CONTACTBESTPHONE"])}', ");
-						}
+                if (!(ado_ContactType.BOF && ado_ContactType.EOF))
+                {
 
 
-						//
-						//              If Not IsNull(ado_ContactType("contact_title")) Then
-						//                Query = Query & "  sublogin_phone_additional = '" & ado_ContactType("contact_title") & "', "
-						//              End If
 
-						//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-						if (!Convert.IsDBNull(ado_ContactType["contact_email_address"]))
-						{
-							Query.Append($"  sublogin_email = '{Convert.ToString(ado_ContactType["contact_email_address"])}' ");
-						}
+                    while(!ado_ContactType.EOF)
+                    {
 
-						ado_ContactType.MoveNext();
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["contact_title"]))
+                        {
+                            Query.Append($"  sublogin_title = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["contact_title"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-					};
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["contact_first_name"]))
+                        {
+                            Query.Append($"  sublogin_first_name = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["contact_first_name"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-				}
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["contact_last_name"]))
+                        {
+                            Query.Append($"  sublogin_last_name = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["contact_last_name"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-				//UPGRADE_ISSUE: (2064) ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-				modAdminCommon.LOCAL_ADO_DB.setCursorLocation(CursorLocationEnum.adUseServer);
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["comp_address1"]))
+                        {
+                            Query.Append($"  sublogin_address = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["comp_address1"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-				ado_ContactType.Close();
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["comp_city"]))
+                        {
+                            Query.Append($"  sublogin_city = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["comp_city"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-				// if it is frontegg, make sure its an add and those fields r blank
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["comp_state"]))
+                        {
+                            Query.Append($"  sublogin_state = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["comp_state"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-				is_frontegg_blank = true;
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["comp_zip_code"]))
+                        {
+                            Query.Append($"  sublogin_postal_code = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["comp_zip_code"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
-				if (is_frontegg)
-				{
-					sQuery = "SELECT *  FROM Subscription_Login WITH(NOLOCK) ";
-					sQuery = $"{sQuery} WHERE (sublogin_sub_id = {temp_sub_id.ToString()})";
-					sQuery = $"{sQuery} AND sublogin_login = '{login_name}'";
-
-					//UPGRADE_ISSUE: (2064) ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-					modAdminCommon.LOCAL_ADO_DB.setCursorLocation(CursorLocationEnum.adUseClient);
-
-					ado_ContactType.Open(sQuery, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockReadOnly);
-
-					if (!(ado_ContactType.BOF && ado_ContactType.EOF))
-					{
-
-						while(!ado_ContactType.EOF)
-						{
-
-							//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-							if (!Convert.IsDBNull(ado_ContactType["sublogin_first_name"]))
-							{
-								is_frontegg_blank = false;
-							}
-
-							//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
-							if (!Convert.IsDBNull(ado_ContactType["sublogin_email"]))
-							{
-								is_frontegg_blank = false;
-							}
-
-							ado_ContactType.MoveNext();
-						};
-
-					}
-					ado_ContactType.Close();
-
-				}
-
-				ado_ContactType = null;
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["comp_country"]))
+                        {
+                            Query.Append($"  sublogin_country = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["comp_country"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
+                        //
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["CONTACTBESTPHONE"]))
+                        {
+                            Query.Append($"  sublogin_phone = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["CONTACTBESTPHONE"]), "'", "''", 1, -1, CompareMethod.Binary)}', ");
+                        }
 
 
-				if (is_frontegg_blank)
-				{
+                        //
+                        //              If Not IsNull(ado_ContactType("contact_title")) Then
+                        //                Query = Query & "  sublogin_phone_additional = '" & ado_ContactType("contact_title") & "', "
+                        //              End If
 
-					Query.Append($" WHERE (sublogin_sub_id = {temp_sub_id.ToString()})");
-					Query.Append($" AND sublogin_login = '{login_name}'");
+                        //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                        if (!Convert.IsDBNull(ado_ContactType["contact_email_address"]))
+                        {
+                            Query.Append($"  sublogin_email = '{StringsHelper.Replace(Convert.ToString(ado_ContactType["contact_email_address"]), "'", "''", 1, -1, CompareMethod.Binary)}' ");
+                        }
 
-					DbCommand TempCommand = null;
-					TempCommand = modAdminCommon.LOCAL_ADO_DB.CreateCommand();
-					UpgradeHelpers.DB.DbConnectionHelper.ResetCommandTimeOut(TempCommand);
-					TempCommand.CommandText = Query.ToString();
-					//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-					//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-					TempCommand.CommandType = (CommandType) (((int) CommandType.Text) + ((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()));
-					UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand);
-					TempCommand.ExecuteNonQuery(); //aey 6/21/04
+                        ado_ContactType.MoveNext();
 
-					Query = new StringBuilder($"UPDATE Subscription  SET sub_action_date = NULL WHERE (sub_id = {temp_sub_id.ToString()})");
-					DbCommand TempCommand_2 = null;
-					TempCommand_2 = modAdminCommon.LOCAL_ADO_DB.CreateCommand();
-					UpgradeHelpers.DB.DbConnectionHelper.ResetCommandTimeOut(TempCommand_2);
-					TempCommand_2.CommandText = Query.ToString();
-					//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-					//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-					TempCommand_2.CommandType = (CommandType) (((int) CommandType.Text) + ((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()));
-					UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_2);
-					TempCommand_2.ExecuteNonQuery(); //aey 6/21/04
-				}
+                    };
 
-			}
+                }
 
-		}
-		internal static bool Does_Company_Have_An_Active_Subscription(int lCompId, ref int lSubId, ref int lParentId)
+                //UPGRADE_ISSUE: (2064) ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
+                modAdminCommon.LOCAL_ADO_DB.setCursorLocation(CursorLocationEnum.adUseServer);
+
+                ado_ContactType.Close();
+
+                // if it is frontegg, make sure its an add and those fields r blank
+
+                is_frontegg_blank = true;
+
+                if (is_frontegg)
+                {
+                    sQuery = "SELECT *  FROM Subscription_Login WITH(NOLOCK) ";
+                    sQuery = $"{sQuery} WHERE (sublogin_sub_id = {temp_sub_id.ToString()})";
+                    sQuery = $"{sQuery} AND sublogin_login = '{login_name}'";
+
+                    //UPGRADE_ISSUE: (2064) ADODB.Connection property LOCAL_ADO_DB.CursorLocation was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
+                    modAdminCommon.LOCAL_ADO_DB.setCursorLocation(CursorLocationEnum.adUseClient);
+
+                    ado_ContactType.Open(sQuery, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockReadOnly);
+
+                    if (!(ado_ContactType.BOF && ado_ContactType.EOF))
+                    {
+
+                        while(!ado_ContactType.EOF)
+                        {
+
+                            //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                            if (!Convert.IsDBNull(ado_ContactType["sublogin_first_name"]))
+                            {
+                                is_frontegg_blank = false;
+                            }
+
+                            //UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
+                            if (!Convert.IsDBNull(ado_ContactType["sublogin_email"]))
+                            {
+                                is_frontegg_blank = false;
+                            }
+
+                            ado_ContactType.MoveNext();
+                        };
+
+                    }
+                    ado_ContactType.Close();
+
+                }
+
+                ado_ContactType = null;
+
+
+                if (is_frontegg_blank)
+                {
+
+                    Query.Append($" WHERE (sublogin_sub_id = {temp_sub_id.ToString()})");
+                    Query.Append($" AND sublogin_login = '{login_name}'");
+
+                    DbCommand TempCommand = null;
+                    TempCommand = modAdminCommon.LOCAL_ADO_DB.CreateCommand();
+                    UpgradeHelpers.DB.DbConnectionHelper.ResetCommandTimeOut(TempCommand);
+                    TempCommand.CommandText = Query.ToString();
+                    //UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
+                    //UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
+                    TempCommand.CommandType = (CommandType) (((int)CommandType.Text) + ((int)UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()));
+                    UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand);
+                    TempCommand.ExecuteNonQuery(); //aey 6/21/04
+
+                    Query = new StringBuilder($"UPDATE Subscription  SET sub_action_date = NULL WHERE (sub_id = {temp_sub_id.ToString()})");
+                    DbCommand TempCommand_2 = null;
+                    TempCommand_2 = modAdminCommon.LOCAL_ADO_DB.CreateCommand();
+                    UpgradeHelpers.DB.DbConnectionHelper.ResetCommandTimeOut(TempCommand_2);
+                    TempCommand_2.CommandText = Query.ToString();
+                    //UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
+                    //UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
+                    TempCommand_2.CommandType = (CommandType) (((int)CommandType.Text) + ((int)UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()));
+                    UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_2);
+                    TempCommand_2.ExecuteNonQuery(); //aey 6/21/04
+                }
+
+            }
+
+        }
+        internal static bool Does_Company_Have_An_Active_Subscription(int lCompId, ref int lSubId, ref int lParentId)
 		{
 
 			ADORecordSetHelper rstRec1 = new ADORecordSetHelper();

@@ -5848,8 +5848,10 @@ namespace JETNET_Homebase
 				bSawFirstAddress = false;
 				bool bSawSecondAddress = false;
 				bSawSecondAddress = false;
+                string temp_address_string = "";
+                temp_address_string = "";
 
-				int tempForEndVar = arrVerifyFields.GetUpperBound(0);
+                int tempForEndVar = arrVerifyFields.GetUpperBound(0);
 				for (iLoop = 0; iLoop <= tempForEndVar; iLoop++)
 				{
 
@@ -5858,58 +5860,63 @@ namespace JETNET_Homebase
 						case "comp_address" : 
 							tmpField = "comp_address"; 
 							dsplyField = "Address"; 
-							bSawFirstAddress = true; 
-							break;
+							bSawFirstAddress = true;
+                            temp_address_string = address_change_text;
+                            break;
 						case "comp_address2" : 
 							tmpField = "comp_address"; 
-							dsplyField = "Address"; 
-							bSawSecondAddress = true; 
+							dsplyField = "Address";
+                            temp_address_string = address_change_text;
+                            bSawSecondAddress = true; 
 							break;
 						case "comp_email_address" : 
-							tmpField = "comp_email"; 
-							dsplyField = "Email"; 
+							tmpField = "comp_email";
+                            temp_address_string = "";
+                            dsplyField = "Email"; 
 							break;
 						case "comp_web_address" : 
-							tmpField = "comp_web"; 
-							dsplyField = "Web Address"; 
+							tmpField = "comp_web";
+                            temp_address_string = "";
+                            dsplyField = "Web Address"; 
 							break;
 					}
 
-					if (tmpField.Trim() != modGlobalVars.cEmptyString)
-					{
+                    if (tmpField.Trim() != modGlobalVars.cEmptyString)
+                    {
 
-						if ((bSawFirstAddress && !bSawSecondAddress) || (!bSawFirstAddress && bSawSecondAddress) || (!bSawFirstAddress && !bSawSecondAddress))
-						{
+                        // go in for first address, not 2nd if after first, and then if neither address is changed
+                        if ((bSawFirstAddress && !bSawSecondAddress) || (!bSawFirstAddress && bSawSecondAddress) || (!bSawFirstAddress && !bSawSecondAddress) || dsplyField == "Web Address" || dsplyField == "Email")
+                        { // also go in if web address or email
 
-							Query = new StringBuilder($"UPDATE company SET {tmpField}_confirm_date = '{DateTime.Now.ToString()}'");
-							Query.Append($" WHERE comp_id = {in_CompanyID.ToString()} AND comp_journ_id = 0");
+                            Query = new StringBuilder($"UPDATE company SET {tmpField}_confirm_date = '{DateTime.Now.ToString()}'");
+                            Query.Append($" WHERE comp_id = {in_CompanyID.ToString()} AND comp_journ_id = 0");
 
-							modAdminCommon.ADO_Transaction("BeginTrans");
-							DbCommand TempCommand = null;
-							TempCommand = modAdminCommon.ADODB_Trans_conn.CreateCommand();
-							UpgradeHelpers.DB.DbConnectionHelper.ResetCommandTimeOut(TempCommand);
-							TempCommand.CommandText = Query.ToString();
-							//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-							//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-							TempCommand.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
-							UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand);
-							TempCommand.ExecuteNonQuery();
+                            modAdminCommon.ADO_Transaction("BeginTrans");
+                            DbCommand TempCommand = null;
+                            TempCommand = modAdminCommon.ADODB_Trans_conn.CreateCommand();
+                            UpgradeHelpers.DB.DbConnectionHelper.ResetCommandTimeOut(TempCommand);
+                            TempCommand.CommandText = Query.ToString();
+                            //UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
+                            //UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
+                            TempCommand.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int)CommandType.Text));
+                            UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand);
+                            TempCommand.ExecuteNonQuery();
 
-							// INSERT A COMPANY CONFIRMATION JOURNAL ENTRY
-							modAdminCommon.Rec_Journal_Info.journ_subject = $"Confirmed Company: {dsplyField}";
-							modAdminCommon.Rec_Journal_Info.journ_description = address_change_text;
-							modAdminCommon.Rec_Journal_Info.journ_ac_id = 0;
-							modAdminCommon.Rec_Journal_Info.journ_subcategory_code = "CPCFM";
-							modAdminCommon.Rec_Journal_Info.journ_date = DateTime.Parse(DateTimeHelper.ToString(DateTime.Now));
-							modAdminCommon.Rec_Journal_Info.journ_comp_id = in_CompanyID;
-							modAdminCommon.Rec_Journal_Info.journ_contact_id = 0;
-							modAdminCommon.Rec_Journal_Info.journ_user_id = modAdminCommon.gbl_User_ID;
-							modAdminCommon.Rec_Journal_Info.journ_account_id = modAdminCommon.gbl_Account_ID;
-							modAdminCommon.Rec_Journal_Info.journ_prior_account_id = modGlobalVars.cEmptyString;
-							modAdminCommon.Rec_Journal_Info.journ_status = "A";
-							modAdminCommon.Rec_Journal_Info.journ_category_code = "AR";
+                            // INSERT A COMPANY CONFIRMATION JOURNAL ENTRY
+                            modAdminCommon.Rec_Journal_Info.journ_subject = $"Confirmed Company: {dsplyField}";
+                            modAdminCommon.Rec_Journal_Info.journ_description = temp_address_string;
+                            modAdminCommon.Rec_Journal_Info.journ_ac_id = 0;
+                            modAdminCommon.Rec_Journal_Info.journ_subcategory_code = "CPCFM";
+                            modAdminCommon.Rec_Journal_Info.journ_date = DateTime.Parse(DateTimeHelper.ToString(DateTime.Now));
+                            modAdminCommon.Rec_Journal_Info.journ_comp_id = in_CompanyID;
+                            modAdminCommon.Rec_Journal_Info.journ_contact_id = 0;
+                            modAdminCommon.Rec_Journal_Info.journ_user_id = modAdminCommon.gbl_User_ID;
+                            modAdminCommon.Rec_Journal_Info.journ_account_id = modAdminCommon.gbl_Account_ID;
+                            modAdminCommon.Rec_Journal_Info.journ_prior_account_id = modGlobalVars.cEmptyString;
+                            modAdminCommon.Rec_Journal_Info.journ_status = "A";
+                            modAdminCommon.Rec_Journal_Info.journ_category_code = "AR";
 
-							frm_Journal.DefInstance.Commit_Journal_Entry();
+                            frm_Journal.DefInstance.Commit_Journal_Entry();
 
 							modAdminCommon.ADO_Transaction("CommitTrans");
 

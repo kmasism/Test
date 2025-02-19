@@ -6121,8 +6121,7 @@ namespace JETNET_Homebase
 				{
 
 					fFile = new FileInfo(strFullPathFileName);
-					//UPGRADE_ISSUE: (2064) Scripting.File property fFile.Drive was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
-					strDrive = fFile.getDrive().Name;
+					strDrive = new DriveInfo(fFile.Directory.Root.FullName).Name; //gap-note manual change to get Drive letter, removed stub method also
 					strPath = fFile.Directory.FullName;
 					if (strPath.Substring(Math.Max(strPath.Length - 1, 0)) != "\\")
 					{

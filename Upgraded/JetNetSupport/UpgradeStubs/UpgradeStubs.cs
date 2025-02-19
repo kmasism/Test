@@ -98,12 +98,6 @@ namespace UpgradeStubs
 	} 
 	public static class System_IO_FileInfo
 	{
-
-		public static DriveInfo getDrive(this FileInfo instance)
-		{
-			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("Scripting.File.Drive");
-			return default(DriveInfo);
-		}
 		public static string getType(this FileInfo instance)
 		{
 			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("Scripting.File.Type");

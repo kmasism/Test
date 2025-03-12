@@ -344,8 +344,8 @@ namespace JETNET_Homebase
 
 		// type for saving wanted aircraft info on company form
 		[Serializable]
-		public struct t_company_save_wanted_info
-		{
+		public struct t_company_save_wanted_info //gap-note Struct changed to class. VBUC feature.
+        {
 			public int save_amwant_id;
 			public string save_amwant_model;
 			public int save_amwant_modelID;
@@ -384,8 +384,8 @@ namespace JETNET_Homebase
 
 		// type for saving wanted aircraft info on company form
 		[Serializable]
-		public struct t_company_save_phone_info
-		{
+		public struct t_company_save_phone_info //gap-note Struct changed to class. VBUC feature.
+        {
 
 			public bool company_phone_add_flag;
 			public bool company_only_change_is_hide_flag;
@@ -429,8 +429,8 @@ namespace JETNET_Homebase
 
 		// type for saving company info on company form
 		[Serializable]
-		public struct t_company_save_info
-		{
+		public struct t_company_save_info //gap-note Struct changed to class. VBUC feature.
+        {
 
 			public int s_comp_id;
 			public string s_comp_name;

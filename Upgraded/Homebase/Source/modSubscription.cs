@@ -52,8 +52,8 @@ namespace JETNET_Homebase
 		public const CheckState iCHKLOGINMPM = (CheckState) 10;
 
 		[Serializable]
-		public struct TextMsg_Customer_Record
-		{
+		public struct TextMsg_Customer_Record //gap-note Struct changed to class. VBUC feature.
+        {
 
 			public int lCompId;
 			public int lContactId;

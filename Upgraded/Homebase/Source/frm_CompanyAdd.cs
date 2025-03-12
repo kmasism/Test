@@ -14,7 +14,7 @@ using UpgradeHelpers.Helpers;
 
 namespace JETNET_Homebase
 {
-	internal partial class frm_CompanyAdd
+	public partial class frm_CompanyAdd //gap-note Manual change to fix Inconsistent accessibility error
 		: System.Windows.Forms.Form
 	{
 

@@ -6,7 +6,7 @@ using UpgradeHelpers.DB.ADO;
 
 namespace JETNET_Homebase
 {
-	internal static class modGlobalVars
+	public static class modGlobalVars //gap-note Manual change to fix Inconsistent accessibility error
 	{
 
 

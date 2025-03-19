@@ -247,7 +247,7 @@ namespace JETNET_Homebase
 			city = Convert.ToString(city).ToLower();
 
 			//UPGRADE_WARNING: (1068) city of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
-			sQuery = $"{sQuery} '{Convert.ToString(city)}' ";
+			sQuery = $"{sQuery} '{StringsHelper.Replace(Convert.ToString(city), "'", "''", 1, -1, CompareMethod.Binary)}' "; // replaced ticks per task JETDEV-1534 MSW - 2/7/25
 
 			//UPGRADE_WARNING: (1068) city of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 			if (Convert.ToString(city).ToLower().StartsWith("ft ", StringComparison.Ordinal))
@@ -449,7 +449,7 @@ namespace JETNET_Homebase
 
 
 			//UPGRADE_WARNING: (1068) build_sp_string() of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
-			tupdate = $"{tupdate}{Convert.ToString(build_sp_string("@inCompid", txt_comp_id.Text))}";
+			tupdate = $"{tupdate}{Convert.ToString(build_sp_string("@inCompid", txt_Comp_id.Text))}";
 			//UPGRADE_WARNING: (1068) build_sp_string() of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 			tupdate = $"{tupdate}{Convert.ToString(build_sp_string("@inName", temp_Comp_name))}";
 			//UPGRADE_WARNING: (1068) build_sp_string() of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068

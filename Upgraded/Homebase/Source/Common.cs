@@ -15766,7 +15766,8 @@ namespace JETNET_Homebase
 
 			if (strACId != "" && strACId != "0")
 			{
-				strQuery1 = $"SELECT ac_id FROM Aircraft WHERE (ac_reg_no = '{strRegNbr}') AND (ac_id <> {strACId}) AND (ac_journ_id = 0)";
+				// MSW - updated to use new view - 2/6/25
+				strQuery1 = $"select * from Research_Integrity_Aircraft_Registration_Number_Duplicates_View where ac_reg_no = '{strRegNbr}' ";
 				if (modAdminCommon.Exist(strQuery1))
 				{
 					bResults = true;

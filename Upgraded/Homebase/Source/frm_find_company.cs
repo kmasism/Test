@@ -15,7 +15,7 @@ using UpgradeStubs;
 
 namespace JETNET_Homebase
 {
-	internal partial class frm_Find_Company
+	public partial class frm_Find_Company //gap-note Manual change to fix Inconsistent accessibility error
 		: System.Windows.Forms.Form
 	{
 

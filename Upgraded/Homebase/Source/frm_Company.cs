@@ -449,7 +449,7 @@ namespace JETNET_Homebase
 
 
 			//UPGRADE_WARNING: (1068) build_sp_string() of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
-			tupdate = $"{tupdate}{Convert.ToString(build_sp_string("@inCompid", txt_Comp_id.Text))}";
+			tupdate = $"{tupdate}{Convert.ToString(build_sp_string("@inCompid", txt_comp_id.Text))}";
 			//UPGRADE_WARNING: (1068) build_sp_string() of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 			tupdate = $"{tupdate}{Convert.ToString(build_sp_string("@inName", temp_Comp_name))}";
 			//UPGRADE_WARNING: (1068) build_sp_string() of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068

@@ -9057,9 +9057,9 @@ namespace JETNET_Homebase
 			string strQuery1 = "";
 			string strQuery2 = "";
 
-			dynamic objExcel = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWB = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWS = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcel = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWB = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWS = null; //gap-note Review excel type during stabilization
 
 
 
@@ -9310,7 +9310,7 @@ namespace JETNET_Homebase
 									rstRec1.Close();
 
 									//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-									objExcelWS = objExcel.Worksheets.Add;
+									objExcelWS = objExcel.Worksheets().Add;
 									//UPGRADE_TODO: (1067) Member Name is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 									objExcelWS.Name = "Company Notes";
 									//UPGRADE_WARNING: (7006) The Named argument After was not resolved and corresponds to the following expression objExcelWB.Sheets() More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-7006
@@ -9633,9 +9633,9 @@ namespace JETNET_Homebase
 			string strQuery1 = "";
 			string strQuery2 = "";
 
-			dynamic objExcel = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWB = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWS = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcel = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWB = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWS = null; //gap-note Review excel type during stabilization
 
 
 

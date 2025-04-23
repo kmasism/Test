@@ -8698,9 +8698,9 @@ namespace JETNET_Homebase
 			string strQuery2 = "";
 			string strUserId = "";
 
-			dynamic objExcel = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWB = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWS = null; //gap-note Review excel type during stabilization
+			ExcelApplication objExcel = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWB = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWS = null; //gap-note Review excel type during stabilization
 
 			int lExcelRow = 0;
 			int lExcelCol = 0;

@@ -208,9 +208,9 @@ namespace JETNET_Homebase
 			string strQuery1 = "";
 			string strQuery2 = "";
 
-			dynamic objExcel = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWB = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWS = null; //gap-note Review excel type during stabilization
+			ExcelApplication objExcel = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWB = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWS = null; //gap-note Review excel type during stabilization
 
 			string strExcelDir = "";
 			string strFileName = "";
@@ -1251,7 +1251,7 @@ namespace JETNET_Homebase
 
 		} // Form_Load
 
-		private void Add_User_Overall_Time_Tracker_Headers(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol, string strStart, string strEnd)
+		private void Add_User_Overall_Time_Tracker_Headers(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol, string strStart, string strEnd)
 		{
 
 
@@ -1262,7 +1262,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = $"Date: {strStart} To {strEnd}";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = $"Date: {strStart} To {strEnd}";
 			modExcel.Merge_Cells(oExcel, oExcelWB, oExcelWS, lExcelRow, lExcelCol, lExcelRow, lExcelCol + 2);
 
 			lExcelRow++;
@@ -1278,7 +1278,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Columns(lExcelCol).ColumnWidth = 15;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Last Name";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Last Name";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1290,7 +1290,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Columns(lExcelCol).ColumnWidth = 15;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "First Name";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "First Name";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1300,7 +1300,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Pos";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Pos";
 
 
 			lExcelCol++;
@@ -1311,7 +1311,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "RSCH";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "RSCH";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1321,7 +1321,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "ID";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "ID";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1333,7 +1333,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Columns(lExcelCol).ColumnWidth = 10;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Pubs/Pics";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Pubs/Pics";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1343,7 +1343,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Projects";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Projects";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1353,7 +1353,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Trans";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Trans";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1363,7 +1363,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Specs";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Specs";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1373,19 +1373,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Frac";
-
-			lExcelCol++;
-			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells(lExcelRow, lExcelCol).Interior.ColorIndex = modExcel.xlBrightGreen;
-			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells(lExcelRow, lExcelCol).HorizontalAlignment = modExcel.xlCenter;
-			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
-			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Columns(lExcelCol).ColumnWidth = 12;
-			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "ADSB-X"; // changed from yachts - 10/20/23
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Frac";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1397,7 +1385,19 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Columns(lExcelCol).ColumnWidth = 12;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "OT"; //
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "ADSB-X"; // changed from yachts - 10/20/23
+
+			lExcelCol++;
+			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
+			oExcelWS.Cells(lExcelRow, lExcelCol).Interior.ColorIndex = modExcel.xlBrightGreen;
+			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
+			oExcelWS.Cells(lExcelRow, lExcelCol).HorizontalAlignment = modExcel.xlCenter;
+			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
+			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
+			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
+			oExcelWS.Columns(lExcelCol).ColumnWidth = 12;
+			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "OT"; //
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1407,7 +1407,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Mktg";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Mktg";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1419,7 +1419,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Columns(lExcelCol).ColumnWidth = 11;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Train/Meet";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Train/Meet";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1431,7 +1431,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Columns is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Columns(lExcelCol).ColumnWidth = 12;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Scan/Non HB";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Scan/Non HB";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1441,7 +1441,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Breaks";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Breaks";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1451,7 +1451,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Tech";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Tech";
 
 			lExcelCol++;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1461,7 +1461,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "PTO";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "PTO";
 
 
 			lExcelCol++;
@@ -1472,7 +1472,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Total";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Total";
 
 			string strRange = modExcel.ConvertRowColumnToExcelRange(lExcelRow, 1, lExcelRow, lExcelCol);
 
@@ -1480,7 +1480,7 @@ namespace JETNET_Homebase
 
 		} // Add_User_Overall_Time_Tracker_Headers
 
-		private void Add_Individual_Hours_To_Excel(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol, string strUserId, string strFName, string strLName, string strAcctRep, string strStart, string strEnd, int iColor)
+		private void Add_Individual_Hours_To_Excel(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol, string strUserId, string strFName, string strLName, string strAcctRep, string strStart, string strEnd, int iColor)
 		{
 			ADORecordSetHelper rstRec1 = new ADORecordSetHelper();
 			string strQuery1 = "";
@@ -1507,7 +1507,7 @@ namespace JETNET_Homebase
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					oExcelWS.Cells[lExcelRow, lExcelCol] = strLName.ToUpper();
+					oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = strLName.ToUpper();
 
 					lExcelCol++;
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1517,7 +1517,7 @@ namespace JETNET_Homebase
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					oExcelWS.Cells[lExcelRow, lExcelCol] = strFName.ToUpper();
+					oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = strFName.ToUpper();
 
 					lExcelCol++;
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -1527,7 +1527,7 @@ namespace JETNET_Homebase
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					oExcelWS.Cells[lExcelRow, lExcelCol] = strAcctRep.ToUpper();
+					oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = strAcctRep.ToUpper();
 
 					strQuery1 = "SELECT [user_id] As UserId,  user_first_name As FName, user_last_name As LName, user_default_account_id As AcctRep, ";
 
@@ -1617,7 +1617,7 @@ namespace JETNET_Homebase
 
 		} // Add_Individual_Hours_To_Excel
 
-		private void Add_Team_Hours_To_Excel_File(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol, string strTeamLeaderUserId, string strTeamLeaderTeam, string strReportName, string strStart, string strEnd)
+		private void Add_Team_Hours_To_Excel_File(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol, string strTeamLeaderUserId, string strTeamLeaderTeam, string strReportName, string strStart, string strEnd)
 		{
 
 			ADORecordSetHelper rstRec1 = new ADORecordSetHelper();
@@ -1701,7 +1701,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = strReportName;
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = strReportName;
 
 				modExcel.Merge_Cells(oExcel, oExcelWB, oExcelWS, lExcelRow, lExcelCol, lExcelRow, lExcelCol + 1);
 

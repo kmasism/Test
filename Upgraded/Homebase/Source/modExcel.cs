@@ -157,7 +157,7 @@ namespace JETNET_Homebase
 
 		//==================================================================================
 
-		internal static void SetExcelDisplayOff(dynamic oExcel)//gap-note Review excel type during stabilization
+		internal static void SetExcelDisplayOff(ExcelApplication oExcel)//gap-note Review excel type during stabilization
 		{
 
 			//UPGRADE_TODO: (1067) Member ScreenUpdating is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -169,7 +169,7 @@ namespace JETNET_Homebase
 
 		}
 
-		internal static void SetExcelDisplayOn(dynamic oExcel)//gap-note Review excel type during stabilization
+		internal static void SetExcelDisplayOn(ExcelApplication oExcel)//gap-note Review excel type during stabilization
 		{
 
 			//UPGRADE_TODO: (1067) Member ScreenUpdating is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -185,7 +185,7 @@ namespace JETNET_Homebase
 
 
 
-		internal static bool Create_Excel_File(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS, string strFileName)//gap-note Review excel type during stabilization
+		internal static bool Create_Excel_File(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS, string strFileName)//gap-note Review excel type during stabilization
 		{
 
 			bool result = false;
@@ -196,10 +196,10 @@ namespace JETNET_Homebase
 
 				bResults = false;
 
-				objExcel = new Excel.Application();
+				objExcel = new ExcelApplication();
 
 				//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWB = objExcel.Workbooks.Add;
+				objExcelWB = (ExcelApplication)objExcel.Workbooks.Add(new Microsoft.Office.Interop.Excel.Workbook());
 				//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				objExcelWS = objExcelWB.Worksheets("Sheet1");
 
@@ -226,16 +226,16 @@ namespace JETNET_Homebase
 			return result;
 		} // Create_Excel_File
 
-		internal static void OpenExcel(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS, bool bQuite)//gap-note Review excel type during stabilization
+		internal static void OpenExcel(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS, bool bQuite)//gap-note Review excel type during stabilization
 		{
 
 			if (objExcel == null)
 			{
-				objExcel = new Excel.Application();
+				objExcel = new ExcelApplication();
 			}
 
 			//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			objExcelWB = objExcel.Workbooks.Add;
+			objExcelWB = (ExcelApplication)objExcel.Workbooks.Add();
 			//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			objExcelWB.Worksheets("Sheet1").Activate();
 			//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -246,7 +246,7 @@ namespace JETNET_Homebase
 
 		} // OpenExcel
 
-		internal static void DisposeExcel(ref object objExcel, ref object objExcelWB, ref object objExcelWS)
+		internal static void DisposeExcel(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS)
 		{
 
 			objExcelWS = null;
@@ -255,14 +255,14 @@ namespace JETNET_Homebase
 
 		} // DisposeExcel
 
-		internal static void OpenExcelFile(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS, string strFileName, bool bQuite)//gap-note Review excel type during stabilization
+		internal static void OpenExcelFile(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS, string strFileName, bool bQuite)//gap-note Review excel type during stabilization
 		{
 
 			Object fso = new Object();
 
 			if (objExcel == null)
 			{
-				objExcel = new Excel.Application();
+				objExcel = new ExcelApplication();
 			}
 
 			if (File.Exists(strFileName))
@@ -272,9 +272,9 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				objExcel.Workbooks.Open(strFileName);
 				//UPGRADE_TODO: (1067) Member ActiveWorkbook is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWB = objExcel.ActiveWorkbook;
+				objExcelWB = (ExcelApplication)objExcel.ActiveWorkbook;
 				//UPGRADE_TODO: (1067) Member ActiveSheet is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWS = objExcelWB.ActiveSheet;
+				objExcelWS = (ExcelApplication)objExcelWB.ActiveSheet;
 				//UPGRADE_TODO: (1067) Member Visible is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				objExcel.Visible = true;
 
@@ -286,9 +286,9 @@ namespace JETNET_Homebase
 		internal static void ExportMSHFlexGrid(UpgradeHelpers.DataGridViewFlex fGrid, string strHeader = "")
 		{
 
-			dynamic objExcel = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWB = null; //gap-note Review excel type during stabilization
-			dynamic objExcelWS = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcel = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWB = null; //gap-note Review excel type during stabilization
+            ExcelApplication objExcelWS = null; //gap-note Review excel type during stabilization
 
 			int lExcelRow = 0;
 			int lExcelCol = 0;
@@ -685,7 +685,7 @@ namespace JETNET_Homebase
 
 		} // ConvertRowColumnToExcelRange
 
-		internal static void DrawGrid(dynamic oExcel, string strRange) //gap-note Review excel type during stabilization
+		internal static void DrawGrid(ExcelApplication oExcel, string strRange) //gap-note Review excel type during stabilization
 		{
 
 			try
@@ -739,7 +739,7 @@ namespace JETNET_Homebase
 
 		} // DrawGrid
 
-		internal static void AddHyperLink(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, string strWorksheetName, string strText, int lExcelRow, int lExcelCol)
+		internal static void AddHyperLink(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, string strWorksheetName, string strText, int lExcelRow, int lExcelCol)
 		{
 
 			string strHRef = "";
@@ -770,7 +770,7 @@ namespace JETNET_Homebase
 
 		} // AddHyperLink
 
-		internal static void Merge_Cells(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, int lRow1, int lCol1, int lRow2, int lCol2)
+		internal static void Merge_Cells(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, int lRow1, int lCol1, int lRow2, int lCol2)
 		{
 
 
@@ -784,7 +784,7 @@ namespace JETNET_Homebase
 
 		} // Merge_Cells
 
-		internal static void Save_Excel_File(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, string strFullFileName)
+		internal static void Save_Excel_File(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, string strFullFileName)
 		{
 
 			try
@@ -815,7 +815,7 @@ namespace JETNET_Homebase
 
 		} // Savei_Excel_File
 
-		internal static void Add_Seperator_Line_To_Excel(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, int lExcelCol, int iColor)
+		internal static void Add_Seperator_Line_To_Excel(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, int lExcelCol, int iColor)
 		{
 
 			int lCnt1 = 0;
@@ -830,11 +830,11 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, 1).Interior.ColorIndex = iColor;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, 1] = " ";
+			oExcelWS.Cells(lExcelRow, 1)[lExcelRow, 1] = " ";
 
 		} // Add_Seperator_Line_To_Excel
 
-		internal static void Add_Number_To_Excel(dynamic oExcelWS, int lExcelRow, ref int lExcelCol, double dValue, int iColor, string strFormat)//gap-note Review excel type during stabilization
+		internal static void Add_Number_To_Excel(ExcelApplication oExcelWS, int lExcelRow, ref int lExcelCol, double dValue, int iColor, string strFormat)//gap-note Review excel type during stabilization
 		{
 
 			lExcelCol++;
@@ -851,17 +851,17 @@ namespace JETNET_Homebase
 			if (!Convert.IsDBNull(dValue))
 			{
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = dValue.ToString();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = dValue.ToString();
 			}
 			else
 			{
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = "0";
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "0";
 			}
 
 		} // Add_Number_To_Excel
 
-		internal static void Add_Conditional_Formatting(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, string strRange, int iType, int iOperator, string strFormula, int iFontColor, int iBackColor, bool bBold)
+		internal static void Add_Conditional_Formatting(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, string strRange, int iType, int iOperator, string strFormula, int iFontColor, int iBackColor, bool bBold)
 		{
 
 
@@ -883,7 +883,7 @@ namespace JETNET_Homebase
 
 		} // Add_Conditional_Formatting
 
-		internal static void Delete_Conditional_Formatting(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, string strRange)
+		internal static void Delete_Conditional_Formatting(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, string strRange)
 		{
 
 

@@ -31339,7 +31339,7 @@ namespace JETNET_Homebase
 					{
 						case modGlobalVars.CHK_BUSINESS_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_ac_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_ac_product[I].CheckState == CheckState.Checked && chk_ac_product[I].getDataChanged())
+                            if (chk_ac_product[I].CheckState == CheckState.Checked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_business_flag").OriginalValue) != "Y")
@@ -31348,7 +31348,7 @@ namespace JETNET_Homebase
 									bHadChanges = true;
 								}
 							}
-							else if (chk_ac_product[I].CheckState == CheckState.Unchecked && chk_ac_product[I].getDataChanged())
+							else if (chk_ac_product[I].CheckState == CheckState.Unchecked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_business_flag").OriginalValue) != "N")
@@ -31360,7 +31360,7 @@ namespace JETNET_Homebase
 							break;
 						case modGlobalVars.CHK_HELICOPTER_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_ac_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_ac_product[I].CheckState == CheckState.Checked && chk_ac_product[I].getDataChanged())
+							if (chk_ac_product[I].CheckState == CheckState.Checked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_helicopter_flag").OriginalValue) != "Y")
@@ -31369,7 +31369,7 @@ namespace JETNET_Homebase
 									bHadChanges = true;
 								}
 							}
-							else if (chk_ac_product[I].CheckState == CheckState.Unchecked && chk_ac_product[I].getDataChanged())
+							else if (chk_ac_product[I].CheckState == CheckState.Unchecked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_helicopter_flag").OriginalValue) != "N")
@@ -31382,7 +31382,7 @@ namespace JETNET_Homebase
 						case modGlobalVars.CHK_COMMERCIAL_IDX : 
 							// tom check this commercial 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_ac_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_ac_product[I].CheckState == CheckState.Checked && chk_ac_product[I].getDataChanged())
+							if (chk_ac_product[I].CheckState == CheckState.Checked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_commercial_flag").OriginalValue) != "Y")
@@ -31394,7 +31394,7 @@ namespace JETNET_Homebase
 									}
 								}
 							}
-							else if (chk_ac_product[I].CheckState == CheckState.Unchecked && chk_ac_product[I].getDataChanged())
+							else if (chk_ac_product[I].CheckState == CheckState.Unchecked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_commercial_flag").OriginalValue) != "N")
@@ -31408,7 +31408,7 @@ namespace JETNET_Homebase
 							break;
 						case modGlobalVars.CHK_AIRBP_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_ac_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_ac_product[I].CheckState == CheckState.Checked && chk_ac_product[I].getDataChanged())
+							if (chk_ac_product[I].CheckState == CheckState.Checked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_airbp_flag").OriginalValue) != "Y")
@@ -31420,7 +31420,7 @@ namespace JETNET_Homebase
 									}
 								}
 							}
-							else if (chk_ac_product[I].CheckState == CheckState.Unchecked && chk_ac_product[I].getDataChanged())
+							else if (chk_ac_product[I].CheckState == CheckState.Unchecked) //&& chk_ac_product[I].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								//UPGRADE_WARNING: (1068) adoAircraftRecordset().OriginalValue of type Variant is being forced to string. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1068
 								if (Convert.ToString(adoAircraftRecordset.GetField("ac_product_airbp_flag").OriginalValue) != "N")

@@ -118,17 +118,17 @@ public static class System_Windows_Forms_Control
 			ctl.BringToFront();
 		}
 
-		public static bool getDataChanged(this Component instance)
-		{
-			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.DataChanged");
-			return default(bool);
-		}
-		public static bool getDataChanged(this Control instance)
-		{
-			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.DataChanged");
-			return default(bool);
-		}
-		public static void SetToolTipText(this Control instance, string ToolTipText) => UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.ToolTipText");
+        //public static bool getDataChanged(this Component instance) //gap-note: jgamboa. Remove deprecated property.
+        //{
+        //	UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.DataChanged");
+        //	return default(bool);
+        //}
+        //public static bool getDataChanged(this Control instance) //gap-note: jgamboa. Remove deprecated property.
+        //{
+        //	UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.DataChanged");
+        //	return default(bool);
+        //}
+        public static void SetToolTipText(this Control instance, string ToolTipText) => UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.ToolTipText");
 
 		public static void setToolTipText(this Component instance, string ToolTipText) => UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("VB.Control.ToolTipText");
 

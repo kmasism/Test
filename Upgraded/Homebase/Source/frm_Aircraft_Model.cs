@@ -5547,7 +5547,7 @@ namespace JETNET_Homebase
 					{
 						case modGlobalVars.CHK_BUSINESS_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_amod_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_amod_product[i].CheckState == CheckState.Checked && chk_amod_product[i].getDataChanged())
+							if (chk_amod_product[i].CheckState == CheckState.Checked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								if (Convert.ToString(snp_Model["amod_product_business_flag"]) != "Y")
 								{
@@ -5558,7 +5558,7 @@ namespace JETNET_Homebase
 									}
 								}
 							}
-							else if (chk_amod_product[i].CheckState == CheckState.Unchecked && chk_amod_product[i].getDataChanged())
+							else if (chk_amod_product[i].CheckState == CheckState.Unchecked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								if (Convert.ToString(snp_Model["amod_product_business_flag"]) != "N")
 								{
@@ -5578,7 +5578,7 @@ namespace JETNET_Homebase
 							break;
 						case modGlobalVars.CHK_HELICOPTER_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_amod_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_amod_product[i].CheckState == CheckState.Checked && chk_amod_product[i].getDataChanged())
+							if (chk_amod_product[i].CheckState == CheckState.Checked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								if (Convert.ToString(snp_Model["amod_product_helicopter_flag"]) != "Y")
 								{
@@ -5589,7 +5589,7 @@ namespace JETNET_Homebase
 									}
 								}
 							}
-							else if (chk_amod_product[i].CheckState == CheckState.Unchecked && chk_amod_product[i].getDataChanged())
+							else if (chk_amod_product[i].CheckState == CheckState.Unchecked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 
 								if (Convert.ToString(snp_Model["amod_product_helicopter_flag"]) != "N")
@@ -5610,7 +5610,7 @@ namespace JETNET_Homebase
 							break;
 						case modGlobalVars.CHK_COMMERCIAL_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_amod_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_amod_product[i].CheckState == CheckState.Checked && chk_amod_product[i].getDataChanged())
+							if (chk_amod_product[i].CheckState == CheckState.Checked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								if (Convert.ToString(snp_Model["amod_product_commercial_flag"]) != "Y")
 								{
@@ -5621,7 +5621,7 @@ namespace JETNET_Homebase
 									}
 								}
 							}
-							else if (chk_amod_product[i].CheckState == CheckState.Unchecked && chk_amod_product[i].getDataChanged())
+							else if (chk_amod_product[i].CheckState == CheckState.Unchecked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								// check for business aircraft for this model if business product code changes
 								if (Convert.ToString(snp_Model["amod_product_commercial_flag"]) != "N")
@@ -5642,7 +5642,7 @@ namespace JETNET_Homebase
 							break;
 						case modGlobalVars.CHK_AIRBP_IDX : 
 							//UPGRADE_ISSUE: (2064) CheckBox property chk_amod_product.DataChanged was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064 
-							if (chk_amod_product[i].CheckState == CheckState.Checked && chk_amod_product[i].getDataChanged())
+							if (chk_amod_product[i].CheckState == CheckState.Checked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{
 								if (chk_amod_product[modGlobalVars.CHK_AIRBP_IDX].CheckState == CheckState.Checked)
 								{
@@ -5653,7 +5653,7 @@ namespace JETNET_Homebase
 									}
 								}
 							}
-							else if (chk_amod_product[i].CheckState == CheckState.Unchecked && chk_amod_product[i].getDataChanged())
+							else if (chk_amod_product[i].CheckState == CheckState.Unchecked) //&& chk_amod_product[i].getDataChanged()) //gap-note: jgamboa. Remove deprecated property; validation is handled by the inner condition.
 							{ 
 								if (Convert.ToString(snp_Model["amod_product_airbp_flag"]) != "N")
 								{

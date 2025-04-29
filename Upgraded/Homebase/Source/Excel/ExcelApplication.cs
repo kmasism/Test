@@ -108,6 +108,11 @@ namespace JETNET_Homebase
             throw new NotImplementedException();
         }
 
+        internal dynamic Range(string strBeginRange, string strEndRange)
+        {
+            throw new NotImplementedException();
+        }
+
         internal void Activate()
         {
             throw new NotImplementedException();
@@ -263,5 +268,6 @@ namespace JETNET_Homebase
     public class Font
     {
         public int ColorIndex { get; set; }
+        public bool Bold { get; internal set; }
     }
 }

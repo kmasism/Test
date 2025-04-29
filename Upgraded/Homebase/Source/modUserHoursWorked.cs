@@ -7934,7 +7934,7 @@ namespace JETNET_Homebase
 			return result;
 		} // Return_Hours_Worked_By_Report_Name
 
-		private static void Create_UserHoursWorked_Excel_Headers_And_Data_Part1(DbConnection cntConn, ADORecordSetHelper rstRec1, ADORecordSetHelper rstRec2, dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol)
+		private static void Create_UserHoursWorked_Excel_Headers_And_Data_Part1(DbConnection cntConn, ADORecordSetHelper rstRec1, ADORecordSetHelper rstRec2, ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol)
 		{
 
 			int lCnt1 = 0;
@@ -7964,7 +7964,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = gstrReportName;
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = gstrReportName;
 
 			rstRec1.MoveFirst();
 			do 
@@ -7981,7 +7981,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["AcctRep"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["AcctRep"])} ").Trim();
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8002,7 +8002,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = $"Start Date: {gstrStartDate}";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = $"Start Date: {gstrStartDate}";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8017,7 +8017,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["FName"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["FName"])} ").Trim();
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8036,7 +8036,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = $"End Date: {gstrEndDate}";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = $"End Date: {gstrEndDate}";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8051,7 +8051,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["LName"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["LName"])} ").Trim();
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8070,7 +8070,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Category";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Category";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8085,7 +8085,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = "Count";
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Count";
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8107,7 +8107,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec2["uar_report_name"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec2["uar_report_name"])} ").Trim();
 
 				rstRec1.MoveFirst();
 				do 
@@ -8124,7 +8124,7 @@ namespace JETNET_Homebase
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					oExcelWS.Cells(lExcelRow, lExcelCol).NumberFormat = "#0";
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					oExcelWS.Cells[lExcelRow, lExcelCol] = StringsHelper.Format(lCount, "0");
+					oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = StringsHelper.Format(lCount, "0");
 
 					rstRec1.MoveNext();
 
@@ -8155,7 +8155,7 @@ namespace JETNET_Homebase
 
 		} // Create_UserHoursWorked_Excel_Headers_And_Data_Part1
 
-		private static void Create_UserHoursWorked_Excel_Headers_And_Data_Part2(DbConnection cntConn, ADORecordSetHelper rstRec1, ADORecordSetHelper rstRec2, dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol)
+		private static void Create_UserHoursWorked_Excel_Headers_And_Data_Part2(DbConnection cntConn, ADORecordSetHelper rstRec1, ADORecordSetHelper rstRec2, ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol)
 		{
 
 			int lCnt1 = 0;
@@ -8181,7 +8181,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec2["uar_report_name"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec2["uar_report_name"])} ").Trim();
 
 				rstRec1.MoveFirst();
 				do 
@@ -8200,7 +8200,7 @@ namespace JETNET_Homebase
 						//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 						oExcelWS.Cells(lExcelRow, lExcelCol).NumberFormat = "#0.0##";
 						//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-						oExcelWS.Cells[lExcelRow, lExcelCol] = StringsHelper.Format(rstRec2["uar_report_goals"], "#0.0##");
+						oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = StringsHelper.Format(rstRec2["uar_report_goals"], "#0.0##");
 					}
 
 					rstRec1.MoveNext();
@@ -8232,7 +8232,7 @@ namespace JETNET_Homebase
 
 		} // Create_UserHoursWorked_Excel_Headers_And_Data_Part2
 
-		private static void Create_UserHoursWorked_Excel_Headers_And_Data_Part3(DbConnection cntConn, ADORecordSetHelper rstRec1, ADORecordSetHelper rstRec2, dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol, bool bNormalize)
+		private static void Create_UserHoursWorked_Excel_Headers_And_Data_Part3(DbConnection cntConn, ADORecordSetHelper rstRec1, ADORecordSetHelper rstRec2, ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol, bool bNormalize)
 		{
 
 			int lCnt1 = 0;
@@ -8273,7 +8273,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = "Normalized To Goal";
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Normalized To Goal";
 			}
 
 			lExcelRow++;
@@ -8293,7 +8293,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = gstrReportName;
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = gstrReportName;
 
 			rstRec1.MoveFirst();
 			do 
@@ -8310,7 +8310,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["AcctRep"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["AcctRep"])} ").Trim();
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8331,7 +8331,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = $"Start Date: {gstrStartDate}";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = $"Start Date: {gstrStartDate}";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8346,7 +8346,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["FName"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["FName"])} ").Trim();
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8365,7 +8365,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = $"End Date: {gstrEndDate}";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = $"End Date: {gstrEndDate}";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8380,7 +8380,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["LName"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec1["LName"])} ").Trim();
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8399,7 +8399,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Category";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Category";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8414,7 +8414,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = "Count";
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Count";
 				rstRec1.MoveNext();
 			}
 			while(!rstRec1.EOF);
@@ -8441,7 +8441,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec2["uar_report_name"])} ").Trim();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = ($"{Convert.ToString(rstRec2["uar_report_name"])} ").Trim();
 
 				rstRec1.MoveFirst();
 
@@ -8512,7 +8512,7 @@ namespace JETNET_Homebase
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 					oExcelWS.Cells(lExcelRow, lExcelCol).NumberFormat = "#0.00";
 					//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-					oExcelWS.Cells[lExcelRow, lExcelCol] = StringsHelper.Format(dAvg, "0.00");
+					oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = StringsHelper.Format(dAvg, "0.00");
 
 					rstRec1.MoveNext();
 
@@ -8538,7 +8538,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).VerticalAlignment = modExcel.xlCenter;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Hours Researched";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Hours Researched";
 
 			rstRec1.MoveFirst();
 			do 
@@ -8558,7 +8558,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).NumberFormat = "#0.0";
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = StringsHelper.Format(dHoursWorked, "0.0");
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = StringsHelper.Format(dHoursWorked, "0.0");
 
 				rstRec1.MoveNext();
 
@@ -8579,7 +8579,7 @@ namespace JETNET_Homebase
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, lExcelCol).Font.Bold = true;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, lExcelCol] = "Scores";
+			oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "Scores";
 
 			rstRec1.MoveFirst();
 
@@ -8601,7 +8601,7 @@ namespace JETNET_Homebase
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcelWS.Cells(lExcelRow, lExcelCol).NumberFormat = "#0.0%";
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = strFormula;
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = strFormula;
 
 				rstRec1.MoveNext();
 
@@ -8631,7 +8631,7 @@ namespace JETNET_Homebase
 
 		} // Create_UserHoursWOrked_Excel_Headers_And_Data_Part3
 
-		private static void Create_UserHoursWorked_Excel_Headers_And_Data(DbConnection cntConn, ADORecordSetHelper rstRec1, ProgressBar pBar, dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, ref int lExcelCol, string strFieldCodes)
+		private static void Create_UserHoursWorked_Excel_Headers_And_Data(DbConnection cntConn, ADORecordSetHelper rstRec1, ProgressBar pBar, ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, ref int lExcelCol, string strFieldCodes)
 		{
 
 			ADORecordSetHelper rstRec2 = new ADORecordSetHelper();

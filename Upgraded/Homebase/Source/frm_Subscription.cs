@@ -14,6 +14,7 @@ using UpgradeHelpers.Gui.Controls;
 using UpgradeHelpers.Gui.Utils;
 using UpgradeHelpers.Helpers;
 using UpgradeStubs;
+using JetNetSupport.Excel;
 
 namespace JETNET_Homebase
 {

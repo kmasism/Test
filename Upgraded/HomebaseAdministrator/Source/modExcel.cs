@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using UpgradeHelpers.Helpers;
+using JetNetSupport.Excel;
 
 namespace HomebaseAdministrator
 {
@@ -112,7 +113,7 @@ namespace HomebaseAdministrator
 
 
 
-		internal static bool Create_Excel_File(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS, string strFileName)
+		internal static bool Create_Excel_File(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS, string strFileName)
 		{
 
 			bool result = false;
@@ -123,12 +124,12 @@ namespace HomebaseAdministrator
 
 				bResults = false;
 
-				objExcel = new Excel.Application();
+				objExcel = new ExcelApplication();
 
 				//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWB = objExcel.Workbooks.Add;
-				//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWS = objExcelWB.Worksheets("Sheet1");
+				objExcelWB = (ExcelApplication)objExcel.Workbooks.Add(new Microsoft.Office.Interop.Excel.Workbook());
+                //UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
+                objExcelWS = objExcelWB.Worksheets("Sheet1");
 
 				//UPGRADE_WARNING: (7006) The Named argument FileFormat was not resolved and corresponds to the following expression xlNormal More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-7006
 				//UPGRADE_WARNING: (7006) The Named argument FileName was not resolved and corresponds to the following expression strFileName More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-7006
@@ -155,16 +156,16 @@ namespace HomebaseAdministrator
 
 		//==================================================================================
 
-		internal static void OpenExcel(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS, bool bQuite)
+		internal static void OpenExcel(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS, bool bQuite)
 		{
 
 			if (objExcel == null)
 			{
-				objExcel = new Excel.Application();
+				objExcel = new ExcelApplication();
 			}
 
 			//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			objExcelWB = objExcel.Workbooks.Add;
+			objExcelWB = (ExcelApplication)objExcel.Workbooks.Add(new Microsoft.Office.Interop.Excel.Workbook());
 			//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			objExcelWB.Worksheets("Sheet1").Activate();
 			//UPGRADE_TODO: (1067) Member Worksheets is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
@@ -176,7 +177,7 @@ namespace HomebaseAdministrator
 		} // OpenExcel
 
 
-		internal static void DisposeExcel(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS)
+		internal static void DisposeExcel(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS)
 		{
 
 			objExcelWS = null;
@@ -186,14 +187,14 @@ namespace HomebaseAdministrator
 		} // DisposeExcel
 
 
-		internal static void OpenExcelFile(ref dynamic objExcel, ref dynamic objExcelWB, ref dynamic objExcelWS, string strFileName, bool bQuite)
+		internal static void OpenExcelFile(ref ExcelApplication objExcel, ref ExcelApplication objExcelWB, ref ExcelApplication objExcelWS, string strFileName, bool bQuite)
 		{
 
 			Object fso = new Object();
 
 			if (objExcel == null)
 			{
-				objExcel = new Excel.Application();
+				objExcel = new ExcelApplication();
 			}
 
 			if (File.Exists(strFileName))
@@ -203,9 +204,9 @@ namespace HomebaseAdministrator
 				//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				objExcel.Workbooks.Open(strFileName);
 				//UPGRADE_TODO: (1067) Member ActiveWorkbook is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWB = objExcel.ActiveWorkbook;
+				objExcelWB = (ExcelApplication)objExcel.ActiveWorkbook;
 				//UPGRADE_TODO: (1067) Member ActiveSheet is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				objExcelWS = objExcelWB.ActiveSheet;
+				objExcelWS = (ExcelApplication)objExcelWB.ActiveSheet;
 				//UPGRADE_TODO: (1067) Member Visible is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				objExcel.Visible = true;
 
@@ -218,9 +219,9 @@ namespace HomebaseAdministrator
 		internal static void ExportMSHFlexGrid(UpgradeHelpers.DataGridViewFlex fGrid, Label lLabel)
 		{
 
-			dynamic objExcel = null;//gap-note type must be defined during Blazor stabilization
-			dynamic objExcelWB = null;//gap-note type must be defined during Blazor stabilization
-			dynamic objExcelWS = null;//gap-note type must be defined during Blazor stabilization
+			ExcelApplication objExcel = null;//gap-note type must be defined during Blazor stabilization
+			ExcelApplication objExcelWB = null;//gap-note type must be defined during Blazor stabilization
+			ExcelApplication objExcelWS = null;//gap-note type must be defined during Blazor stabilization
 
 			int lExcelRow = 0;
 			int lExcelCol = 0;
@@ -553,7 +554,7 @@ namespace HomebaseAdministrator
 
 		} // ConvertRowColumnToExcelRange
 
-		internal static void DrawGrid(dynamic oExcel, string strRange)
+		internal static void DrawGrid(ExcelApplication oExcel, string strRange)
 		{
 
 			try
@@ -562,42 +563,42 @@ namespace HomebaseAdministrator
 				//UPGRADE_TODO: (1067) Member Range is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				oExcel.Range(strRange).Select();
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Interior.Pattern = xlSolid;
+				oExcel.selection.Interior.Pattern = xlSolid;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlDiagonalDown).LineStyle = xlNone;
+				oExcel.selection.Borders(xlDiagonalDown).LineStyle = xlNone;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlDiagonalUp).LineStyle = xlNone;
+				oExcel.selection.Borders(xlDiagonalUp).LineStyle = xlNone;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeTop).LineStyle = xlContinuous;
+				oExcel.selection.Borders(xlEdgeTop).LineStyle = xlContinuous;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeTop).Weight = xlThin;
+				oExcel.selection.Borders(xlEdgeTop).Weight = xlThin;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeBottom).LineStyle = xlContinuous;
+				oExcel.selection.Borders(xlEdgeBottom).LineStyle = xlContinuous;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeBottom).Weight = xlThin;
+				oExcel.selection.Borders(xlEdgeBottom).Weight = xlThin;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeLeft).LineStyle = xlContinuous;
+				oExcel.selection.Borders(xlEdgeLeft).LineStyle = xlContinuous;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeLeft).Weight = xlThin;
+				oExcel.selection.Borders(xlEdgeLeft).Weight = xlThin;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeRight).LineStyle = xlContinuous;
+				oExcel.selection.Borders(xlEdgeRight).LineStyle = xlContinuous;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlEdgeRight).Weight = xlThin;
+				oExcel.selection.Borders(xlEdgeRight).Weight = xlThin;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlInsideVertical).LineStyle = xlContinuous;
+				oExcel.selection.Borders(xlInsideVertical).LineStyle = xlContinuous;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlInsideVertical).Weight = xlThin;
+				oExcel.selection.Borders(xlInsideVertical).Weight = xlThin;
 
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlInsideHorizontal).LineStyle = xlContinuous;
+				oExcel.selection.Borders(xlInsideHorizontal).LineStyle = xlContinuous;
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcel.Selection.Borders(xlInsideHorizontal).Weight = xlThin;
+				oExcel.selection.Borders(xlInsideHorizontal).Weight = xlThin;
 			}
 			catch (System.Exception excep)
 			{
@@ -608,7 +609,7 @@ namespace HomebaseAdministrator
 
 		} // DrawGrid
 
-		internal static void AddHyperLink(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, string strWorksheetName, string strText, int lExcelRow, int lExcelCol)
+		internal static void AddHyperLink(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, string strWorksheetName, string strText, int lExcelRow, int lExcelCol)
 		{
 
 			string strHRef = "";
@@ -627,7 +628,7 @@ namespace HomebaseAdministrator
 				//UPGRADE_WARNING: (7006) The Named argument Anchor was not resolved and corresponds to the following expression oExcel.Selection More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-7006
 				//UPGRADE_TODO: (1067) Member Selection is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 				//UPGRADE_TODO: (1067) Member Hyperlinks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Hyperlinks.Add(oExcel.Selection, "", strHRef, strText);
+				oExcelWS.Hyperlinks.Add(oExcel.selection, "", strHRef, strText);
 			}
 			catch (System.Exception excep)
 			{
@@ -637,7 +638,7 @@ namespace HomebaseAdministrator
 
 		} // AddHyperLink
 
-		internal static void Merge_Cells(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, int lRow1, int lCol1, int lRow2, int lCol2)
+		internal static void Merge_Cells(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, int lRow1, int lCol1, int lRow2, int lCol2)
 		{
 
 
@@ -651,7 +652,7 @@ namespace HomebaseAdministrator
 
 		} // Merge_Cells
 
-		internal static void Save_Excel_File(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, string strFullFileName)
+		internal static void Save_Excel_File(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, string strFullFileName)
 		{
 
 			try
@@ -682,7 +683,7 @@ namespace HomebaseAdministrator
 
 		} // Savei_Excel_File
 
-		internal static void Add_Seperator_Line_To_Excel(dynamic oExcel, dynamic oExcelWB, dynamic oExcelWS, ref int lExcelRow, int lExcelCol, int iColor)
+		internal static void Add_Seperator_Line_To_Excel(ExcelApplication oExcel, ExcelApplication oExcelWB, ExcelApplication oExcelWS, ref int lExcelRow, int lExcelCol, int iColor)
 		{
 
 			int lCnt1 = 0;
@@ -697,11 +698,11 @@ namespace HomebaseAdministrator
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			oExcelWS.Cells(lExcelRow, 1).Interior.ColorIndex = iColor;
 			//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			oExcelWS.Cells[lExcelRow, 1] = " ";
+			oExcelWS.Cells(lExcelRow, 1)[lExcelRow, 1] = " ";
 
 		} // Add_Seperator_Line_To_Excel
 
-		internal static void Add_Number_To_Excel(dynamic oExcelWS, int lExcelRow, ref int lExcelCol, double dValue, int iColor, string strFormat)
+		internal static void Add_Number_To_Excel(ExcelApplication oExcelWS, int lExcelRow, ref int lExcelCol, double dValue, int iColor, string strFormat)
 		{
 
 			lExcelCol++;
@@ -718,12 +719,12 @@ namespace HomebaseAdministrator
 			if (!Convert.IsDBNull(dValue))
 			{
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = dValue.ToString();
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = dValue.ToString();
 			}
 			else
 			{
 				//UPGRADE_TODO: (1067) Member Cells is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				oExcelWS.Cells[lExcelRow, lExcelCol] = "0";
+				oExcelWS.Cells(lExcelRow, lExcelCol)[lExcelRow, lExcelCol] = "0";
 			}
 
 		} // Add_Number_To_Excel

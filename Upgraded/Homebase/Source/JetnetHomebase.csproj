@@ -205,7 +205,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Excel\ExcelApplication.cs" />
     <Compile Include="frm_ActionList.Designer.cs">
       <DependentUpon>frm_ActionList.cs</DependentUpon>
     </Compile>

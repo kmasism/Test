@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using UpgradeHelpers.Helpers;
+using JetNetSupport.Excel;
 
 namespace JETNET_Homebase
 {

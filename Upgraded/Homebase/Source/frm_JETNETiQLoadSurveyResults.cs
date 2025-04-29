@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using UpgradeHelpers.DB.ADO;
 using UpgradeHelpers.Gui.Controls;
 using UpgradeHelpers.Helpers;
+using JetNetSupport.Excel;
 
 namespace JETNET_Homebase
 {
@@ -170,9 +171,9 @@ namespace JETNET_Homebase
 			string strCopyToDir = "";
 			string strCopyToFileName = "";
 
-			dynamic xlExcel = null;//gap-note Excel library must be reviewed during the stabilization
-			dynamic xlExcelWB = null;//gap-note Excel library must be reviewed during the stabilization
-			dynamic xlExcelWS = null;//gap-note Excel library must be reviewed during the stabilization
+			ExcelApplication xlExcel = null;//gap-note Excel library must be reviewed during the stabilization
+            ExcelApplication xlExcelWB = null;//gap-note Excel library must be reviewed during the stabilization
+            ExcelApplication xlExcelWS = null;//gap-note Excel library must be reviewed during the stabilization
 
 			int lExcelRow = 0;
 			int lExcelCol = 0;
@@ -252,15 +253,15 @@ namespace JETNET_Homebase
 
 							if (xlExcel == null)
 							{
-								xlExcel = new Excel.Application();
+								xlExcel = new ExcelApplication();
 							}
 
 							//UPGRADE_TODO: (1067) Member Workbooks is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 							xlExcel.Workbooks.Open(strFileName);
 							//UPGRADE_TODO: (1067) Member ActiveWorkbook is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-							xlExcelWB = xlExcel.ActiveWorkbook;
+							xlExcelWB = (ExcelApplication)xlExcel.ActiveWorkbook;
 							//UPGRADE_TODO: (1067) Member ActiveSheet is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-							xlExcelWS = xlExcelWB.ActiveSheet;
+							xlExcelWS = (ExcelApplication)xlExcelWB.ActiveSheet;
 
 							//UPGRADE_TODO: (1067) Member Visible is not defined in type Variant. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 							xlExcel.Visible = true; // <-- *** Optional ***

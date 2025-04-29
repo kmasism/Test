@@ -1,5 +1,5 @@
 ﻿
-namespace JETNET_Homebase
+namespace JetNetSupport.Excel
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,7 @@ namespace JETNET_Homebase
     /// </summary>
     public class ExcelApplication
     {
-        internal dynamic selection;
+        public dynamic selection;
 
         // Propiedades
         public Workbooks Workbooks { get; }
@@ -32,12 +32,16 @@ namespace JETNET_Homebase
         public int SheetsInNewWorkbook { get; set; }
         public string Caption { get; set; }
         public bool CutCopyMode { get; }
-        public int Calculation { get; internal set; }
-        public bool EnableEvents { get; internal set; }
+        public int Calculation { get; set; }
+        public bool EnableEvents { get; set; }
         public dynamic Hyperlinks { get; internal set; }
 
         // Métodos
         public void Quit()
+        {
+
+        }
+        public void Close(bool value)
         {
 
         }
@@ -93,22 +97,22 @@ namespace JETNET_Homebase
             return new Cells();
         }
 
-        internal Row Rows(int lExcelRow)
+        public Row Rows(int lExcelRow)
         {
             return new Row();
         }
 
-        internal Column Columns(int lExcelCol)
+        public Column Columns(int lExcelCol)
         {
             return new Column();
         }
 
-        internal dynamic Range(string strRange)
+        public dynamic Range(string strRange)
         {
             throw new NotImplementedException();
         }
 
-        internal dynamic Range(string strBeginRange, string strEndRange)
+        public dynamic Range(string strBeginRange, string strEndRange)
         {
             throw new NotImplementedException();
         }
@@ -118,12 +122,12 @@ namespace JETNET_Homebase
             throw new NotImplementedException();
         }
 
-        internal void Move(object value)
+        public void Move(object value)
         {
             throw new NotImplementedException();
         }
 
-        internal object Sheets(string v)
+        public object Sheets(string v)
         {
             throw new NotImplementedException();
         }
@@ -157,7 +161,7 @@ namespace JETNET_Homebase
 
         public bool IsFixedSize => throw new NotImplementedException();
 
-        public string NumberFormat { get; internal set; }
+        public string NumberFormat { get; set; }
         public Font Font { get; internal set; }
 
         Cells IList<Cells>.this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -268,6 +272,6 @@ namespace JETNET_Homebase
     public class Font
     {
         public int ColorIndex { get; set; }
-        public bool Bold { get; internal set; }
+        public bool Bold { get; set; }
     }
 }

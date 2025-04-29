@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using UpgradeHelpers.DB.ADO;
 using UpgradeHelpers.Gui.Controls;
 using UpgradeHelpers.Helpers;
+using JetNetSupport.Excel;
 
 namespace JETNET_Homebase
 {

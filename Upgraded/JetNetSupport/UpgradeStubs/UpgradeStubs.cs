@@ -35,13 +35,13 @@ namespace UpgradeStubs
 			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("ADODB.ExecuteOptionEnum.adAsyncExecute");
 			return (UpgradeStubs.ADODB_ExecuteOptionEnumEnum) ADODB_ExecuteOptionEnumEnum.adAsyncExecute;
 		}
-		public static UpgradeStubs.ADODB_ExecuteOptionEnumEnum getadExecuteNoRecords()
-		{
-			UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("ADODB.ExecuteOptionEnum.adExecuteNoRecords");
-			return (UpgradeStubs.ADODB_ExecuteOptionEnumEnum) ADODB_ExecuteOptionEnumEnum.adExecuteNoRecords;
-		}
-	} 
-	public class ADODB_ResyncEnum
+        //public static UpgradeStubs.ADODB_ExecuteOptionEnumEnum getadExecuteNoRecords()  //gap-note: jgamboa. Remove deprecated option. Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
+        //{
+        //	UpgradeHelpers.Helpers.NotUpgradedHelper.NotifyNotUpgradedElement("ADODB.ExecuteOptionEnum.adExecuteNoRecords");
+        //	return (UpgradeStubs.ADODB_ExecuteOptionEnumEnum) ADODB_ExecuteOptionEnumEnum.adExecuteNoRecords;
+        //}
+    }
+    public class ADODB_ResyncEnum
 	{
 
 		public static UpgradeStubs.ADODB_ResyncEnumEnum getadResyncAllValues()

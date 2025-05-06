@@ -2460,7 +2460,7 @@ namespace JETNET_Homebase
 						TempCommand_2.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_2.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_2.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_2);
 						TempCommand_2.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2485,7 +2485,7 @@ namespace JETNET_Homebase
 						TempCommand_3.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_3.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_3.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_3);
 						TempCommand_3.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2514,7 +2514,7 @@ namespace JETNET_Homebase
 						TempCommand_4.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_4.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_4.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_4);
 						TempCommand_4.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2545,7 +2545,7 @@ namespace JETNET_Homebase
 						TempCommand_5.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_5.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_5.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_5);
 						TempCommand_5.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2580,7 +2580,7 @@ namespace JETNET_Homebase
 						TempCommand_6.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_6.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_6.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_6);
 						TempCommand_6.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2625,7 +2625,7 @@ namespace JETNET_Homebase
 						TempCommand_7.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_7.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_7.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_7);
 						TempCommand_7.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2656,7 +2656,7 @@ namespace JETNET_Homebase
 						TempCommand_8.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_8.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_8.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_8);
 						TempCommand_8.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");
@@ -2685,7 +2685,7 @@ namespace JETNET_Homebase
 						TempCommand_9.CommandText = strInsert1;
 						//UPGRADE_ISSUE: (2064) ADODB.ExecuteOptionEnum property ExecuteOptionEnum.adExecuteNoRecords was not upgraded. More Information: https://docs.mobilize.net/vbuc/ewis/issues#id-2064
 						//UPGRADE_WARNING: (6021) Casting 'int' to Enum may cause different behaviour. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-6021
-						TempCommand_9.CommandType = (CommandType) (((int) UpgradeStubs.ADODB_ExecuteOptionEnum.getadExecuteNoRecords()) + ((int) CommandType.Text));
+						TempCommand_9.CommandType = CommandType.Text; // gap-note: Use CommandType.Text, the adExecuteNoRecords flag is equivalent to executing the command within an ExecuteNonQuery.
 						UpgradeHelpers.DB.TransactionManager.SetCommandTransaction(TempCommand_9);
 						TempCommand_9.ExecuteNonQuery();
 						modAdminCommon.ADO_Transaction("CommitTrans");

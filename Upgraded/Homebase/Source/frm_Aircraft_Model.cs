@@ -4180,37 +4180,24 @@ namespace JETNET_Homebase
 		{
 
 
-			ToolStrip tbr = tbr_ToolBar; //gap-note ToolStrip instead of Control
+			ToolStrip tbr = tbr_ToolBar;
 
-			//UPGRADE_TODO: (1067) Member ImageList is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
 			tbr.ImageList = mdi_ResearchAssistant.DefInstance.imgNormal;
 
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			(tbr.Items[2] as ToolStripButton).Image = (Image) resources.GetObject( "Home");
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			(tbr.Items[4] as ToolStripButton).Image = (Image) resources.GetObject( "Back");
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			(tbr.Items[6] as ToolStripButton).Image = (Image) resources.GetObject( "Save");
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			(tbr.Items[8] as ToolStripButton).Image = (Image) resources.GetObject( "Help");
+			tbr.Items[1].ImageKey = "Home";
+			tbr.Items[3].ImageKey = "Back";
+			tbr.Items[5].ImageKey = "Save";
+			tbr.Items[7].ImageKey = "Help";
 
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[2].Text = "Home";
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[4].Text = "Back";
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[6].Text = "Save";
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[8].Text = "Help";
+			tbr.Items[1].Name = "Home";
+			tbr.Items[3].Name = "Back";
+			tbr.Items[5].Name = "Save";
+			tbr.Items[7].Name = "Help";
 
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[2].ToolTipText = "Go to Main Menu";
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[4].ToolTipText = "Go to Previous Screen";
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[6].ToolTipText = "Save screen data";
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[8].ToolTipText = "Online Help";
+			tbr.Items[1].ToolTipText = "Go to Main Menu";
+			tbr.Items[3].ToolTipText = "Go to Previous Screen";
+			tbr.Items[5].ToolTipText = "Save screen data";
+			tbr.Items[7].ToolTipText = "Online Help";
 
 		}
 
@@ -5008,21 +4995,15 @@ namespace JETNET_Homebase
 		{
 
 
-			ToolStrip tbr = tbr_ToolBar; //gap-note ToolStrip instead of Control
+			ToolStrip tbr = tbr_ToolBar;
 
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[2].Visible = true;
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[4].Visible = true;
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[8].Visible = true;
+			tbr.Items[1].Visible = true;
+			tbr.Items[3].Visible = true;
+			tbr.Items[7].Visible = true;
 
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[2].Enabled = true;
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[4].Enabled = true;
-			//UPGRADE_TODO: (1067) Member Buttons is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			tbr.Items[8].Enabled = true;
+			tbr.Items[1].Enabled = true;
+			tbr.Items[3].Enabled = true;
+			tbr.Items[7].Enabled = true;
 
 		}
 

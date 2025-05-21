@@ -10485,7 +10485,9 @@ namespace JETNET_Homebase
 				}
 
 				Query = "SELECT top 1 * FROM Publication_listing ";
-
+				// added in msw - 4/22/25
+				Query = $"{Query} inner join aircraft with (NOLOCK) on ac_id = publist_Ac_id and ac_journ_id = 0 ";
+				Query = $"{Query} inner join aircraft_model with (NOLOCK) on amod_id = ac_amod_id and amod_class_code <> 'E' ";
 				Query = $"{Query} WHERE publist_status in ('O','I')  ";
 
 				Query = $"{Query} AND publist_acct_rep = '{whichAcctID.Trim()}' ";
@@ -15056,7 +15058,7 @@ namespace JETNET_Homebase
 					Query = $"{Query}comp_timezone, ";
 
 					// ADDED MSW - 8/13/18 - TO GET LAST JOURNAL NOTE
-					Query = $"{Query} (select top 1 journ_subject  from Journal with (NOLOCK) where journ_comp_id = comp_id and journ_subcategory_code = 'IQ' order by journ_id desc) as iq_note_type, ";
+					Query = $"{Query} (select top 1 journ_subject + ' (' + cast(CONVERT(VARCHAR(10), journ_date, 101) as varchar(25)) + ')'  from Journal with (NOLOCK) where journ_comp_id = comp_id and journ_subcategory_code = 'IQ' order by journ_id desc) as iq_note_type, ";
 
 
 					// 07/25/2016 - By David D. Cruger; Added
@@ -15206,6 +15208,13 @@ namespace JETNET_Homebase
 							break;
 					} // Case left(cmbProductType.Text, 1)
 
+
+
+					// hide IQ declined
+					if (chk_action_list[chkHideIQDeclined].CheckState == CheckState.Checked)
+					{
+						Query = $"{Query}  and not exists (SELECT top 100 j2.journ_description  FROM Journal j2 WITH(NOLOCK)  WHERE ((j2.journ_subject = 'JNiQ - Declined Survey' and j2.journ_comp_id = comp_id and journ_date >= GETDATE()-365) or  (j2.journ_subject = 'JNiQ - Declined Survey - Do not Send' and j2.journ_comp_id = comp_id and journ_date >= GETDATE()-365))) ";
+					}
 					// 07/25/2016 - By David D. Cruger; Added Search for Customers or Non-Customers
 					if (optSearchCust[1].Checked)
 					{ // Customers Only
@@ -15285,7 +15294,7 @@ namespace JETNET_Homebase
 					Query = $"{Query}comp_last_contact_date, ";
 
 					// ADDED MSW - 8/13/18 - TO GET LAST JOURNAL NOTE
-					Query = $"{Query} (select top 1 journ_subject  from Journal with (NOLOCK) where journ_comp_id = comp_id and journ_subcategory_code = 'IQ' order by journ_id desc) as iq_note_type, ";
+					Query = $"{Query} (select top 1 journ_subject + ' (' + cast(CONVERT(VARCHAR(10), journ_date, 101) as varchar(25)) + ')'  from Journal with (NOLOCK) where journ_comp_id = comp_id and journ_subcategory_code = 'IQ' order by journ_id desc) as iq_note_type, ";
 
 
 					// 07/25/2016 - By David D. Cruger; Added
@@ -15348,7 +15357,7 @@ namespace JETNET_Homebase
 					// hide IQ declined
 					if (chk_action_list[chkHideIQDeclined].CheckState == CheckState.Checked)
 					{
-						Query = $"{Query}  and not exists (SELECT top 100 j2.journ_description  FROM Journal j2 WITH(NOLOCK)  WHERE ((j2.journ_subject = 'JNiQ - Declined Survey' and j2.journ_comp_id = comp_id and journ_date >= GETDATE()-90) or  (j2.journ_subject = 'JNiQ - Declined Survey - Do not Send' and j2.journ_comp_id = comp_id and journ_date >= GETDATE()-365))) ";
+						Query = $"{Query}  and not exists (SELECT top 100 j2.journ_description  FROM Journal j2 WITH(NOLOCK)  WHERE ((j2.journ_subject = 'JNiQ - Declined Survey' and j2.journ_comp_id = comp_id and journ_date >= GETDATE()-365) or  (j2.journ_subject = 'JNiQ - Declined Survey - Do not Send' and j2.journ_comp_id = comp_id and journ_date >= GETDATE()-365))) ";
 					}
 
 

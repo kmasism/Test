@@ -11109,15 +11109,13 @@ namespace JETNET_Homebase
 									}
 								}
 
-								if (($"{Convert.ToString(rstRec1["sublogin_active_flag"])} ").Trim() == "N")
-								{
-									strStatus = "N";
-								}
+								//  If Trim(rstRec1!sublogin_active_flag & " ") = "N" Then
+								//    strStatus = "N"
+								//  End If
 
-								if (($"{Convert.ToString(rstRec1["subins_active_flag"])} ").Trim() == "N")
-								{
-									strStatus = "N";
-								}
+								//  If Trim(rstRec1!subins_active_flag & " ") = "N" Then
+								//    strStatus = "N"
+								//  End If
 
 								//UPGRADE_WARNING: (1049) Use of Null/IsNull() detected. More Information: https://docs.mobilize.net/vbuc/ewis/warnings#id-1049
 								if (!Convert.IsDBNull(rstRec1["sub_end_date"]))
@@ -12285,8 +12283,53 @@ namespace JETNET_Homebase
 
 		} // Load_Service_Combo_Box
 
-		private void Set_Count_For_Inactive_Subscriptions()
+	private void Load_Service_Info(string service_string, ref string sub_evo_flag, ref string sub_api_flag, ref string sub_bi_flag, ref string sub_jsa_flag, ref string sub_iq_flag, ref string sub_data_feed_report_flag)
+	{
+
+		ADORecordSetHelper rstRec1 = null;
+		string strQuery1 = "";
+
+		try
 		{
+
+			rstRec1 = new ();
+
+
+			strQuery1 = "SELECT * FROM Service (NOLOCK) ";
+			strQuery1 = $"{strQuery1}WHERE  serv_code = '{service_string}' ";
+
+			rstRec1.Open(strQuery1, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockReadOnly);
+
+			if ((!rstRec1.BOF) && (!rstRec1.EOF))
+			{
+
+				do 
+				{ // Loop Until rstRec1.EOF = True
+					sub_evo_flag = Convert.ToString(rstRec1["serv_evolution_flag"]);
+					sub_api_flag = Convert.ToString(rstRec1["serv_api_flag"]);
+					sub_bi_flag = Convert.ToString(rstRec1["serv_bi_flag"]);
+					sub_jsa_flag = Convert.ToString(rstRec1["serv_salesforce_flag"]);
+					sub_iq_flag = Convert.ToString(rstRec1["serv_jetnetiq_flag"]);
+					sub_data_feed_report_flag = Convert.ToString(rstRec1["serv_customrep_flag"]);
+					rstRec1.MoveNext();
+				}
+				while(!rstRec1.EOF);
+
+			} // If (rstRec1.BOF = False) And (rstRec1.EOF = False) Then
+
+			rstRec1.Close();
+			rstRec1 = null;
+		}
+		catch (System.Exception excep)
+		{
+
+			modAdminCommon.Report_Error($"Load_Service_Combo_Box_Error: {excep.Message}");
+		}
+
+	} // Load_Service_Combo_Box
+
+	private void Set_Count_For_Inactive_Subscriptions()
+	{
 
 			int lCount = 0;
 
@@ -12792,6 +12835,15 @@ namespace JETNET_Homebase
 			string temp_serve = "";
 
 
+			string sub_evo_flag = "N";
+			string sub_api_flag = "N";
+			string sub_bi_flag = "N";
+			string sub_jsa_flag = "N";
+			string sub_iq_flag = "N";
+			string sub_data_feed_report_flag = "N";
+
+
+
 			try
 			{
 
@@ -12861,16 +12913,51 @@ namespace JETNET_Homebase
 						FLDS = $"{FLDS}, sub_serv_code";
 						VALS = $"{VALS}, '{temp_serve}'";
 
-						// 03/16/2004 - By David D. Cruger; Added Marketing Flag and Nbr of Days Expire
-						FLDS = $"{FLDS}, sub_marketing_flag ";
-						if (chkProductType[modSubscription.ProductMarketing].CheckState == CheckState.Checked)
-						{
-							VALS = $"{VALS}, 'Y'";
-						}
-						else
-						{
-							VALS = $"{VALS}, 'N'";
-						}
+					Load_Service_Info(temp_serve, ref sub_evo_flag, ref sub_api_flag, ref sub_bi_flag, ref sub_jsa_flag, ref sub_iq_flag, ref sub_data_feed_report_flag);
+
+
+					// added MSW 4/1/25
+					FLDS = $"{FLDS}, sub_evo_flag ";
+					VALS = $"{VALS}, '{sub_evo_flag}'";
+
+					FLDS = $"{FLDS}, sub_api_flag ";
+					VALS = $"{VALS}, '{sub_api_flag}'";
+
+					FLDS = $"{FLDS}, sub_bi_flag ";
+					VALS = $"{VALS}, '{sub_bi_flag}'";
+
+					FLDS = $"{FLDS}, sub_jsa_flag ";
+					VALS = $"{VALS}, '{sub_jsa_flag}'";
+
+					FLDS = $"{FLDS}, sub_iq_flag ";
+					VALS = $"{VALS}, '{sub_iq_flag}'";
+
+					FLDS = $"{FLDS}, sub_data_feed_report_flag ";
+					VALS = $"{VALS}, '{sub_data_feed_report_flag}'";
+
+
+					// added MSW 4/1/25
+					FLDS = $"{FLDS}, sub_values_flag ";
+					if (chkProductType[7].CheckState == CheckState.Checked)
+					{
+						VALS = $"{VALS}, 'Y'";
+					}
+					else
+					{
+						VALS = $"{VALS}, 'N'";
+					}
+
+
+					// 03/16/2004 - By David D. Cruger; Added Marketing Flag and Nbr of Days Expire
+					FLDS = $"{FLDS}, sub_marketing_flag ";
+					if (chkProductType[modSubscription.ProductMarketing].CheckState == CheckState.Checked)
+					{
+						VALS = $"{VALS}, 'Y'";
+					}
+					else
+					{
+						VALS = $"{VALS}, 'N'";
+					}
 
 						// added MSW - 1/19/23
 						FLDS = $"{FLDS}, sub_api_flights_flag ";
@@ -13978,7 +14065,27 @@ namespace JETNET_Homebase
 						temp_serve = temp_serve.Substring(Math.Max(temp_serve.Length - (Strings.Len(temp_serve) - (temp_serve.IndexOf(" - ") + 1)), 0));
 						temp_serve = StringsHelper.Replace(temp_serve, "- ", "", 1, -1, CompareMethod.Binary);
 
-						Query = $"{Query}, sub_serv_code = '{temp_serve}'";
+					Query = $"{Query}, sub_serv_code = '{temp_serve}'";
+
+					Load_Service_Info(temp_serve, ref sub_evo_flag, ref sub_api_flag, ref sub_bi_flag, ref sub_jsa_flag, ref sub_iq_flag, ref sub_data_feed_report_flag);
+
+
+					Query = $"{Query}, sub_evo_flag = '{sub_evo_flag}'";
+					Query = $"{Query}, sub_api_flag = '{sub_api_flag}'";
+					Query = $"{Query}, sub_bi_flag = '{sub_bi_flag}'";
+					Query = $"{Query}, sub_jsa_flag = '{sub_jsa_flag}'";
+					Query = $"{Query}, sub_iq_flag = '{sub_iq_flag}'";
+					Query = $"{Query}, sub_data_feed_report_flag = '{sub_data_feed_report_flag}'";
+
+					if (chkProductType[7].CheckState == CheckState.Checked)
+					{
+						Query = $"{Query}, sub_values_flag = 'Y'";
+					}
+					else
+					{
+						Query = $"{Query}, sub_values_flag = 'N'";
+					}
+
 
 
 						Query = $"{Query}, sub_start_date = '{txt_sub_start_date.Text.Trim()}'";

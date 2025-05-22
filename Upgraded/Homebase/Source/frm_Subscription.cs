@@ -12292,7 +12292,7 @@ namespace JETNET_Homebase
 		try
 		{
 
-			rstRec1 = new ();
+			rstRec1 = new ADORecordSetHelper();
 
 
 			strQuery1 = "SELECT * FROM Service (NOLOCK) ";

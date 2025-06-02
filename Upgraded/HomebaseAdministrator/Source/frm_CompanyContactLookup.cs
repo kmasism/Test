@@ -5301,21 +5301,15 @@ namespace HomebaseAdministrator
 			//Update existing row
 
 			RecordStat = "Update";
-            DataGridViewFlex Grd = FG_CBTList;
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 0;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			txt_cbus_type.Text = Convert.ToString(Grd.Text);
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 1;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			txt_cbus_Name.Text = Convert.ToString(Grd.Text);
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 2;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			string txt_cbus_abi_type = Convert.ToString(Grd.Text);
+            UpgradeHelpers.DataGridViewFlex Grd = FG_CBTList;
+            Grd.CurrentColumnIndex = 0;
+            txt_cbus_type.Text = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
+            Grd.CurrentColumnIndex = 1;
+            txt_cbus_Name.Text = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
+            Grd.CurrentColumnIndex = 2;
+            string txt_cbus_abi_type = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
 
-			if (txt_cbus_abi_type == "Y")
+            if (txt_cbus_abi_type == "Y")
 			{
 				chkBusIdxOnly.CheckState = CheckState.Checked;
 			}
@@ -5324,12 +5318,10 @@ namespace HomebaseAdministrator
 				chkBusIdxOnly.CheckState = CheckState.Unchecked;
 			}
 
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 3;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			string txt_cbus_ac_type = Convert.ToString(Grd.Text);
+            Grd.CurrentColumnIndex = 3;
+            string txt_cbus_ac_type = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
 
-			if (txt_cbus_ac_type == "Y")
+            if (txt_cbus_ac_type == "Y")
 			{
 				chkACOnly.CheckState = CheckState.Checked;
 			}
@@ -5338,11 +5330,9 @@ namespace HomebaseAdministrator
 				chkACOnly.CheckState = CheckState.Unchecked;
 			}
 
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 4;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			string txt_cbus_yacht_type = Convert.ToString(Grd.Text);
-			if (txt_cbus_yacht_type == "Y")
+            Grd.CurrentColumnIndex = 4;
+            string txt_cbus_yacht_type = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
+            if (txt_cbus_yacht_type == "Y")
 			{
 				chkYachtOnly.CheckState = CheckState.Checked;
 			}
@@ -5353,18 +5343,14 @@ namespace HomebaseAdministrator
 
 
 
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 5;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			txt_cbus_Desc.Text = Convert.ToString(Grd.Text);
+            Grd.CurrentColumnIndex = 5;
+            txt_cbus_Desc.Text = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
 
-			//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			Grd.Col = 6;
-			//UPGRADE_TODO: (1067) Member Text is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-			txt_cbus_keywords.Text = Convert.ToString(Grd.Text);
+            Grd.CurrentColumnIndex = 6;
+            txt_cbus_keywords.Text = Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].FormattedValue.ToString();
 
 
-			FillBusinessGroupLists(($"{txt_cbus_type.Text}").Trim());
+            FillBusinessGroupLists(($"{txt_cbus_type.Text}").Trim());
 			pnl_CBT_AddUpdate.Visible = true;
 			pnl_BusGroup.Visible = true;
 
@@ -6319,10 +6305,10 @@ namespace HomebaseAdministrator
 			string Comma = ""; //comma work field for query string
 			int nRow = 0; //Current row counter
 			int Ans = 0; //Answer to question
-            DataGridViewFlex Grd = null;
+            UpgradeHelpers.DataGridViewFlex Grd = null;
 
-			try
-			{
+            try
+            {
 
 				this.Cursor = Cursors.WaitCursor;
 
@@ -6392,79 +6378,79 @@ namespace HomebaseAdministrator
 				switch(NewTab)
 				{
 					case modAdminCommon.iTabCompanyAccountType :  //Company Account Type 
-						pnl_CAT_AddUpdate.Visible = false; 
-						FG_Cat_List.Clear(); 
-						Query = "SELECT * from Company_Account_Type "; 
+						pnl_CAT_AddUpdate.Visible = false;
+                        FG_Cat_List.Clear();
+                        Query = "SELECT * from Company_Account_Type "; 
 						Query = $"{Query} ORDER BY cacctype_code "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
 						{
-							FG_Cat_List.CurrentColumnIndex = 0;
-							FG_Cat_List.CurrentRowIndex = 0;
-							FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = "Code";
-							FG_Cat_List.CurrentColumnIndex = 1;
-							FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = "Name";
-							FG_Cat_List.SetColumnWidth(0, 67);
-							FG_Cat_List.SetColumnWidth(1, 200);
+                            FG_Cat_List.CurrentColumnIndex = 0;
+                            FG_Cat_List.CurrentRowIndex = 0;
+                            FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = "Code";
+                            FG_Cat_List.CurrentColumnIndex = 1;
+                            FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = "Name";
+                            FG_Cat_List.SetColumnWidth(0, 67);
+                            FG_Cat_List.SetColumnWidth(1, 200);
 
-							nRow = 1;
-							FG_Cat_List.CurrentRowIndex = nRow;
+                            nRow = 1;
+                            FG_Cat_List.CurrentRowIndex = nRow; 
 							RS_Table.MoveFirst();
 
 							while(!RS_Table.EOF)
 							{
-								FG_Cat_List.CurrentColumnIndex = 0;
-								FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cacctype_code"])} ").Trim();
-								FG_Cat_List.CurrentColumnIndex = 1;
-								FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = modAdminCommon.Fix_Quote($"{Convert.ToString(RS_Table["cacctype_name"])} ").Trim();
-								nRow++;
-								FG_Cat_List.RowsCount = nRow + 1;
-								FG_Cat_List.CurrentRowIndex = nRow;
-								RS_Table.MoveNext();
-							}; // Do While Not snp_Cat.EOF
+                                FG_Cat_List.CurrentColumnIndex = 0;
+                                FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cacctype_code"])} ").Trim();
+                                FG_Cat_List.CurrentColumnIndex = 1;
+                                FG_Cat_List[FG_Cat_List.CurrentRowIndex, FG_Cat_List.CurrentColumnIndex].Value = modAdminCommon.Fix_Quote($"{Convert.ToString(RS_Table["cacctype_name"])} ").Trim();
+                                nRow++;
+                                FG_Cat_List.RowsCount = nRow + 1;
+                                FG_Cat_List.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            }; // Do While Not snp_Cat.EOF
 
 						}  // If Not (snp_Cat.BOF And snp_Cat.EOF) Then 
-						RS_Table.Close(); 
-						FG_Cat_List.RowsCount--; 
-						FG_Cat_List.Refresh(); 
+						RS_Table.Close();
+                        FG_Cat_List.RowsCount--;
+                        FG_Cat_List.Refresh();
 
-						 
-						break;
+
+                        break;
 					case modAdminCommon.iTabCompanyAgencyType :  //Company Agency Type 
-						FG_CompAgency.Clear(); 
+                        FG_CompAgency.Clear(); 
 						pnl_GAT_AddUpdate.Visible = false; 
 						Query = "SELECT * from Company_Agency_Type ORDER BY cagtype_code "; 
 						//Set snp_GAT = LOCAL_DB.OpenRecordset(QUERY, dbOpenSnapshot) 
-						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
-						FG_CompAgency.CurrentColumnIndex = 0; 
-						FG_CompAgency.CurrentRowIndex = 0; 
-						FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = "Code"; 
-						FG_CompAgency.CurrentColumnIndex = 1; 
-						FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = "Name"; 
-						FG_CompAgency.SetColumnWidth(0, 67); 
-						FG_CompAgency.SetColumnWidth(1, 200); 
-						 
-						nRow = 1; 
-						FG_CompAgency.CurrentRowIndex = nRow; 
-						if (!(RS_Table.BOF && RS_Table.EOF))
+						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic);
+                        FG_CompAgency.CurrentColumnIndex = 0;
+                        FG_CompAgency.CurrentRowIndex = 0;
+                        FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = "Code";
+                        FG_CompAgency.CurrentColumnIndex = 1;
+                        FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = "Name";
+                        FG_CompAgency.SetColumnWidth(0, 67);
+                        FG_CompAgency.SetColumnWidth(1, 200);
+
+                        nRow = 1;
+                        FG_CompAgency.CurrentRowIndex = nRow;
+                        if (!(RS_Table.BOF && RS_Table.EOF))
 						{
 							RS_Table.MoveFirst();
 
 							while(!RS_Table.EOF)
 							{
-								FG_CompAgency.CurrentColumnIndex = 0;
-								FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cagtype_code"])} ").Trim();
-								FG_CompAgency.CurrentColumnIndex = 1;
-								FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = modAdminCommon.Fix_Quote($"{Convert.ToString(RS_Table["cagtype_name"])} ").Trim();
-								nRow++;
-								FG_CompAgency.RowsCount = nRow + 1;
-								FG_CompAgency.CurrentRowIndex = nRow;
-								RS_Table.MoveNext();
-							};
-						} 
-						FG_CompAgency.RowsCount--; 
-						FG_CompAgency.Refresh(); 
+                                FG_CompAgency.CurrentColumnIndex = 0;
+                                FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cagtype_code"])} ").Trim();
+                                FG_CompAgency.CurrentColumnIndex = 1;
+                                FG_CompAgency[FG_CompAgency.CurrentRowIndex, FG_CompAgency.CurrentColumnIndex].Value = modAdminCommon.Fix_Quote($"{Convert.ToString(RS_Table["cagtype_name"])} ").Trim();
+                                nRow++;
+                                FG_CompAgency.RowsCount = nRow + 1;
+                                FG_CompAgency.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
+						}
+                        FG_CompAgency.RowsCount--;
+                        FG_CompAgency.Refresh(); 
 						RS_Table.Close(); 
 						 
 						break;
@@ -6502,104 +6488,78 @@ namespace HomebaseAdministrator
 							combo_bus_type_dropdown.AddItem("Yacht");
 							combo_bus_type_dropdown.SetItemData(combo_bus_type_dropdown.GetNewIndex(), 3);
 							combo_bus_type_dropdown.SelectedIndex = 0;
-						} 
+						}
 
-						 
-						FG_CBTList.Clear(); 
-						FG_CBTList.ColumnsCount = 7; 
-						Grd = FG_CBTList; 
-						pnl_CBT_AddUpdate.Visible = false; 
-						pnl_BusGroup.Visible = false; 
-						 
-						Query = $"SELECT * from Company_Business_Type {search_string} ORDER BY cbus_type "; 
-						 
-						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
-						 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[1] = 2600; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[2] = 500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[3] = 900; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[4] = 600; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[5] = 1100; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[6] = 1100; 
 
+                        FG_CBTList.Clear();
+                        FG_CBTList.ColumnsCount = 7;
+                        Grd = FG_CBTList;
+                        pnl_CBT_AddUpdate.Visible = false;
+                        pnl_BusGroup.Visible = false;
+
+                        Query = $"SELECT * from Company_Business_Type {search_string} ORDER BY cbus_type "; 
 						 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Code"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 1; 
-						Grd.Text = "Name"; 
-						 
-						// ADDED MSW 4/20/12 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 2; 
-						Grd.Text = "ABI"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 3; 
-						Grd.Text = "AVIATION"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 4; 
-						Grd.Text = "YACHT"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 5; 
-						Grd.Text = "Desc"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 6; 
-						Grd.Text = "KeyWords"; 
-						 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						 
-						if (!(RS_Table.BOF && RS_Table.EOF))
+						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic);
+
+                        Grd.SetColumnWidth(0, 33);
+                        Grd.SetColumnWidth(1, 173);
+                        Grd.SetColumnWidth(2, 33);
+                        Grd.SetColumnWidth(3, 60);
+                        Grd.SetColumnWidth(4, 40);
+                        Grd.SetColumnWidth(5, 73);
+                        Grd.SetColumnWidth(6, 73);
+
+
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Code";
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Name";
+
+                        // ADDED MSW 4/20/12 
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "ABI";
+                        Grd.CurrentColumnIndex = 3;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "AVIATION";
+                        Grd.CurrentColumnIndex = 4;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "YACHT";
+                        Grd.CurrentColumnIndex = 5;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Desc";
+                        Grd.CurrentColumnIndex = 6;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "KeyWords";
+
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+
+                        if (!(RS_Table.BOF && RS_Table.EOF))
 						{
 							RS_Table.MoveFirst();
 
 							while(!RS_Table.EOF)
 							{
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 0;
-								Grd.Text = ($"{Convert.ToString(RS_Table["cbus_type"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 1;
-								Grd.Text = modAdminCommon.Fix_Quote($"{Convert.ToString(RS_Table["cbus_name"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 2;
-								Grd.Text = ($"{Convert.ToString(RS_Table["cbus_abi_flag"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 3;
-								Grd.Text = ($"{Convert.ToString(RS_Table["cbus_aircraft_flag"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 4;
-								Grd.Text = ($"{Convert.ToString(RS_Table["cbus_yacht_flag"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 5;
-								Grd.Text = ($"{modAdminCommon.Fix_Quote(RS_Table.GetField("cbus_description"))} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 6;
-								Grd.Text = ($"{modAdminCommon.Fix_Quote(RS_Table.GetField("cbus_keywords"))} ").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
-						} 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						FG_CBTList.Refresh(); 
-						RS_Table.Close(); 
+                                Grd.CurrentColumnIndex = 0;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cbus_type"])} ").Trim();
+                                Grd.CurrentColumnIndex = 1;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = modAdminCommon.Fix_Quote($"{Convert.ToString(RS_Table["cbus_name"])} ").Trim();
+                                Grd.CurrentColumnIndex = 2;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cbus_abi_flag"])} ").Trim();
+                                Grd.CurrentColumnIndex = 3;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cbus_aircraft_flag"])} ").Trim();
+                                Grd.CurrentColumnIndex = 4;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["cbus_yacht_flag"])} ").Trim();
+                                Grd.CurrentColumnIndex = 5;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{modAdminCommon.Fix_Quote(RS_Table.GetField("cbus_description"))} ").Trim();
+                                Grd.CurrentColumnIndex = 6;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{modAdminCommon.Fix_Quote(RS_Table.GetField("cbus_keywords"))} ").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
+						}
+                        Grd.RowsCount--;
+                        FG_CBTList.Refresh();
+                        RS_Table.Close(); 
 						 
 						break;
 					case modAdminCommon.iTabCountry :  //Country 
@@ -6610,20 +6570,16 @@ namespace HomebaseAdministrator
 					case modAdminCommon.iTabLanguage :  //Language 
 						 
 						FG_Language.Clear(); 
-						pnl_Language_AddUpdate.Visible = false; 
-						Grd = FG_Language; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Language Name"; 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 3000; 
-						 
-						Query = "SELECT * from Language ORDER BY language_name "; 
+						pnl_Language_AddUpdate.Visible = false;
+                        Grd = FG_Language;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Language Name";
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+                        Grd.SetColumnWidth(0, 200);
+
+                        Query = "SELECT * from Language ORDER BY language_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -6632,64 +6588,47 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								Grd.Text = ($"{Convert.ToString(RS_Table["language_name"])}").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
-						} 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						RS_Table.Close(); 
-						Grd.Refresh(); 
-						 
-						break;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["language_name"])}").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
+						}
+                        Grd.RowsCount--;
+                        RS_Table.Close();
+                        Grd.Refresh();
+
+                        break;
 					case modAdminCommon.iTabCurrency :  //Currency 
 						 
 						FG_Currency.Clear(); 
-						pnl_Currency_Change.Visible = false; 
-						Grd = FG_Currency; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Currency Name"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 1; 
-						Grd.Text = "Currency Exchange Rate"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 2; 
-						Grd.Text = "Currency Exchange_Rate Date"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 3; 
-						Grd.Text = "Currency Exchange Rate Source"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 4; 
-						Grd.Text = "Currency Country"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 5; 
-						Grd.Text = "Currency ISO"; 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 1500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[1] = 1500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[2] = 2500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[3] = 1500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[4] = 1500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[5] = 1500; 
+						pnl_Currency_Change.Visible = false;
+                        Grd = FG_Currency;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Currency Name";
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Currency Exchange Rate";
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Currency Exchange_Rate Date";
+                        Grd.CurrentColumnIndex = 3;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Currency Exchange Rate Source";
+                        Grd.CurrentColumnIndex = 4;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Currency Country";
+                        Grd.CurrentColumnIndex = 5;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Currency ISO";
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+                        Grd.SetColumnWidth(0, 100);
+                        Grd.SetColumnWidth(1, 100);
+                        Grd.SetColumnWidth(2, 167);
+                        Grd.SetColumnWidth(3, 100);
+                        Grd.SetColumnWidth(4, 100);
+                        Grd.SetColumnWidth(5, 100);
 
-						 
-						Query = "SELECT * from Currency ORDER BY currency_name "; 
+
+                        Query = "SELECT * from Currency ORDER BY currency_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -6698,58 +6637,45 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 0;
-								Grd.Text = ($"{Convert.ToString(RS_Table["currency_name"])}").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 1;
-								Grd.Text = ($"{Convert.ToString(RS_Table["currency_exchange_rate"])}").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 2;
-								Grd.Text = ($"{Convert.ToString(RS_Table["currency_exchange_rate_date"])}").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 3;
-								Grd.Text = ($"{Convert.ToString(RS_Table["currency_exchange_rate_source"])}").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 4;
-								Grd.Text = ($"{Convert.ToString(RS_Table["currency_country"])}").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 5;
-								Grd.Text = ($"{Convert.ToString(RS_Table["currency_iso"])}").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
+                                Grd.CurrentColumnIndex = 0;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["currency_name"])}").Trim();
+                                Grd.CurrentColumnIndex = 1;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["currency_exchange_rate"])}").Trim();
+                                Grd.CurrentColumnIndex = 2;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["currency_exchange_rate_date"])}").Trim();
+                                Grd.CurrentColumnIndex = 3;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["currency_exchange_rate_source"])}").Trim();
+                                Grd.CurrentColumnIndex = 4;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["currency_country"])}").Trim();
+                                Grd.CurrentColumnIndex = 5;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["currency_iso"])}").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
 						} 
-						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						Grd.Refresh(); 
-						 
-						Application.DoEvents(); 
+						RS_Table.Close();
+                        Grd.RowsCount--;
+                        Grd.Refresh();
+
+                        Application.DoEvents(); 
 						Application.DoEvents(); 
 						 
 						break;
 					case modAdminCommon.iTabContactSirname :  //Contact Surname 
 						 
 						FG_Contact_SirName.Clear(); 
-						pnl_CSN_AddUpdate.Visible = false; 
-						Grd = FG_Contact_SirName; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Contact Sirname"; 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 3000; 
-						 
-						Query = "SELECT * from Contact_Sirname ORDER BY csir_name "; 
+						pnl_CSN_AddUpdate.Visible = false;
+                        Grd = FG_Contact_SirName;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Contact Sirname";
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+                        Grd.SetColumnWidth(0, 200);
+
+                        Query = "SELECT * from Contact_Sirname ORDER BY csir_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -6758,37 +6684,30 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								Grd.Text = ($"{Convert.ToString(RS_Table["csir_name"])}").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
-						} 
-						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						Grd.Refresh(); 
-						 
-						break;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["csir_name"])}").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
+						}
+                        RS_Table.Close();
+                        Grd.RowsCount--;
+                        Grd.Refresh();
+
+                        break;
 					case modAdminCommon.iTabContactSuffix :  //Contact Suffix 
 						FG_Contact_Suffix.Clear(); 
-						pnl_CS_AddUpdate.Visible = false; 
-						Grd = FG_Contact_Suffix; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Contact Suffix"; 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 3000; 
-						 
-						Query = "SELECT * from Contact_Suffix ORDER BY csuffix_name "; 
+						pnl_CS_AddUpdate.Visible = false;
+                        Grd = FG_Contact_Suffix;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Contact Suffix";
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+                        Grd.SetColumnWidth(0, 200);
+
+                        Query = "SELECT * from Contact_Suffix ORDER BY csuffix_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -6797,21 +6716,18 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								Grd.Text = ($"{Convert.ToString(RS_Table["csuffix_name"])}").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["csuffix_name"])}").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
 						} 
-						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						Grd.Refresh(); 
-						 
-						break;
+						RS_Table.Close();
+                        Grd.RowsCount--;
+                        Grd.Refresh();
+
+                        break;
 					case modAdminCommon.iTabContactTitle :  //Contact Title 
 						 
 						LoadContactTitleGroupComboBox(cboSearchTitleGroup, "N"); 
@@ -6820,31 +6736,23 @@ namespace HomebaseAdministrator
 						 
 						break;
 					case modAdminCommon.iTabPhoneType :  //Phone Type 
-						pnl_PT_AddUpdate.Visible = false; 
-						Grd = FG_Phone_Type; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Phone Type"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 1; 
-						Grd.Text = "Seq_No"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 2; 
-						Grd.Text = "Abbrev"; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 2000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[1] = 1000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[2] = 1000; 
-						 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						 
-						Query = "SELECT * from Phone_Type ORDER BY ptype_name "; 
+						pnl_PT_AddUpdate.Visible = false;
+                        Grd = FG_Phone_Type;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Phone Type";
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Seq_No";
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Abbrev";
+                        Grd.SetColumnWidth(0, 133);
+                        Grd.SetColumnWidth(1, 67);
+                        Grd.SetColumnWidth(2, 67);
+
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+
+                        Query = "SELECT * from Phone_Type ORDER BY ptype_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -6853,26 +6761,20 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 0;
-								Grd.Text = ($"{Convert.ToString(RS_Table["ptype_name"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 1;
-								Grd.Text = ($"{Convert.ToString(RS_Table["ptype_seq_no"])}").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 2;
-								Grd.Text = ($"{Convert.ToString(RS_Table["ptype_abbrev"])} ").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
+                                Grd.CurrentColumnIndex = 0;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["ptype_name"])} ").Trim();
+                                Grd.CurrentColumnIndex = 1;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["ptype_seq_no"])}").Trim();
+                                Grd.CurrentColumnIndex = 2;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["ptype_abbrev"])} ").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
 							};
 						} 
 						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
+						Grd.RowsCount--; 
 						Grd.Refresh(); 
 						 
 						break;
@@ -6907,48 +6809,34 @@ namespace HomebaseAdministrator
 							CMB_State_TimeZone.AddItem($"{Convert.ToString(RS_Table["tzone_name"])}");
 							RS_Table.MoveNext();
 						}; 
-						RS_Table.Close(); 
-						 
-						//fill grid 
-						FG_State.Clear(); 
-						Grd = FG_State; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Code"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 1; 
-						Grd.Text = "Name"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 2; 
-						Grd.Text = "Loc"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 3; 
-						Grd.Text = "Timezone"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 4; 
-						Grd.Text = "Country"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 5; 
-						Grd.Text = "Active"; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 1000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[1] = 2000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[2] = 1000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[3] = 1000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[4] = 1500; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[5] = 1000; 
-						 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						Query = "SELECT * from State ORDER BY State_name "; 
+						RS_Table.Close();
+
+                        //fill grid 
+                        FG_State.Clear();
+                        Grd = FG_State;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Code";
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Name";
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Loc";
+                        Grd.CurrentColumnIndex = 3;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Timezone";
+                        Grd.CurrentColumnIndex = 4;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Country";
+                        Grd.CurrentColumnIndex = 5;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Active";
+                        Grd.SetColumnWidth(0, 67);
+                        Grd.SetColumnWidth(1, 133);
+                        Grd.SetColumnWidth(2, 67);
+                        Grd.SetColumnWidth(3, 67);
+                        Grd.SetColumnWidth(4, 100);
+                        Grd.SetColumnWidth(5, 67);
+
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+                        Query = "SELECT * from State ORDER BY State_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -6957,65 +6845,48 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 0;
-								Grd.Text = $"{Convert.ToString(RS_Table["State_code"])}";
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 1;
-								Grd.Text = $"{Convert.ToString(RS_Table["State_name"])}";
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 2;
-								Grd.Text = $"{Convert.ToString(RS_Table["state_loc"])}";
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 3;
-								Grd.Text = $"{Convert.ToString(RS_Table["state_timezone"])}";
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 4;
-								Grd.Text = $"{Convert.ToString(RS_Table["state_country"])}";
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 5;
-								Grd.Text = (Convert.ToString(RS_Table["state_active_flag"]) == "Y") ? "Yes" : "No";
+                                Grd.CurrentColumnIndex = 0;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = $"{Convert.ToString(RS_Table["State_code"])}";
+                                Grd.CurrentColumnIndex = 1;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = $"{Convert.ToString(RS_Table["State_name"])}";
+                                Grd.CurrentColumnIndex = 2;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = $"{Convert.ToString(RS_Table["state_loc"])}";
+                                Grd.CurrentColumnIndex = 3;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = $"{Convert.ToString(RS_Table["state_timezone"])}";
+                                Grd.CurrentColumnIndex = 4;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = $"{Convert.ToString(RS_Table["state_country"])}";
+                                Grd.CurrentColumnIndex = 5;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = (Convert.ToString(RS_Table["state_active_flag"]) == "Y") ? "Yes" : "No";
 
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
 						} 
-						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						Grd.Refresh(); 
-						 
-						break;
+						RS_Table.Close();
+                        Grd.RowsCount--;
+                        Grd.Refresh();
+
+                        break;
 					case modAdminCommon.iTabTimeZone :  //TimeZone 
-						pnl_TZ_AddUpdate.Visible = false; 
-						FG_TimeZone.Clear(); 
-						Grd = FG_TimeZone; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Zone Name"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 1; 
-						Grd.Text = "Sort Num"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 2; 
-						Grd.Text = "Time vs Eastern"; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 1000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[1] = 1000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[2] = 1500; 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						 
-						Query = "SELECT * from Timezone ORDER BY tzone_name "; 
+						pnl_TZ_AddUpdate.Visible = false;
+                        FG_TimeZone.Clear();
+                        Grd = FG_TimeZone;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Zone Name";
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Sort Num";
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Time vs Eastern";
+                        Grd.SetColumnWidth(0, 67);
+                        Grd.SetColumnWidth(1, 67);
+                        Grd.SetColumnWidth(2, 100);
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+
+                        Query = "SELECT * from Timezone ORDER BY tzone_name "; 
 						RS_Table.Open(Query, modAdminCommon.LOCAL_ADO_DB, UpgradeHelpers.DB.LockTypeEnum.LockOptimistic); 
 						 
 						if (!(RS_Table.BOF && RS_Table.EOF))
@@ -7024,85 +6895,61 @@ namespace HomebaseAdministrator
 
 							while(!RS_Table.EOF)
 							{
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 0;
-								Grd.Text = ($"{Convert.ToString(RS_Table["tzone_name"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 1;
-								Grd.Text = ($"{Convert.ToString(RS_Table["tzone_sort_num"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 2;
-								Grd.Text = ($"{Convert.ToString(RS_Table["tzone_time_vs_eastern"])} ").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
+                                Grd.CurrentColumnIndex = 0;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["tzone_name"])} ").Trim();
+                                Grd.CurrentColumnIndex = 1;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["tzone_sort_num"])} ").Trim();
+                                Grd.CurrentColumnIndex = 2;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["tzone_time_vs_eastern"])} ").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
 						} 
 						 
-						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						Grd.Refresh(); 
-						 
-						break;
-					case modAdminCommon.iTabFractionalPrograms :  //fractional programs 
-						pnl_add_frac_Program.Visible = false; 
-						FG_FracPrograms.Clear(); 
-						FG_FracPrograms.RowsCount = 2; 
-						FG_TimeZone.Clear(); 
-						Grd = FG_FracPrograms; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 0; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = 0; 
-						Grd.Text = "Prog Id"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 1; 
-						Grd.Text = "Fractional Program"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 2; 
-						Grd.Text = "Description"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 3; 
-						Grd.Text = "Code"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 4; 
-						Grd.Text = "Active"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 5; 
-						Grd.Text = "Major"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 6; 
-						Grd.Text = "CompID"; 
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Col = 7; 
-						Grd.Text = "Program Provider"; 
+						RS_Table.Close();
+                        Grd.RowsCount--;
+                        Grd.Refresh();
 
-						 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[0] = 650; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[1] = 2000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[2] = 2000; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[3] = 800; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[4] = 600; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[5] = 600; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[6] = 800; 
-						//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.ColWidth[7] = 1300; 
-						 
-						nRow = 1; 
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.Row = nRow; 
-						Query = "SELECT prog_id, prog_name, prog_description, prog_code, prog_active_flag, prog_major_flag, prog_comp_id, comp_name "; 
+                        break;
+					case modAdminCommon.iTabFractionalPrograms :  //fractional programs 
+						pnl_add_frac_Program.Visible = false;
+                        FG_FracPrograms.Clear();
+                        FG_FracPrograms.RowsCount = 2;
+                        FG_TimeZone.Clear();
+                        Grd = FG_FracPrograms;
+                        Grd.CurrentColumnIndex = 0;
+                        Grd.CurrentRowIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Prog Id";
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Fractional Program";
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Description";
+                        Grd.CurrentColumnIndex = 3;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Code";
+                        Grd.CurrentColumnIndex = 4;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Active";
+                        Grd.CurrentColumnIndex = 5;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Major";
+                        Grd.CurrentColumnIndex = 6;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "CompID";
+                        Grd.CurrentColumnIndex = 7;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Program Provider";
+
+
+                        Grd.SetColumnWidth(0, 43);
+                        Grd.SetColumnWidth(1, 133);
+                        Grd.SetColumnWidth(2, 133);
+                        Grd.SetColumnWidth(3, 53);
+                        Grd.SetColumnWidth(4, 40);
+                        Grd.SetColumnWidth(5, 40);
+                        Grd.SetColumnWidth(6, 53);
+                        Grd.SetColumnWidth(7, 87);
+
+                        nRow = 1;
+                        Grd.CurrentRowIndex = nRow;
+                        Query = "SELECT prog_id, prog_name, prog_description, prog_code, prog_active_flag, prog_major_flag, prog_comp_id, comp_name "; 
 						Query = $"{Query}from Aircraft_programs left outer join company on prog_comp_id = comp_id and comp_journ_id =0 "; 
 						Query = $"{Query}ORDER BY prog_name "; 
 						 
@@ -7115,45 +6962,34 @@ namespace HomebaseAdministrator
 							while(!RS_Table.EOF)
 							{
 
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 0;
-								Grd.Text = ($"{Convert.ToString(RS_Table["Prog_id"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 1;
-								Grd.Text = ($"{Convert.ToString(RS_Table["prog_name"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 2;
-								Grd.Text = ($"{Convert.ToString(RS_Table["prog_description"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 3;
-								Grd.Text = ($"{Convert.ToString(RS_Table["prog_code"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 4;
-								Grd.Text = ($"{Convert.ToString(RS_Table["prog_active_flag"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 5;
-								Grd.Text = ($"{Convert.ToString(RS_Table["prog_major_flag"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 6;
-								Grd.Text = ($"{Convert.ToString(RS_Table["prog_comp_id"])} ").Trim();
-								//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Col = 7;
-								Grd.Text = ($"{Convert.ToString(RS_Table["Comp_Name"])} ").Trim();
-								nRow++;
-								//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-								//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-								Grd.Row = nRow;
-								RS_Table.MoveNext();
-							};
+                                Grd.CurrentColumnIndex = 0;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["Prog_id"])} ").Trim();
+                                Grd.CurrentColumnIndex = 1;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["prog_name"])} ").Trim();
+                                Grd.CurrentColumnIndex = 2;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["prog_description"])} ").Trim();
+                                Grd.CurrentColumnIndex = 3;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["prog_code"])} ").Trim();
+                                Grd.CurrentColumnIndex = 4;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["prog_active_flag"])} ").Trim();
+                                Grd.CurrentColumnIndex = 5;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["prog_major_flag"])} ").Trim();
+                                Grd.CurrentColumnIndex = 6;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["prog_comp_id"])} ").Trim();
+                                Grd.CurrentColumnIndex = 7;
+                                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["Comp_Name"])} ").Trim();
+                                nRow++;
+                                Grd.RowsCount = nRow + 1;
+                                Grd.CurrentRowIndex = nRow;
+                                RS_Table.MoveNext();
+                            };
 						} 
 						 
-						RS_Table.Close(); 
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067 
-						Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						Grd.Refresh(); 
-						 
-						cboFracToRemove.Items.Clear(); 
+						RS_Table.Close();
+                        Grd.RowsCount--;
+                        Grd.Refresh();
+
+                        cboFracToRemove.Items.Clear(); 
 						cboFracToKeep.Items.Clear(); 
 						cboFracToRemove.AddItem("None Selected"); 
 						cboFracToRemove.SetItemData(cboFracToRemove.GetNewIndex(), 0); 
@@ -7212,11 +7048,11 @@ namespace HomebaseAdministrator
 						 
 						pnl_new_FracMember.Visible = false; 
 						pnl_add_fracMember.Visible = false; 
-						cmdAddFracMember.Visible = false; 
-						FG_ProgCompany.Visible = false; 
-						 
-						// ************************************************************ 
-						break;
+						cmdAddFracMember.Visible = false;
+                        FG_ProgCompany.Visible = false;
+
+                        // ************************************************************ 
+                        break;
 					case modAdminCommon.iTabFinancialGroups :  // Existing Financial Intuition Groups 
 						SSTabHelper.SetSelectedIndex(tab_Lists, 0); 
 						if (modAdminCommon.gbl_User_ID != "mvit")
@@ -7873,34 +7709,26 @@ namespace HomebaseAdministrator
 		{
 			try
 			{
-                DataGridViewFlex Grd = null;
-				int nRow = 0; //Current row counter
+                UpgradeHelpers.DataGridViewFlex Grd = null;
+                int nRow = 0; //Current row counter
 				string Query = ""; //Current query sql
 				ADORecordSetHelper RS_Table = new ADORecordSetHelper(); //Current recordset
-				Grd = FG_Phone_Type;
-				//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.Col = 0;
-				//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.Row = 0;
-				Grd.Text = "Phone Type";
-				//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.Col = 1;
-				Grd.Text = "Seq_No";
-				//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.Col = 2;
-				Grd.Text = "Abbrev";
-				//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.ColWidth[0] = 2000;
-				//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.ColWidth[1] = 1000;
-				//UPGRADE_TODO: (1067) Member ColWidth is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.ColWidth[2] = 1000;
+                Grd = FG_Phone_Type;
+                Grd.CurrentColumnIndex = 0;
+                Grd.CurrentRowIndex = 0;
+                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Phone Type";
+                Grd.CurrentColumnIndex = 1;
+                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Seq_No";
+                Grd.CurrentColumnIndex = 2;
+                Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = "Abbrev";
+                Grd.SetColumnWidth(0, 133);
+                Grd.SetColumnWidth(1, 67);
+                Grd.SetColumnWidth(2, 67);
 
-				nRow = 1;
-				//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-				Grd.Row = nRow;
+                nRow = 1;
+                Grd.CurrentRowIndex = nRow;
 
-				Query = "SELECT * from Phone_Type ";
+                Query = "SELECT * from Phone_Type ";
 				if (vbCheck[0].CheckState == CheckState.Checked)
 				{
 					Query = $"{Query} ORDER BY ptype_seq_no ";
@@ -7917,26 +7745,20 @@ namespace HomebaseAdministrator
 
 					while(!RS_Table.EOF)
 					{
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-						Grd.Col = 0;
-						Grd.Text = ($"{Convert.ToString(RS_Table["ptype_name"])} ").Trim();
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-						Grd.Col = 1;
-						Grd.Text = ($"{Convert.ToString(RS_Table["ptype_seq_no"])}").Trim();
-						//UPGRADE_TODO: (1067) Member Col is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-						Grd.Col = 2;
-						Grd.Text = ($"{Convert.ToString(RS_Table["ptype_abbrev"])} ").Trim();
-						nRow++;
-						//UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-						Grd.RowCount = nRow + 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
-						//UPGRADE_TODO: (1067) Member Row is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-						Grd.Row = nRow;
-						RS_Table.MoveNext();
-					};
+                        Grd.CurrentColumnIndex = 0;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["ptype_name"])} ").Trim();
+                        Grd.CurrentColumnIndex = 1;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["ptype_seq_no"])}").Trim();
+                        Grd.CurrentColumnIndex = 2;
+                        Grd[Grd.CurrentRowIndex, Grd.CurrentColumnIndex].Value = ($"{Convert.ToString(RS_Table["ptype_abbrev"])} ").Trim();
+                        nRow++;
+                        Grd.RowsCount = nRow + 1;
+                        Grd.CurrentRowIndex = nRow;
+                        RS_Table.MoveNext();
+                    };
 				}
 				RS_Table.Close();
-                //UPGRADE_TODO: (1067) Member Rows is not defined in type VB.Control. More Information: https://docs.mobilize.net/vbuc/ewis/todos#id-1067
-                Grd.RowCount = nRow - 1;//gap-note Grd.Rows was changed to GrdRow.RowCount
+                Grd.RowsCount--;
                 Grd.Refresh();
 			}
 			catch

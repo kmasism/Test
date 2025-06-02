@@ -1583,19 +1583,5 @@ namespace UpgradeHelpers
                 }
             }
         }
-
-		#region Pending Properties
-
-		public int Row { get; set; }
-		public int Col { get; set; }
-        
-        public int TopRow { get; set; }
-        public dynamic Cols { get; set; }
-		public dynamic ColWidth { get; set; }
-
-		public dynamic RowData { get; set; }
-
-		#endregion
-
 	}
 }

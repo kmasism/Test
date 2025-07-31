@@ -22,7 +22,10 @@ namespace UpgradeHelpers
     /// </summary>
     public partial class DataGridViewFlex
     {
-
+        /// <summary>
+        /// Gets or sets the AllowUserResizing settings for the DataGridViewFlex control.
+        /// </summary>
+        public AllowUserResizingSettings AllowUserResizing { get; set; }
 
         /// <summary>
         /// This property should not be used, use the ColumnsCount instead

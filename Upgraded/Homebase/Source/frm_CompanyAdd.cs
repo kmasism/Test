@@ -1314,8 +1314,8 @@ namespace JETNET_Homebase
 							}
 
 							// If InStr(LOCAL_ADO_DB, "jetnet_ra_test") > 0 And gbl_User_ID = "mvit" And gbl_User_ID = "DONT GO" Then    '    so for now it doesnt go in
-							if (modAdminCommon.LOCAL_ADO_DB.ConnectionString.IndexOf("jetnet_ra_test") >= 0)
-							{ //    will go on test every time now
+							if (modAdminCommon.LOCAL_ADO_DB.ConnectionString.IndexOf("jetnet_ra") >= 0)
+						    { //    MSW - 6/28/25 - to go in every time
 
 								run_company_add_sp();
 
